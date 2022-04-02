@@ -1,0 +1,28 @@
+.reviews-filter {
+    color: white;
+    padding: 0 1rem;
+    direction: rtl;
+  }
+  
+  .reviews-filter__control {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0;
+    direction: rtl;
+  }
+  
+  .reviews-filter label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    direction: rtl;
+  }
+  
+  .reviews-filter select {
+    font: inherit;
+    padding: 0.5rem 3rem;
+    font-weight: bold;
+    border-radius: 6px;
+    direction: rtl;
+  }
