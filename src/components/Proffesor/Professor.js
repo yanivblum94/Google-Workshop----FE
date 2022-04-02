@@ -1,9 +1,8 @@
 import React from "react";
 //import { Link } from "react-router-dom";
 import "./Professor.css";
-import RatingChart from "./RatingChart";
+import RatingChart from '../ReviewsChart/RatingChart';
 
-// TODO: add dificulty
 
 const Professor = (props) => {
   const mailto = "mailto:" + props.data.email;

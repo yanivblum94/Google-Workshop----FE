@@ -1,5 +1,5 @@
 .reviews-filter {
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 0 1rem;
     direction: rtl;
   }
@@ -17,12 +17,37 @@
     font-weight: bold;
     margin-bottom: 0.5rem;
     direction: rtl;
+    font-family: 'Gloria', sans-serif;
   }
   
   .reviews-filter select {
-    font: inherit;
+    font-family: 'Gloria', sans-serif;
     padding: 0.5rem 3rem;
     font-weight: bold;
     border-radius: 6px;
     direction: rtl;
+  }
+
+  @font-face {
+    font-family: 'Gloria';
+    src: url('/src/fonts/gloria/gloria-regular-aaa.otf');
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gloria';
+    src: url('/src/fonts/gloria/gloria-bold-aaa.otf');
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: 'Afek';
+    src: url('/src/fonts/afek/afek-regular-aaa.otf');
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: 'Afek';
+    src: url('/src/fonts/afek/afek-bold-aaa.otf');
+    font-weight: bold;
   }
