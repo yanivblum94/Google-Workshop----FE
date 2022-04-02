@@ -8,7 +8,7 @@ const Professor = (props) => {
   const website = props.data.website;
 
   return (
-    <div className="professor">
+    <body className="professor">
       <div className="professor-details">
         <div className="professor-elements">{props.data.name}</div>
         <div className="professor-elements">{avgRating}</div>
@@ -24,8 +24,9 @@ const Professor = (props) => {
           </a>
         </div>
         <button className="ratingButton" role="button">דרג את המרצה!</button>
-      </div><div className="professor-details">כאן יהיה דיאגרמת דירוג</div> 
-    </div>
+      </div>
+      <div className="professor-ratingChart">כאן יהיה דיאגרמת דירוג</div> 
+    </body>
   );
 };
 
