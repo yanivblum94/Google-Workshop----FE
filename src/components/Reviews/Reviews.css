@@ -1,9 +1,21 @@
 .reviews {
     padding: 1rem;
-    background-color: rgb(31, 31, 31);
+    background-color: #a7a7a7;
     margin: 2rem auto;
     width: 50rem;
     max-width: 95%;
     direction: rtl;
   }
   
+
+  @font-face {
+    font-family: 'Gloria';
+    src: url('/src/fonts/gloria/gloria-regular-aaa.otf');
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gloria';
+    src: url('/src/fonts/gloria/gloria-bold-aaa.otf');
+    font-weight: bold;
+  }
