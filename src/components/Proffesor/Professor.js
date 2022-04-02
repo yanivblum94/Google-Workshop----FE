@@ -3,7 +3,6 @@ import React from "react";
 import "./Professor.css";
 import RatingChart from '../ReviewsChart/RatingChart';
 
-
 const Professor = (props) => {
   const mailto = "mailto:" + props.data.email;
   const avgRating = "דירוג ממוצע: " + props.data.avgRating + " מתוך " + props.data.ratings.length +" דירוגים";

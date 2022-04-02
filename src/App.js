@@ -2,6 +2,9 @@ import React from 'react';
 import Professor from "./components/Proffesor/Professor";
 import Reviews from './components/Reviews/Reviews'
 import "./App.css"
+import Header from './components/Header/Header';
+
+
 const professor = {
     id: 'p1',
     name: 'ד"ר אמיר רובינשטיין',
@@ -71,6 +74,7 @@ function App() {
 
   return (
     <div className='container'>
+      <Header/>
       <Professor data={professor}/>
       <Reviews items = {reviews}/>
     </div>
