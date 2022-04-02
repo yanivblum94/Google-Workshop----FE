@@ -1,6 +1,10 @@
 import React from "react";
 //import { Link } from "react-router-dom";
 import "./Professor.css";
+import RatingChart from "./RatingChart";
+
+// TODO: add dificulty 
+
 
 const Professor = (props) => {
   const mailto = "mailto:" + props.data.email;
@@ -25,7 +29,7 @@ const Professor = (props) => {
         </div>
         <button className="ratingButton" role="button">דרג את המרצה!</button>
       </div>
-      <div className="professor-ratingChart">כאן יהיה דיאגרמת דירוג</div> 
+      <RatingChart >כאן יהיה דיאגרמת דירוג</RatingChart> 
     </body>
   );
 };
@@ -37,3 +41,5 @@ export default Professor;
 {
   /* <button class="button-4" role="button">Button 4</button> */
 }
+
+
