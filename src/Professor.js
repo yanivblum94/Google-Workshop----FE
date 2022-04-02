@@ -3,13 +3,18 @@ import React from "react";
 import "./Professor.css";
 import RatingChart from "./RatingChart";
 
-// TODO: add dificulty 
-
+// TODO: add dificulty
 
 const Professor = (props) => {
   const mailto = "mailto:" + props.data.email;
-  const avgRating = "דירוג ממוצע: " + props.data.avgRating;
+  const avgRating = "דירוג ממוצע: " + props.data.avgRating + " מתוך " + props.data.ratings.length +" דירוגים";
   const website = props.data.website;
+
+  console.log("after this");
+  const ratingValuesArray = props.data.ratings.map(rate => 
+    rate.totalRating
+  );
+  console.log(ratingValuesArray);
 
   return (
     <body className="professor">
@@ -27,9 +32,11 @@ const Professor = (props) => {
             אתר
           </a>
         </div>
-        <button className="ratingButton" role="button">דרג את המרצה!</button>
+        <button className="ratingButton" role="button">
+          דרג את המרצה!
+        </button>
       </div>
-      <RatingChart >כאן יהיה דיאגרמת דירוג</RatingChart> 
+      <RatingChart ratingValuesArray={ratingValuesArray}></RatingChart>
     </body>
   );
 };
@@ -41,5 +48,3 @@ export default Professor;
 {
   /* <button class="button-4" role="button">Button 4</button> */
 }
-
-
