@@ -1,0 +1,10 @@
+.header{
+    direction: rtl;
+    background-color: #a7a7a7;
+    padding-right: 1rem;
+}
+
+.logo{
+    width: 20%;
+    float: right;
+}

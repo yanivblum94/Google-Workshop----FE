@@ -1,0 +1,19 @@
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 1px;
+    align-items: center;
+    border-radius: 6px;
+
+}
+
+.search-button{
+    background-color: #eb5e28;
+    cursor: pointer;
+      box-sizing: border-box;
+      border-radius: 6px;
+
+}

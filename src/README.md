@@ -3,7 +3,9 @@ npm install react-router-dom --save
 
 
 TODO: 
-
+* make logo and add to header
+* put fonts in a general css to import from all files 
 
 
 Missing: 
+* log in button from the header
