@@ -1,11 +1,15 @@
 .chart {
     padding: 1rem;
     border-radius: 12px;
-    background-color: #f8dfff;
+    background-color: #103459;
     text-align: center;
     display: flex;
     justify-content: space-around;
     height: 10rem;
     float:left;
-  }
+    width: 50%;
+}
   
+.char-text{
+    color:rgb(255, 255, 255)
+}
