@@ -1,7 +1,7 @@
 import React from "react";
 //import { Link } from "react-router-dom";
 import "./Professor.css";
-import RatingChart from "./RatingChart";
+import RatingChart from '../ReviewsChart/RatingChart';
 
 // TODO: add dificulty 
 
@@ -29,7 +29,6 @@ const Professor = (props) => {
         </div>
         <button className="ratingButton" role="button">דרג את המרצה!</button>
       </div>
-      <RatingChart >כאן יהיה דיאגרמת דירוג</RatingChart> 
     </body>
   );
 };

@@ -9,3 +9,15 @@
     text-align: center;
     direction: rtl;
   }
+
+  @font-face {
+    font-family: 'Gloria';
+    src: url('/src/fonts/gloria/gloria-regular-aaa.otf');
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gloria';
+    src: url('/src/fonts/gloria/gloria-bold-aaa.otf');
+    font-weight: bold;
+  }

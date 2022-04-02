@@ -1,16 +1,10 @@
 import React from 'react';
-import Professor from "./Professor";
-import Reviews from './components/Reviews/Reviews'
+import Professor from "./components/Proffesor/Professor";
+import Reviews from './components/Reviews/Reviews';
+import './App.css';
 
-const professor = {
-    id: '1',
-    name: 'ד"ר אמיר רובינשטיין',
-    avgRating: 4.5 ,
-    email: 'amirr@tau.ac.il',
-    website: "https://cs3801.wixsite.com/amirr"
-}
 
-const expenses = [
+const reviews = [
   {
     id: 'r1',
     totalRating: 5,
@@ -24,7 +18,7 @@ const expenses = [
   },
   {
     id: 'r2',
-    totalRating: 3,
+    totalRating: 2,
     difficulty: 5,
     courseName: 'מבני נתונים',
     hwReq: 'כן',
@@ -35,13 +29,27 @@ const expenses = [
   },
 ];
 
+let averageRating = 0.0;
+reviews.forEach(review => {
+  averageRating += review.totalRating;
+});
+averageRating =averageRating/reviews.length;
+const professor = {
+  id: '1',
+  name: 'ד"ר אמיר רובינשטיין',
+  avgRating: averageRating ,
+  email: 'amirr@tau.ac.il',
+  website: "https://cs3801.wixsite.com/amirr"
+}
+
 function App() {
   
 
   return (
-    <div >
+
+    <div className='container'>
       <Professor data={professor}/>
-      <Reviews items = {expenses}/>
+      <Reviews items = {reviews}/>
     </div>
   );
 };

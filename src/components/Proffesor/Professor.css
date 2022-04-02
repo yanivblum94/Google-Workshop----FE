@@ -5,6 +5,7 @@
   width: 60rem;
   max-width: 95%;
   direction: rtl;
+  font-family: 'Gloria', sans-serif;
   /* float: right; */
 
 }
@@ -86,4 +87,16 @@
 
 .button-4:-webkit-details-marker {
   display: none;
+}
+
+@font-face {
+  font-family: 'Gloria';
+  src: url('/src/fonts/gloria/gloria-regular-aaa.otf');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Gloria';
+  src: url('/src/fonts/gloria/gloria-bold-aaa.otf');
+  font-weight: bold;
 }

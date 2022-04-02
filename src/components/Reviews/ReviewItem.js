@@ -10,8 +10,6 @@ const ReviewItem = (props) => {
           </div>
           <div className="review-item__price">
             דירוג כללי: {props.totalRating}{" "}
-          </div>
-          <div className="review-item__price">
             דרגת קושי: {props.difficulty}{" "}
           </div>
           <div className="review-item__price">
@@ -19,6 +17,8 @@ const ReviewItem = (props) => {
           <h2>מטלות ממוחזרות: {props.hwRef}</h2>
           <h2>מעלה חומרים למודל: {props.moodleQuality}</h2>
           <h2>קיימות הקלטות: {props.records}</h2>
+          </div>
+          <div className="review-item__price">
           <h2>הערות: {props.textReview}</h2>
         </div>
       </Card>

@@ -14,6 +14,7 @@
     gap: 1rem;
     align-items: flex-end;
     flex-flow: column-reverse;
+    font-family: 'Afek', sans-serif;
     justify-content: flex-start;
     flex: 1;
     direction: rtl;
@@ -31,6 +32,7 @@
   .review-item__price {
     font-size: 1rem;
     font-weight: bold;
+    font-family: 'Afek', sans-serif;
     color: white;
     background-color: #40005d;
     border: 1px solid white;
@@ -58,4 +60,28 @@
       padding: 0.5rem 1.5rem;
       direction: rtl;
     }
+  }
+
+  @font-face {
+    font-family: 'Gloria';
+    src: url('/src/fonts/gloria/gloria-regular-aaa.otf');
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: 'Gloria';
+    src: url('/src/fonts/gloria/gloria-bold-aaa.otf');
+    font-weight: bold;
+  }
+
+  @font-face {
+    font-family: 'Afek';
+    src: url('/src/fonts/afek/afek-regular-aaa.otf');
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: 'Afek';
+    src: url('/src/fonts/afek/afek-bold-aaa.otf');
+    font-weight: bold;
   }
