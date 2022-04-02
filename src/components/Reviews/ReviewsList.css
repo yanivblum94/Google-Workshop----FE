@@ -1,0 +1,11 @@
+.reviews-list {
+    list-style: none;
+    padding: 0;
+    direction: rtl;
+  }
+  
+  .reviews-list__fallback {
+    color: white;
+    text-align: center;
+    direction: rtl;
+  }
