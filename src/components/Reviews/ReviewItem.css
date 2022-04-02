@@ -4,7 +4,7 @@
     align-items: center;
     padding: 0.5rem;
     margin: 1rem 0;
-    background-color: #4b4b4b;
+    background-color: #a7a7a7;
     direction: rtl;
   }
   
@@ -29,17 +29,85 @@
     direction: rtl;
   }
   
-  .review-item__price {
+  .review-item__ratingValues{
+    display: flex;
+    flex-direction: column;
     font-size: 1rem;
     font-weight: bold;
     font-family: 'Afek', sans-serif;
-    color: white;
-    background-color: #40005d;
-    border: 1px solid white;
     padding: 0.5rem;
     border-radius: 12px;
     direction: rtl;
   }
+  .review-item__ratingValuesCard{
+    margin-bottom: 24px;
+    color: rgb(21, 21, 21);
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Afek', sans-serif;
+    color: white;
+    background-color: #103459;
+    border: 1px solid white;
+    direction: rtl;
+  }
+  .review-item__ratingInfo{
+    margin-right: 48px;
+    text-align: right;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: 'Afek', sans-serif;
+    color: white;
+    background-color: #103459;
+    border: 1px solid white;
+    padding: 0.5rem;
+    border-radius: 14px;
+    direction: rtl;
+  }
+
+  .review-item__header{
+    color: rgb(21, 21, 21);
+    font-weight: 900;
+    -webkit-box-align: center;
+    align-items: right;
+    align-self: right;
+    display: flex;
+    font-size: 32px;
+    padding-right: 22px;
+
+}
+
+.review-item__courseMeta{
+  display: flex;
+    flex-flow: wrap;
+    margin-bottom: 14px;
+  color: rgb(255, 255, 255);
+  font-weight: regular;
+  font-family: 'Afek', sans-serif;
+  font-size: 14px;
+}
+.review-item__metaItem{
+  line-height: 1.54;
+  margin-right: 16px;
+  padding: 4px 4px;
+  white-space: nowrap;
+  color: rgb(255, 255, 255);
+  margin-bottom: 8px;
+  font-weight: regular;
+  font-family: 'Afek', sans-serif;
+  font-size: 14px;
+}
+.review-item__comment{
+  display: flex;
+    flex-flow: wrap;
+    margin-bottom: 14px;
+  color: rgb(21, 21, 21);
+  font-size: 16px;
+}
+
+
   
   @media (min-width: 580px) {
     .review-item__description {
