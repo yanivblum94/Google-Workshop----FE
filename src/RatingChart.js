@@ -3,24 +3,40 @@ import React from 'react';
 import ChartBar from './ChartBar';
 import './RatingChart.css';
 
-
-// edit props 
 const RatingChart = (props) => {
-  const dataPointValues = props.dataPoints.map(dataPoint => dataPoint.value);
-  const totalMaximum = Math.max(...dataPointValues);
+    const ratingDict = {1:0,
+    2:0,
+    3:0,
+    4:0,
+    5:0
+};
+    let totalRatings = props.ratingValuesArray.length;
+    console.log("in rating chart");
+
+    for(let i = 0; i< props.ratingValuesArray.length;i++){
+        ratingDict[props.ratingValuesArray[i]] ++;
+    }
+
+    const ratingValues = props.ratingValuesArray;
+    console.log(ratingDict);
+    console.log(totalRatings);
 
   return (
     <div className='chart'>
-      {props.dataPoints.map((dataPoint) => (
-        <ChartBar
-          key={dataPoint.label}
-          value={dataPoint.value}
-          maxValue={totalMaximum}
-          label={dataPoint.label}
-        />
-      ))}
-    </div>
-  );
+      <div className='char-text'>התפלגות דירוגים</div> 
+      <div></div>
+    {Object.entries(ratingDict).map(([key,value]) => (
+
+      <ChartBar
+        key={key}
+        value={value}
+        maxValue={totalRatings}
+        label={key}
+      />
+    ))}
+  </div>
+);
 };
 
 export default RatingChart;
+
