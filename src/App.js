@@ -1,4 +1,15 @@
+import React from 'react';
+import Professor from "./Professor";
 import Reviews from './components/Reviews/Reviews'
+
+const professor = {
+    id: '1',
+    name: 'ד"ר אמיר רובינשטיין',
+    avgRating: 4.5 ,
+    email: 'amirr@tau.ac.il',
+    website: "https://cs3801.wixsite.com/amirr"
+}
+
 const expenses = [
   {
     id: 'r1',
@@ -25,11 +36,14 @@ const expenses = [
 ];
 
 function App() {
+  
+
   return (
-    <div>
+    <div >
+      <Professor data={professor}/>
       <Reviews items = {expenses}/>
     </div>
   );
-}
+};
 
 export default App;
