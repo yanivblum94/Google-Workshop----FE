@@ -7,7 +7,8 @@
   direction: rtl;
   font-family: 'Gloria', sans-serif;
   /* float: right; */
-
+  display: flex;
+  flex-direction: row;
 }
 
 .professor-details{

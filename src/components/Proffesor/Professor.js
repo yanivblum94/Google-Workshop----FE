@@ -2,6 +2,7 @@ import React from "react";
 //import { Link } from "react-router-dom";
 import "./Professor.css";
 import RatingChart from '../ReviewsChart/RatingChart';
+import professorPic from "./professor_pic.jpg";
 
 const Professor = (props) => {
   const mailto = "mailto:" + props.data.email;
@@ -16,6 +17,7 @@ const Professor = (props) => {
 
   return (
     <body className="professor">
+
       <div className="professor-details">
         <div className="professor-elements">{props.data.name}</div>
         <div className="professor-elements">{avgRating}</div>
@@ -46,3 +48,6 @@ export default Professor;
 {
   /* <button class="button-4" role="button">Button 4</button> */
 }
+
+
+//<img  src={professorPic}  alt="prof" height='20%' width='20%' />

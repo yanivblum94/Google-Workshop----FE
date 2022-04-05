@@ -1,19 +1,39 @@
 .visually-hidden {
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    height: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 1px;
-    align-items: center;
-    border-radius: 6px;
-
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+  align-items: center;
+  border-radius: 6px;
+  float: center;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  padding-top: 2%;
 }
 
-.search-button{
-    background-color: #eb5e28;
-    cursor: pointer;
-      box-sizing: border-box;
-      border-radius: 6px;
+.search-button {
+  background-color: #eb5e28;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-radius: 6px;
+  font-weight: bold;
+  height: 80%;
+  /* padding-right: 20; */
+  font-size: large;
+  font-family: "Afek", sans-serif;
+}
 
+.google-button {
+  font-weight: bold;
+  margin-right: 50%;
+}
+
+.search-box {
+  height: 80%;
+  font-size: large;
+  font-weight: bold;
+  font-family: "Afek", sans-serif;
 }

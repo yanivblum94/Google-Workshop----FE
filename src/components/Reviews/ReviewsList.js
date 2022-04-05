@@ -1,10 +1,11 @@
 
 import ReviewItem from './ReviewItem';
 import './ReviewItem.css';
+import './ReviewsList.css';
 
 const ReviewsList = (props) => {
   if (props.items.length === 0) {
-    return <h2 className = 'reviews-list__fallback'>לא נמצאו דירוגים</h2>;
+    return <div className = 'reviews-list__fallback'>לא נמצאו דירוגים</div>;
   }
 
   return (

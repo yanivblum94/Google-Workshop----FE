@@ -6,7 +6,7 @@ const SearchBar = () => (
         <label htmlFor="header-search">
             <span className="visually-hidden">Search blog posts</span>
         </label>
-        <input
+        <input className="search-box"
             type="text"
             id="header-search"
             placeholder="חפש מרצה"

@@ -5,9 +5,14 @@
   }
   
   .reviews-list__fallback {
-    color: white;
-    text-align: center;
+    color: rgb(2, 2, 2);
+    text-align: right;
     direction: rtl;
+    padding-right: 17px;
+    font-family: "Gloria", sans-serif;
+    font-weight: normal;
+    font-size: large;
+
   }
 
   @font-face {
