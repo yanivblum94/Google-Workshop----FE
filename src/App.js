@@ -8,7 +8,7 @@ import Header from './components/Header/Header';
 const professor = {
     id: 'p1',
     name: 'ד"ר אמיר רובינשטיין',
-    avgRating: 4.5 ,
+    avgRating: 4 ,
     email: 'amirr@tau.ac.il',
     website: "https://cs3801.wixsite.com/amirr",
     ratings: [
