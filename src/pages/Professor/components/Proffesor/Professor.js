@@ -1,5 +1,5 @@
 import React from "react";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Professor.css";
 import RatingChart from '../ReviewsChart/RatingChart';
 import professorPic from "./professor_pic.jpg";
@@ -32,9 +32,10 @@ const Professor = (props) => {
             אתר
           </a>
         </div>
-        <button className="ratingButton" role="button">
+        <Link className="ratingButton" to='/professor/add-review' > 
+        {/* //dynamiclly = {`/professor/$props.id}`} where props.is should results in professor id */}
           דרג את המרצה!
-        </button>
+        </Link>
       </div>
       <RatingChart ratingValuesArray={ratingValuesArray}></RatingChart>
     </body>

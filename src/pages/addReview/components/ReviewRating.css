@@ -1,0 +1,29 @@
+.review-rating {
+    font-family: 'Afek';
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    justify-content: right;
+    align-items: center;
+    direction: rtl;
+}
+
+.review-rating_title {
+    margin-left: 50px;
+    margin-right: 20px;
+}
+
+
+.review-rating_result {
+    font-family: 'Afek';
+    font-weight: bold;
+    font-size: 24px;
+    margin-left: 50px;
+    margin-right: 20px;
+
+}
+
+.fa-graduation-cap{
+    --fa-animation-duration: 2s;
+    --fa-animation-iteration-count: 0.5;
+}

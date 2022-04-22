@@ -1,0 +1,75 @@
+/* origin was App.css in Maria's branch */
+@font-face {
+    font-family: 'Gloria';
+    src: url('fonts/gloria/gloria-regular-aaa.otf');
+    font-weight: normal;
+  }
+  
+  /*bold version of gloria font*/
+  @font-face {
+    font-family: 'Gloria';
+    src: url('fonts/gloria/gloria-bold-aaa.otf');
+    font-weight: bold;
+  }
+  
+  @font-face {
+    font-family: 'Afek';
+    src: url('fonts/afek/afek-regular-aaa.otf');
+    font-weight: normal;
+  }
+  
+  /*bold version of afek font*/
+  @font-face {
+    font-family: 'Afek';
+    src: url('fonts/afek/afek-bold-aaa.otf');
+    font-weight: bold;
+  }
+  
+
+.rest-of-page{
+    margin-top: 200px;
+    direction: rtl;
+}
+
+.bars{
+    top:0;
+    width: 100%;
+    height: 175px;
+    position: fixed;
+    box-shadow: 2px 2px 2px 2px #DDDDDD;
+}
+
+.free-input{
+    font-size: 24px;
+    font-family: 'Afek';
+    margin-right: 10%;
+    border-radius: 10px;
+    border: 5px  #000000;
+    box-shadow: 2px 2px 10px 2px #999999;
+    width: 80%;
+    height: 150px;
+    offset: 2px;
+    resize: none;
+  }
+
+.submit-button{
+    margin: 30px;
+    margin-right:40%;
+    width: 20%;
+    height: 72px;
+    background-color: #003f7d;
+    font-family: 'Gloria';
+    font-weight: bold;
+    font-size: 36px;
+    color: white;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 2px #999999;
+    border-color: #003f7d;
+    cursor: pointer;
+}
+
+.submit-button:hover{
+  background: #0060C0;
+  transform: scale(1.2);
+}

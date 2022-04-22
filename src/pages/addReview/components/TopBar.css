@@ -1,0 +1,14 @@
+.upper-bar{    
+    display: flex;
+    flex-direction: row;
+    background-color: #d8e2ec;
+    height: 65px;
+    width: 100%;
+    direction: rtl;
+    justify-content: center;
+}
+
+.logo-pic{
+    margin-top: 5px;
+    height: 50px;
+}
