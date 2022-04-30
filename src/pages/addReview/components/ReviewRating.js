@@ -4,10 +4,17 @@ import DividedCard from "./DividedCard";
 import RatingCaps from "./RatingCaps";
 
 const ReviewRating = (props) => {
-    const [userRating, setUserRating] = useState("")
+    const [userRating, setUserRating] = useState("דרגו")
 
     const hoverChangeHandler = (newRating) => {
-        setUserRating(props.ratingsOptions[newRating - 1]);
+        console.log(newRating);
+        if (newRating == 0){
+            console.log("got here");
+            setUserRating("דרגו");
+        }
+        else{
+            setUserRating(props.ratingsOptions[newRating - 1]);
+        }
     }; 
 
     const ratingChangeHandler = (newRating) => {
@@ -23,7 +30,6 @@ const ReviewRating = (props) => {
                 <RatingCaps onChoosingRating={ratingChangeHandler} onHovering={hoverChangeHandler}></RatingCaps>
                 <div className="review-rating_result">{userRating}</div>
             </div>
-
         </DividedCard>
 
     )

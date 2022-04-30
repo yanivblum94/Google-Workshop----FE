@@ -128,22 +128,33 @@ function MainAddReview() {
   }
 
   const saveFreeInput = (writtenInput) => {
-      if (writtenInput.target.value.length > 20)
-      {
-        console.log(writtenInput.target.value)
+    if (writtenInput.target.value.length >= 20){
+      if (freeInput == -1){
         setCompleteness(completeness + 100 / 8);
+        if (completeness > 90) {
+          setIsComplete(1);
+        }
       }
-      if (completeness > 90) {
-        setIsComplete(1);
+      setFreeInput(writtenInput.target.value);
+    }
+    else{
+      console.log(writtenInput.target.value.length);
+      setFreeInput(-1);
+      if (freeInput != -1){
+        setCompleteness(completeness - (100 / 8));
+        setIsComplete(0);
       }
-    setFreeInput(writtenInput.target.value);
+    }
   }
 
   const submit = () => {
-    if (completeness != 100) {
+    console.log(isComplete);
+    console.log(completeness);
+
+    if (isComplete == 0) {
       console.log("not Complete");
     }
-    console.log(freeInput);
+
   }
 
   return (
