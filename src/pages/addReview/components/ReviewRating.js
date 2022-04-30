@@ -1,31 +1,36 @@
-import ReactStars from "react-rating-stars-component";
 import './ReviewRating.css'
 import { useState } from "react";
-import Card from "./Card";
+import DividedCard from "./DividedCard";
+import RatingCaps from "./RatingCaps";
 
 const ReviewRating = (props) => {
     const [userRating, setUserRating] = useState("דרגו")
 
-    const ratingChangeHandler= (newRating) => {
-        setUserRating(props.ratingsOptions[newRating-1]);
+    const hoverChangeHandler = (newRating) => {
+        console.log(newRating);
+        if (newRating == 0){
+            console.log("got here");
+            setUserRating("דרגו");
+        }
+        else{
+            setUserRating(props.ratingsOptions[newRating - 1]);
+        }
+    }; 
+
+    const ratingChangeHandler = (newRating) => {
+        console.log(newRating);
+        setUserRating(props.ratingsOptions[newRating - 1]);
         props.onChoosingRating(newRating);
     };
 
     return (
-        <Card className="review-rating">
-            <h2 className="review-rating_title">{props.title}</h2>
-            <ReactStars className="review-rating_stars"
-                count={5}
-                value={0}
-                onChange={ratingChangeHandler}
-                size={24}
-                activeColor="#003f7d"
-                color="#EEEEEE"
-                emptyIcon={<i class="fa-solid fa-graduation-cap fa-2x"></i>}
-                filledIcon={<i class="fa-solid fa-graduation-cap fa-shake fa-2x"></i>}
-            />
-            <div className="review-rating_result">{userRating}</div>
-        </Card>
+        <DividedCard className="review-rating">
+            <div className="review-rating_title">{props.title}</div>
+            <div className="review-rating_main">
+                <RatingCaps onChoosingRating={ratingChangeHandler} onHovering={hoverChangeHandler}></RatingCaps>
+                <div className="review-rating_result">{userRating}</div>
+            </div>
+        </DividedCard>
 
     )
 }

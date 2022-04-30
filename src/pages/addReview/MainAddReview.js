@@ -1,4 +1,4 @@
-/* origin was App.css in Maria's branch */ 
+/* origin was App.css in Maria's branch */
 
 import './MainAddReview.css'
 import ProfBar from './components/ProfBar'
@@ -7,7 +7,19 @@ import ReviewQuestions from './components/ReviewQuestions';
 import TopBar from './components/TopBar';
 import ProgressBar from "react-progressbar";
 import { useState } from 'react';
-
+import TextAreaWInstrucions from './components/TextAreaWInstructions';
+class Review {
+  constructor(generalRating, difficultyRating, studentTreatmentRating,
+    materialSharing, recordingsAvailable, takeAgain, wordsReview) {
+    this.generalRating = generalRating;
+    this.difficultyRating = difficultyRating;
+    this.studentTreatmentRating = studentTreatmentRating;
+    this.materialSharing = materialSharing;
+    this.recordingsAvailable = recordingsAvailable;
+    this.takeAgain = takeAgain;
+    this.wordsReview = wordsReview;
+  }
+}
 const options = [
   { value: '03680001', label: 'מתמטיקה בדידה' },
   { value: '03680002', label: 'מבוא למדמ"ח' },
@@ -15,48 +27,35 @@ const options = [
 ]
 
 const profRatingsOptions = [
-  "גרוע", "לא משהו", "בסדר", "טוב", "מעולה"
+  "גרוע", "רע", "בסדר", "טוב", "מעולה"
 ]
 
 const profDiffOptions = [
-  "קשוח ממש", "קשה", "סביר", "די קל", "קללל"
+  "קשה מאוד", "קשה", "בסדר", "קל", "קל מאוד"
 ]
 
-const choiceValues = [
-  "כן", "לא", "לא רלוונטי"
+const profStudentTreatmentOptions = [
+  "גרוע", "רע", "בסדר", "טוב", "מעולה"
+]
+
+const choiceSegmentLabels = [
+  "כן", "לא"
+]
+const choiceSegmentValues = [
+  true, false
 ]
 
 function MainAddReview() {
   const [completeness, setCompleteness] = useState(0);
-  const [profRating, setProfRating] = useState(-1);
-  const [diffRating, setDiffRating] = useState(-1);
   const [course, setCourse] = useState(-1);
-  const [mandatoryAssignments, setMandatoryAssignments] = useState(-1);
-  const [referenceAssignments, setReferenceAssignments] = useState(-1);
+  const [profGeneralRating, setProfGeneralRating] = useState(-1);
+  const [profDifficultyRating, setProfDifficultyRating] = useState(-1);
+  const [profStudentTreatmentRating, setProfStudentTreatmentRating] = useState(-1);
   const [materialOnMoodle, setMaterialOnMoodle] = useState(-1);
-  const [recordings, setRecordings] = useState(-1);
+  const [recordingsAvailable, setRecordingsAvailable] = useState(-1);
+  const [wouldTakeAgain, setWouldTakeAgain] = useState(-1);
   const [freeInput, setFreeInput] = useState(-1);
   const [isComplete, setIsComplete] = useState(0);
-
-  const saveProfRating = (chosenRating) => {
-    if (profRating === -1) {
-      setCompleteness(completeness + 100 / 8);
-      if (completeness > 90) {
-        setIsComplete(1);
-      }
-    }
-    setProfRating(chosenRating);
-  }
-
-  const saveDiffRating = (chosenRating) => {
-    if (diffRating === -1) {
-      setCompleteness(completeness + 100 / 8);
-      if (completeness > 90) {
-        setIsComplete(1);
-      }
-    }
-    setDiffRating(chosenRating);
-  }
 
   const saveCourse = (chosenCourse) => {
     if (course === -1) {
@@ -68,67 +67,94 @@ function MainAddReview() {
     setCourse(chosenCourse);
   }
 
-  const saveMandatoryAssignments = (chosenMandatoryAssignments) => {
-    if (mandatoryAssignments === -1) {
+  const saveProfGeneralRating = (chosenRating) => {
+    if (profGeneralRating === -1) {
       setCompleteness(completeness + 100 / 8);
       if (completeness > 90) {
         setIsComplete(1);
       }
     }
-    setMandatoryAssignments(chosenMandatoryAssignments);
+    setProfGeneralRating(chosenRating);
   }
 
-  const saveReferenceAssignments = (chosenReferenceAssignments) => {
-    if (referenceAssignments === -1) {
+  const saveProfDifficultyRating = (chosenRating) => {
+    if (profDifficultyRating === -1) {
       setCompleteness(completeness + 100 / 8);
       if (completeness > 90) {
         setIsComplete(1);
       }
     }
-    setReferenceAssignments(chosenReferenceAssignments);
+    setProfDifficultyRating(chosenRating);
   }
-  const saveMaterialOnMoodle = (chosenMaterialOnMoodle) => {
+
+  const saveProfStudentTreatmentRating = (chosenRating) => {
+    if (profStudentTreatmentRating === -1) {
+      setCompleteness(completeness + 100 / 8);
+      if (completeness > 90) {
+        setIsComplete(1);
+      }
+    }
+    setProfStudentTreatmentRating(chosenRating);
+  }
+
+  const saveMaterialOnMoodle = (choice) => {
     if (materialOnMoodle === -1) {
       setCompleteness(completeness + 100 / 8);
       if (completeness > 90) {
         setIsComplete(1);
       }
     }
-    setMaterialOnMoodle(chosenMaterialOnMoodle);
+    setMaterialOnMoodle(choice);
   }
-  const saveRecordings = (chosenRecordings) => {
-    if (recordings === -1) {
+
+  const saveRecordingsAvialable = (choice) => {
+    if (recordingsAvailable === -1) {
       setCompleteness(completeness + 100 / 8);
       if (completeness > 90) {
         setIsComplete(1);
       }
     }
-    setRecordings(chosenRecordings);
+    setRecordingsAvailable(choice);
+  }
+
+  const saveWouldTakeAgain = (choice) => {
+    if (wouldTakeAgain === -1) {
+      setCompleteness(completeness + 100 / 8);
+      if (completeness > 90) {
+        setIsComplete(1);
+      }
+    }
+    setWouldTakeAgain(choice);
   }
 
   const saveFreeInput = (writtenInput) => {
-    if (freeInput === -1) {
-      setCompleteness(completeness + 100 / 8);
-      if (completeness > 90) {
-        setIsComplete(1);
+    if (writtenInput.target.value.length >= 20){
+      if (freeInput == -1){
+        setCompleteness(completeness + 100 / 8);
+        if (completeness > 90) {
+          setIsComplete(1);
+        }
+      }
+      setFreeInput(writtenInput.target.value);
+    }
+    else{
+      console.log(writtenInput.target.value.length);
+      setFreeInput(-1);
+      if (freeInput != -1){
+        setCompleteness(completeness - (100 / 8));
+        setIsComplete(0);
       }
     }
-    setFreeInput(writtenInput.target.value);
   }
 
   const submit = () => {
-    if (completeness != 100) {
-      console.log("not Complete")
+    console.log(isComplete);
+    console.log(completeness);
+
+    if (isComplete == 0) {
+      console.log("not Complete");
     }
-    
-    console.log(profRating);
-    console.log(diffRating);
-    console.log(course);
-    console.log(mandatoryAssignments);
-    console.log(referenceAssignments);
-    console.log(materialOnMoodle);
-    console.log(recordings);
-    console.log(freeInput);
+
   }
 
   return (
@@ -139,13 +165,13 @@ function MainAddReview() {
         <ProgressBar height="5px" color="#003f7d" completed={completeness}></ProgressBar>
       </div>
       <div className='rest-of-page'>
-        <ReviewRating onChoosingRating={saveProfRating} title={"אנא דרגו את המרצה"} ratingsOptions={profRatingsOptions}></ReviewRating>
-        <ReviewRating onChoosingRating={saveDiffRating} title={"אנא דרגו את רמת הקושי של המרצה"} ratingsOptions={profDiffOptions}></ReviewRating>
-        <ReviewQuestions onChoosingOption={saveMandatoryAssignments} title="חובת מטלות" name="nyku," values={choiceValues}></ReviewQuestions>
-        <ReviewQuestions onChoosingOption={saveReferenceAssignments} title="יש רפרנסים למטלות" name="dfd," values={choiceValues}></ReviewQuestions>
-        <ReviewQuestions onChoosingOption={saveMaterialOnMoodle} title="המרצה מעלה חומרים למודל" name="dfgd," values={choiceValues}></ReviewQuestions>
-        <ReviewQuestions onChoosingOption={saveRecordings} title="ההרצאות מוקלטות" name="dvdhy," values={choiceValues}></ReviewQuestions>
-        <textarea onChange={saveFreeInput} className='free-input' rows={10} MaxLength={300}></textarea>
+        <ReviewRating onChoosingRating={saveProfGeneralRating} title={"המרצה באופן כללי "} ratingsOptions={profRatingsOptions}></ReviewRating>
+        <ReviewRating onChoosingRating={saveProfDifficultyRating} title={"רמת הקושי של המרצה"} ratingsOptions={profDiffOptions}></ReviewRating>
+        <ReviewRating onChoosingRating={saveProfStudentTreatmentRating} title={"יחס המרצה לסטודנטים"} ratingsOptions={profStudentTreatmentOptions}></ReviewRating>
+        <ReviewQuestions onChoosingOption={saveMaterialOnMoodle} title="המרצה מעלה את חומרי הקורס למודל" name="nyku," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
+        <ReviewQuestions onChoosingOption={saveRecordingsAvialable} title="יש הקלטות של הקורס במודל" name="dfd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
+        <ReviewQuestions onChoosingOption={saveWouldTakeAgain} title="הייתי לוקח\ת את הקורס עם המרצה שוב" name="dfgd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
+        <TextAreaWInstrucions onWritingReview={saveFreeInput}></TextAreaWInstrucions>
         <button className='submit-button' onClick={submit}>דרג</button>
       </div>
     </div>

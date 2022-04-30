@@ -1,10 +1,10 @@
 .prof-bar {
     display: flex;
     flex-direction: row;
-    font-size: 20px;
+    font-size: 24px;
     font-family: 'Afek';
     font-weight: normal;
-    justify-content: right;
+    justify-content: center;
     align-items: center;
     list-style-type: none;
     direction: rtl;
@@ -14,13 +14,12 @@
 }
 
 .prof-bar_title{
-    margin-right: 7%;
     font-size: 24px;
 }
 
 .prof-bar_prof-name {
     font-family: 'Gloria';
-    font-size: 28px;
+    font-size: 32px;
     color: #000000;
     margin-right: 10px;
     margin-left: 20px;
@@ -28,17 +27,19 @@
 
 .react-select-container
 {
+    cursor: pointer;
     width:auto;
 }
 .react-select__menu{
     cursor: pointer;
     font-size: 28px;
+    width:auto;
 }
 
 .react-select__control{
     background-color: #EEF1FF ;
     width: 500px;
-    font-size: 28px;
+    font-size: 32px;
     font-family: 'Gloria';
     font-weight: bold;
 }
@@ -50,7 +51,6 @@
 .react-select__menu-list{
     cursor: pointer;
     width: 500px;
-
 }
 
 

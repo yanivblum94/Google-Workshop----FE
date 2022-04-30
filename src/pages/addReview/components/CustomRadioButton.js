@@ -7,7 +7,7 @@ const CustomRadioButton = (props) => {
 
     return (
         <div className="radio-button">
-            <input onChange={optionChoiceHandler} type="radio" value={props.value} name={props.name}/>{props.value}
+            <input onChange={optionChoiceHandler} type="radio" value={props.value} name={props.name}/>{props.label}
         </div>
     )
 }
