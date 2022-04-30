@@ -1,8 +1,10 @@
 import './ProfSearch.css'
-
 const ProfSearch = () => {
-    return(
-        <div className='prof-search'></div>
+
+
+    return (
+        <div className='prof-search'>
+        </div>
     )
 }
 
