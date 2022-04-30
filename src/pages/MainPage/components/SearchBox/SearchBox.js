@@ -22,7 +22,7 @@ const SearchbarDropdown = (props) => {
         id="search-bar"
         type="text"
         className="form-control"
-        placeholder="Search"
+        placeholder="חפש מרצה"
         ref={inputRef}
         onChange={onInputChange}
       />
@@ -33,11 +33,11 @@ const SearchbarDropdown = (props) => {
               type="button"
               key={index}
               onClick={(e) => {
-                inputRef.current.value = option.Name;
+                inputRef.current.value = option.Name ;
               }}
               className="list-group-item list-group-item-action"
             >
-              {option.Name}
+              {(option.Name +" - " + option.Faculty)}
             </button>
           );
         })}
