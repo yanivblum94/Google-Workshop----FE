@@ -58,7 +58,7 @@ function SearchBox() {
       }
 
       const data = await response.json();
-      console.log(data);
+      console.log("did http call");
       setProfessors(data);
       
    }, []);
@@ -74,8 +74,6 @@ function SearchBox() {
       defaultOptions.filter((option) => option.Name.includes(event.target.value))
     );
   };
-  console.log("options");
-  console.log(defaultOptions);
   return (
     <div className="App container mt-2 mb-3">
       <SearchbarDropdown options={options} onInputChange={onInputChange} />
