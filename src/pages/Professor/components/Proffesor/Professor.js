@@ -6,13 +6,13 @@ import professorPic from "./professor_pic.jpg";
 
 const Professor = (props) => {
   console.log(props);
-  let reviewsCount = props.data.professorToPass.Reviews === null ? 0 : props.data.professorToPass.Reviews.length
-  const mailto = "mailto:" + props.data.professorToPass.EmailAddr;
-  const avgRating = "דירוג ממוצע: " + props.data.professorToPass.totalRating + " מתוך " + reviewsCount +" דירוגים";
-  const website = props.data.professorToPass.WebsiteAddr;
+  let reviewsCount = props.data.Reviews === null ? 0 : props.data.professorToPass.Reviews.length
+  const mailto = "mailto:" + props.data.EmailAddr;
+  const avgRating = "דירוג ממוצע: " + props.data.totalRating + " מתוך " + reviewsCount +" דירוגים";
+  const website = props.data.WebsiteAddr;
 
   console.log("after this");
-  const ratingValuesArray = reviewsCount === 0 ? [] : props.data.professorToPass.Reviews.map(rate => 
+  const ratingValuesArray = reviewsCount === 0 ? [] : props.data.Reviews.map(rate => 
     rate.totalRating
   );
   console.log(ratingValuesArray);
@@ -21,12 +21,12 @@ const Professor = (props) => {
     <body className="professor">
 
       <div className="professor-details">
-        <div className="professor-elements">{props.data.professorToPass.Name}</div>
+        <div className="professor-elements">{props.data.Name}</div>
         <div className="professor-elements">{avgRating}</div>
         <div className="professor-elements">
           <span>דואר אלקטרוני: </span>
-          <a href={mailto} itemProp="email" title={props.data.professorToPass.EmailAddr}>
-            {props.data.professorToPass.EmailAddr}
+          <a href={mailto} itemProp="email" title={props.data.EmailAddr}>
+            {props.data.EmailAddr}
           </a>
         </div>
         <div className="professor-element">

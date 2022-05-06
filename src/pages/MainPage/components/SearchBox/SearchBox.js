@@ -12,7 +12,7 @@ const SearchbarDropdown = (props) => {
   let navigate = useNavigate();
   let propessorId;
   let professorProps;
-  let professorToPass;
+  let pId;
 
   useEffect(() => {
     inputRef.current.addEventListener("click", (event) => {
@@ -48,12 +48,12 @@ const SearchbarDropdown = (props) => {
                   (Professor) => Professor.Id === propessorId
                 );
                 console.log(professorProps);
-                professorToPass = professorProps[0];
-                console.log(professorToPass);
+                pId = professorProps[0].Id;
+                console.log(pId);
                 navigate('/professor',
                 {
                   state:{
-                    props : {professorToPass}
+                    props : {pId}
                   }
                 }
                 )
