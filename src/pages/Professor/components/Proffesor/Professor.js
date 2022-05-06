@@ -6,14 +6,14 @@ import professorPic from "./professor_pic.jpg";
 
 const Professor = (props) => {
   console.log(props);
-  let reviewsCount = props.data.Reviews === null ? 0 : props.data.professorToPass.Reviews.length
+  let reviewsCount = props.data.Reviews === null ? 0 : props.data.Reviews.length
   const mailto = "mailto:" + props.data.EmailAddr;
-  const avgRating = "דירוג ממוצע: " + props.data.totalRating + " מתוך " + reviewsCount +" דירוגים";
+  const avgRating = "דירוג ממוצע: " + props.data.TotalRating + " מתוך " + reviewsCount +" דירוגים";
   const website = props.data.WebsiteAddr;
 
   console.log("after this");
   const ratingValuesArray = reviewsCount === 0 ? [] : props.data.Reviews.map(rate => 
-    rate.totalRating
+    rate.TotalRating
   );
   console.log(ratingValuesArray);
 
