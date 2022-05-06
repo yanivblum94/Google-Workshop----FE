@@ -5,12 +5,14 @@ import RatingChart from '../ReviewsChart/RatingChart';
 import professorPic from "./professor_pic.jpg";
 
 const Professor = (props) => {
-  const mailto = "mailto:" + props.data.email;
-  const avgRating = "דירוג ממוצע: " + props.data.avgRating + " מתוך " + props.data.ratings.length +" דירוגים";
-  const website = props.data.website;
+  console.log(props);
+  let reviewsCount = props.data.professorToPass.Reviews === null ? 0 : props.data.professorToPass.Reviews.length
+  const mailto = "mailto:" + props.data.professorToPass.EmailAddr;
+  const avgRating = "דירוג ממוצע: " + props.data.professorToPass.totalRating + " מתוך " + reviewsCount +" דירוגים";
+  const website = props.data.professorToPass.WebsiteAddr;
 
   console.log("after this");
-  const ratingValuesArray = props.data.ratings.map(rate => 
+  const ratingValuesArray = reviewsCount === 0 ? [] : props.data.professorToPass.Reviews.map(rate => 
     rate.totalRating
   );
   console.log(ratingValuesArray);
@@ -19,12 +21,12 @@ const Professor = (props) => {
     <body className="professor">
 
       <div className="professor-details">
-        <div className="professor-elements">{props.data.name}</div>
+        <div className="professor-elements">{props.data.professorToPass.Name}</div>
         <div className="professor-elements">{avgRating}</div>
         <div className="professor-elements">
           <span>דואר אלקטרוני: </span>
-          <a href={mailto} itemProp="email" title={props.data.email}>
-            {props.data.email}
+          <a href={mailto} itemProp="email" title={props.data.professorToPass.EmailAddr}>
+            {props.data.professorToPass.EmailAddr}
           </a>
         </div>
         <div className="professor-element">
@@ -45,7 +47,7 @@ const Professor = (props) => {
 export default Professor;
 
 //<a href="https://www.w3schools.com">W3Schools</a>;
-//<{/* <Link to={props.data.website}>אתר</Link> */}>
+//<{/* <Link to={props.data.professorToPass.website}>אתר</Link> */}>
 {
   /* <button class="button-4" role="button">Button 4</button> */
 }
