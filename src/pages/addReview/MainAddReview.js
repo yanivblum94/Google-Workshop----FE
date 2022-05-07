@@ -200,7 +200,7 @@ function MainAddReview() {
     <div>
     {
       isComplete && 
-      <div>
+      <div className='thanks-page'>
       <Thanks></Thanks>
       <button
               type="button"
@@ -223,7 +223,7 @@ function MainAddReview() {
                 )
               }}
               >חזור לדף הראשי</button>
-              </div>
+      </div>
     }
     {
       !isComplete &&
