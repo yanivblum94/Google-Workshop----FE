@@ -9,13 +9,11 @@ const Professor = (props) => {
   const reviews = props.data.Reviews === null ? [] : props.data.Reviews ;
   const mailto = "mailto:" + props.data.email;
   const avgRating = "דירוג ממוצע: " + props.data.avgRating + " מתוך " + reviews.length + " דירוגים";
-  const website = props.data.website;
+  const website = props.data.WebsiteAddr;
 
-  console.log("after this");
   const ratingValuesArray = reviews.map(rate =>
-    rate.totalRating
+    rate.TotalRating
   );
-  console.log(ratingValuesArray);
   const pId = props.data.Id;
   const profName = props.data.Name;
   return (

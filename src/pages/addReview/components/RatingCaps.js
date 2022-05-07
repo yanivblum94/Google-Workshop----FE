@@ -16,7 +16,7 @@ const RatingCaps = (props) => {
     const [hover, setHover] = useState(0);
 
     return (
-      <div className="star-rating">
+      <div>
         {[...Array(5)].map((star, index) => {
           index += 1;
           return (
