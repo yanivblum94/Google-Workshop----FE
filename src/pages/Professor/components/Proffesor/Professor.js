@@ -2,16 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Professor.css";
 import RatingChart from '../ReviewsChart/RatingChart';
-import professorPic from "./professor_pic.jpg";
 import pic from "../../images/anonymous_profile_pic.png";
+import StarRating from "../StarRating"; 
 const Professor = (props) => {
-  const mailto = "mailto:" + props.data.email;
-  const avgRating = "דירוג ממוצע: " + props.data.avgRating + " מתוך " + props.data.ratings.length + " דירוגים";
-  const website = props.data.website;
+  console.log(props);
+  let reviewsCount = props.data.Reviews === null ? 0 : props.data.Reviews.length
+  const mailto = "mailto:" + props.data.EmailAddr;
+  const avgRating = "דירוג ממוצע: " + props.data.TotalRating + " מתוך " + reviewsCount + " דירוגים";
+  const website = props.data.WebsiteAddr;
 
   console.log("after this");
-  const ratingValuesArray = props.data.ratings.map(rate =>
-    rate.totalRating
+  const ratingValuesArray = reviewsCount === 0 ? [] : props.data.Reviews.map(rate =>
+    rate.TotalRating
   );
   console.log(ratingValuesArray);
 
@@ -19,14 +21,13 @@ const Professor = (props) => {
     <body className="professor">
       <div className="professor-details">
         <div className="professor-details-first">
-          <img src={pic} className='professor-picture' />
+          <img src={pic} className="professor-picture"></img>
           <div className="professor-name-and-email">
-            <div className="professor-name">{props.data.name}</div>
+            <div className="professor-name">{props.data.Name}</div>
             <div className="horizontal-line"></div>
-            <div className="professor-email">
-              <a href={mailto} itemProp="email" title={props.data.email}>
-                {props.data.email}
-              </a></div>
+            <a href={mailto} itemProp="email" title={props.data.EmailAddr}>
+              {props.data.EmailAddr}
+            </a>
           </div>
         </div>
         <div className="professor-website-review-and-rating">
@@ -40,9 +41,10 @@ const Professor = (props) => {
             דרג את המרצה!
           </Link>
           <div className="professor-avg-rating">
-            <div className="rating-numerator">{props.data.avgRating}</div>
+            <div className="rating-numerator">{props.data.TotalRating}</div>
             <div className="rating-denominator">/5</div>
           </div>
+          <StarRating avgRating={props.data.TotalRating}></StarRating>
           <RatingChart ratingValuesArray={ratingValuesArray}></RatingChart>
         </div>
       </div>
@@ -51,3 +53,5 @@ const Professor = (props) => {
 };
 
 export default Professor;
+
+
