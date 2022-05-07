@@ -7,20 +7,23 @@ import ReviewQuestions from './components/ReviewQuestions';
 import TopBar from './components/TopBar';
 import ProgressBar from "react-progressbar";
 import { useState } from 'react';
+import { useLocation, useNavigate } from "react-router-dom";
 import TextAreaWInstrucions from './components/TextAreaWInstructions';
 import Thanks from './components/Thanks';
+import '../Professor/components/Proffesor/Professor.css'
 
 class Review {
-  constructor(course, generalRating, difficultyRating, studentTreatmentRating,
-    materialSharing, recordingsAvailable, takeAgain, wordsReview) {
-    this.course = course;
-    this.generalRating = generalRating;
-    this.difficultyRating = difficultyRating;
-    this.studentTreatmentRating = studentTreatmentRating;
-    this.materialSharing = materialSharing;
-    this.recordingsAvailable = recordingsAvailable;
-    this.takeAgain = takeAgain;
-    this.wordsReview = wordsReview;
+  constructor(Course, TotalRating, DiffRating, TreatRating,
+    MaterialsUpdate, RecordsUpdate, TakeAgain, Comment, pId) {
+    this.Course = Course;
+    this.TotalRating = TotalRating;
+    this.DiffRating = DiffRating;
+    this.TreatRating = TreatRating;
+    this.MaterialsUpdate = MaterialsUpdate;
+    this.RecordsUpdate = RecordsUpdate;
+    this.TakeAgain = TakeAgain;
+    this.Comment = Comment;
+    this.ProfId = pId;
   }
 }
 const options = [
@@ -62,7 +65,11 @@ function MainAddReview() {
   const [freeInput, setFreeInput] = useState(-1);
   const [isComplete, setIsComplete] = useState(0);
   const [canSubmit, setCanSubmit] = useState(-1);
+  const [putResult, setPutResult] = useState(null);
+  let navigate = useNavigate();
 
+  const { state } = useLocation();
+  const pId = state.profId;
 
   const saveCourse = (chosenCourse) => {
     if (course === -1) {
@@ -153,31 +160,77 @@ function MainAddReview() {
     }
   }
 
-  const submit = () => {
+  async function submit(){
     if (completeness == 100) {
       setCanSubmit(1);
       setIsComplete(true);
       review = new Review(course, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,
-          materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput);
+          materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput, pId);
+      console.log(review);
+      const requestOptions = {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(review) 
+    };
+    try {
+      const res = await fetch(`http://localhost:9842/api/professor`, requestOptions
+        );
+      if (!res.ok) {
+        const message = `An error has occured: ${res.status} - ${res.statusText}`;
+        throw new Error(message);
+      }
+      const data = await res.json();
+      const result = {
+        status: res.status + "-" + res.statusText,
+        headers: { "Content-Type": res.headers.get("Content-Type") },
+        data: data,
+      };
+      setPutResult(result);
+    } catch (err) {
+      setPutResult(err.message);
     }
+  }
     else{
       setCanSubmit(0);
-
     }
   }
 
+  
   return (
     <div>
     {
       isComplete && 
+      <div>
       <Thanks></Thanks>
+      <button
+              type="button"
+              className="professor-website-button"
+              onClick={(e) => {
+                navigate('/professor',
+                {
+                  state:{
+                    props : {pId}
+                  }
+                }
+                )
+              }}
+              >חזור למרצה הקודם</button>
+              <button
+              type="button"
+              className="professor-website-button"
+              onClick={(e) => {
+                navigate('/mainPage'
+                )
+              }}
+              >חזור לדף הראשי</button>
+              </div>
     }
     {
       !isComplete &&
       <div className='MainAddReview'>
       <div className='bars'>
         <TopBar></TopBar>
-        <ProfBar onChoosingCourse={saveCourse} prof_name="ד''ר אמיר רובינשטיין" course_options={options}></ProfBar>
+        <ProfBar onChoosingCourse={saveCourse} prof_name={state.profName} course_options={options}></ProfBar>
         <ProgressBar height="10px" color="red" completed={completeness}></ProgressBar>
       </div>
       <div className='rest-of-page'>

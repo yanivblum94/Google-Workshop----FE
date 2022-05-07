@@ -1,20 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Professor.css";
 import RatingChart from '../ReviewsChart/RatingChart';
 import professorPic from "./professor_pic.jpg";
 import pic from "../../images/anonymous_profile_pic.png";
 const Professor = (props) => {
+  let navigate = useNavigate();
+  const reviews = props.data.Reviews === null ? [] : props.data.Reviews ;
   const mailto = "mailto:" + props.data.email;
-  const avgRating = "דירוג ממוצע: " + props.data.avgRating + " מתוך " + props.data.ratings.length + " דירוגים";
+  const avgRating = "דירוג ממוצע: " + props.data.avgRating + " מתוך " + reviews.length + " דירוגים";
   const website = props.data.website;
 
   console.log("after this");
-  const ratingValuesArray = props.data.ratings.map(rate =>
+  const ratingValuesArray = reviews.map(rate =>
     rate.totalRating
   );
   console.log(ratingValuesArray);
-
+  const pId = props.data.Id;
+  const profName = props.data.Name;
   return (
     <body className="professor">
       <div className="professor-details">
@@ -35,10 +38,19 @@ const Professor = (props) => {
               אתר המרצה
             </a>
           </button>
-          <Link className="rating-button" to='/professor/add-review' >
-            {/* //dynamiclly = {`/professor/$props.id}`} where props.is should results in professor id */}
+          <button className="rating-button" onClick={(e) => {
+                navigate('/professor/add-review',
+                {
+                  state:{
+                    profId : pId,
+                    profName: profName
+                  }
+                }
+                )
+              }}
+              >
             דרג את המרצה!
-          </Link>
+          </button>
           <div className="professor-avg-rating">
             <div className="rating-numerator">{props.data.avgRating}</div>
             <div className="rating-denominator">/5</div>

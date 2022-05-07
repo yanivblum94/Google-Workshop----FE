@@ -1,17 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import Professor from "./components/Proffesor/Professor";
-<<<<<<< HEAD
 import Reviews from "./components/Reviews/Reviews";
 import "./MainProfessor.css";
 import Header from "./components/Header/Header";
 import { useLocation } from "react-router-dom";
-=======
-import Reviews from './components/Reviews/Reviews'
-import "./MainProfessor.css"
-import Header from './components/Header/Header';
-import TopBar from './components/TopBar';
->>>>>>> origin/Maria
-
 let newReviews;
 
 // const professor = {
@@ -107,15 +99,6 @@ const MainProfessor = () => {
         <Reviews items={newReviews} />
       </div>
     );
-  
-
-  return (
-    <div className='container'>
-      <TopBar></TopBar>
-      <Professor data={professor}/>
-      <Reviews items = {reviews}/>
-    </div>
-  );
 };
 
 export default MainProfessor;
