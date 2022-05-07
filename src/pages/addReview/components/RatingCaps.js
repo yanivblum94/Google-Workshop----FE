@@ -28,7 +28,7 @@ const RatingCaps = (props) => {
               onMouseEnter={() => hoverRating(index)}
               onMouseLeave={() => hoverRating(rating)}
             >
-            <i class="fa-solid fa-graduation-cap fa-5x"></i>
+            <i class="fa-solid fa-graduation-cap fa-3x"></i>
             </button>
           );
         })}

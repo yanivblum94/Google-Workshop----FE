@@ -1,7 +1,6 @@
 .prof-bar {
     display: flex;
     flex-direction: row;
-    font-size: 24px;
     font-family: 'Afek';
     font-weight: normal;
     justify-content: center;
@@ -9,55 +8,36 @@
     list-style-type: none;
     direction: rtl;
     width: 100%;
-    height: 110px;
-    background-color: #EFF3F7;
+    height: 55%;
+    color: white;
+    background-color: #003f7d;
 }
 
 .prof-bar_title{
-    font-size: 24px;
+    font-size: 1.5vw;
 }
 
 .prof-bar_prof-name {
     font-family: 'Gloria';
-    font-size: 32px;
-    color: #000000;
-    margin-right: 10px;
-    margin-left: 20px;
+    font-size: 2vw;
+    font-weight: bold;
+    color: white;
+    margin-right: 1%;
+    margin-left: 2%;
 }
 
-.react-select-container
-{
-    cursor: pointer;
-    width:auto;
-}
-.react-select__menu{
-    cursor: pointer;
-    font-size: 28px;
-    width:auto;
-}
-
-.react-select__control{
-    background-color: #EEF1FF ;
+.prof-bar_course_choice{
+    height: 70%;
     width: 500px;
-    font-size: 32px;
-    font-family: 'Gloria';
+    font-size: 2vw;
+    font-family: 'gloria';
     font-weight: bold;
 }
-.react-select__menu-list{
-    cursor: pointer;
-    width: 500px;
-}
-
-.react-select__menu-list{
-    cursor: pointer;
-    width: 500px;
-}
-
 
 .prof-bar_course-prompt {
     font-family: 'Afek';
-    font-size: 24px;
-    color: #000000;
-    margin-right: 5px;
-    margin-left: 15px;
+    font-size: 1.5vw;
+    color: white;
+    margin-right: 3%;
+    margin-left: 1%;
 }

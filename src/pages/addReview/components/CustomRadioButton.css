@@ -4,16 +4,15 @@
     align-items: center;
     margin-right: 20px;
     margin-left: 20px;
-
     font-family: 'Afek';
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 input[type='radio'] {
     -webkit-appearance: none;
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     outline: none;
     border: 3px solid #003f7d;

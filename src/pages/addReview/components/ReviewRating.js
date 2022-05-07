@@ -7,9 +7,7 @@ const ReviewRating = (props) => {
     const [userRating, setUserRating] = useState("דרגו")
 
     const hoverChangeHandler = (newRating) => {
-        console.log(newRating);
         if (newRating == 0){
-            console.log("got here");
             setUserRating("דרגו");
         }
         else{
@@ -18,7 +16,6 @@ const ReviewRating = (props) => {
     }; 
 
     const ratingChangeHandler = (newRating) => {
-        console.log(newRating);
         setUserRating(props.ratingsOptions[newRating - 1]);
         props.onChoosingRating(newRating);
     };
