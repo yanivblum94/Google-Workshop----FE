@@ -29,9 +29,9 @@
 .professor-name-and-email{
   display: flex;
   flex-direction: column;
-  width: 800px;
+  width: 400px;
   margin-top: 50px;
-  margin-right: 50px;
+  align-items: center;
 }
 
 .professor-name{
@@ -42,8 +42,7 @@ font-size: 24px;
 
 .horizontal-line{
   border-top: solid black;
-  width: 200px;
-  margin-right: 35px;
+  width: 250px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -82,7 +81,7 @@ font-size: 24px;
 
 .professor-avg-rating{
   margin-right: 650px;
-  margin-top: -100px;
+  margin-top: -200px;
   align-items: center;
   font-family: 'afek';
   font-size: 96px;

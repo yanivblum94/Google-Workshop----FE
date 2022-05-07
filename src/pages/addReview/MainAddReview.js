@@ -162,7 +162,6 @@ function MainAddReview() {
     }
     else{
       setCanSubmit(0);
-
     }
   }
 
