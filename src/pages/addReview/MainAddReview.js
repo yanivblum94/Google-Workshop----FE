@@ -166,7 +166,6 @@ function MainAddReview() {
       setIsComplete(true);
       review = new Review(course, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,
           materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput, pId);
-      console.log(review);
       const requestOptions = {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
