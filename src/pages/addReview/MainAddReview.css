@@ -67,3 +67,18 @@
   color: red;
   text-align: center;
 }
+
+.thanks-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.professor-website-button{
+  font-family: 'Gloria';
+  width: 300px;
+  font-weight: bold;
+  font-size: 18px;
+}
