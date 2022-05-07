@@ -4,7 +4,6 @@ import Reviews from "./components/Reviews/Reviews";
 import "./MainProfessor.css";
 import Header from "./components/Header/Header";
 import { useLocation } from "react-router-dom";
-import TopBar from "./components/TopBar"
 let newReviews;
 
 const MainProfessor = () => {
@@ -43,7 +42,6 @@ const MainProfessor = () => {
         <Reviews items={newReviews} />
       </div>
     );
-  
 };
 
 export default MainProfessor;
