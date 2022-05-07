@@ -8,9 +8,12 @@ import TopBar from './components/TopBar';
 import ProgressBar from "react-progressbar";
 import { useState } from 'react';
 import TextAreaWInstrucions from './components/TextAreaWInstructions';
+import Thanks from './components/Thanks';
+
 class Review {
-  constructor(generalRating, difficultyRating, studentTreatmentRating,
+  constructor(course, generalRating, difficultyRating, studentTreatmentRating,
     materialSharing, recordingsAvailable, takeAgain, wordsReview) {
+    this.course = course;
     this.generalRating = generalRating;
     this.difficultyRating = difficultyRating;
     this.studentTreatmentRating = studentTreatmentRating;
@@ -46,6 +49,8 @@ const choiceSegmentValues = [
 ]
 
 function MainAddReview() {
+  let review;
+
   const [completeness, setCompleteness] = useState(0);
   const [course, setCourse] = useState(-1);
   const [profGeneralRating, setProfGeneralRating] = useState(-1);
@@ -56,6 +61,8 @@ function MainAddReview() {
   const [wouldTakeAgain, setWouldTakeAgain] = useState(-1);
   const [freeInput, setFreeInput] = useState(-1);
   const [isComplete, setIsComplete] = useState(0);
+  const [canSubmit, setCanSubmit] = useState(-1);
+
 
   const saveCourse = (chosenCourse) => {
     if (course === -1) {
@@ -64,7 +71,7 @@ function MainAddReview() {
         setIsComplete(1);
       }
     }
-    setCourse(chosenCourse);
+    setCourse(chosenCourse.target.value);
   }
 
   const saveProfGeneralRating = (chosenRating) => {
@@ -138,7 +145,6 @@ function MainAddReview() {
       setFreeInput(writtenInput.target.value);
     }
     else{
-      console.log(writtenInput.target.value.length);
       setFreeInput(-1);
       if (freeInput != -1){
         setCompleteness(completeness - (100 / 8));
@@ -148,21 +154,31 @@ function MainAddReview() {
   }
 
   const submit = () => {
-    console.log(isComplete);
-    console.log(completeness);
-
-    if (isComplete == 0) {
-      console.log("not Complete");
+    if (completeness == 100) {
+      setCanSubmit(1);
+      setIsComplete(true);
+      review = new Review(course, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,
+          materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput);
     }
+    else{
+      setCanSubmit(0);
 
+    }
   }
 
   return (
-    <div className='MainAddReview'>
+    <div>
+    {
+      isComplete && 
+      <Thanks></Thanks>
+    }
+    {
+      !isComplete &&
+      <div className='MainAddReview'>
       <div className='bars'>
         <TopBar></TopBar>
         <ProfBar onChoosingCourse={saveCourse} prof_name="ד''ר אמיר רובינשטיין" course_options={options}></ProfBar>
-        <ProgressBar height="5px" color="#003f7d" completed={completeness}></ProgressBar>
+        <ProgressBar height="10px" color="red" completed={completeness}></ProgressBar>
       </div>
       <div className='rest-of-page'>
         <ReviewRating onChoosingRating={saveProfGeneralRating} title={"המרצה באופן כללי "} ratingsOptions={profRatingsOptions}></ReviewRating>
@@ -172,8 +188,16 @@ function MainAddReview() {
         <ReviewQuestions onChoosingOption={saveRecordingsAvialable} title="יש הקלטות של הקורס במודל" name="dfd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
         <ReviewQuestions onChoosingOption={saveWouldTakeAgain} title="הייתי לוקח\ת את הקורס עם המרצה שוב" name="dfgd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
         <TextAreaWInstrucions onWritingReview={saveFreeInput}></TextAreaWInstrucions>
+        {
+          !canSubmit && 
+          <div className='fill-request'>
+            אנא מלאו את כל השדות
+          </div>
+        }
         <button className='submit-button' onClick={submit}>דרג</button>
       </div>
+    </div>
+    }
     </div>
   );
 }

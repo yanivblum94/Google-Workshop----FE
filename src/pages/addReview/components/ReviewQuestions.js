@@ -1,6 +1,5 @@
 import ChoiceSegment from "./ChoiceSegment";
 import './ReviewQuestion.css'
-import Card from "./Card";
 import DividedCard from "./DividedCard";
 
 const ReviewQuestions = (props) => {

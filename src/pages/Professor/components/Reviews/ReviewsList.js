@@ -9,7 +9,7 @@ const ReviewsList = (props) => {
   }
 
   return (
-    <ul className='revies-list'>
+    <ul className='reviews-list'>
       {
         (props.items.map((review) => (
           <ReviewItem

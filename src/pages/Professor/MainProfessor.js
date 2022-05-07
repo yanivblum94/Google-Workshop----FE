@@ -3,6 +3,7 @@ import Professor from "./components/Proffesor/Professor";
 import Reviews from './components/Reviews/Reviews'
 import "./MainProfessor.css"
 import Header from './components/Header/Header';
+import TopBar from './components/TopBar';
 
 
 const professor = {
@@ -74,7 +75,7 @@ function MainProfessor() {
 
   return (
     <div className='container'>
-      <Header/>
+      <TopBar></TopBar>
       <Professor data={professor}/>
       <Reviews items = {reviews}/>
     </div>

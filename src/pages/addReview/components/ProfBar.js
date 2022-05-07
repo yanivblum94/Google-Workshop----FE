@@ -10,10 +10,10 @@ const ProfBar = (props) => {
 
     return (
         <div className='prof-bar'>
-            <h2 className='prof-bar_title'>דרגו את:   </h2>
-            <h2 className='prof-bar_prof-name'> {props.prof_name}</h2>
-            <h2 className='prof-bar_course-prompt'> בקורס</h2>
-            <Select onChange={courseChangeHandler} className='react-select-container' classNamePrefix="react-select" options={props.course_options} placeholder=" בחרו"/>
+            <div className='prof-bar_title'>דרגו את:   </div>
+            <div className='prof-bar_prof-name'> {props.prof_name}</div>
+            <div className='prof-bar_course-prompt'> בקורס</div>
+            <textarea onChange={courseChangeHandler} className='prof-bar_course_choice' rows={10} MaxLength={300} placeholder={"אנא בחרו קורס"}></textarea>
         </div>
     );
 }

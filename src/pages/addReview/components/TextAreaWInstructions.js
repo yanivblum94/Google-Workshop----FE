@@ -14,7 +14,7 @@ const TextAreaWInstrucions = (props) => {
                     <div className="free-input_instructions__texts">להשתמש בשפה לא נאותה ובמילים לא מכבדות</div>
                 </div>
             </DividedDiv>
-            <textarea onChange={props.onWritingReview} className='free-input_box' rows={10} MaxLength={300}></textarea>
+            <textarea onChange={props.onWritingReview} className='free-input_box' rows={10} MaxLength={300} placeholder={"אנא הקלידו תגובה באורך מינימום 20 תווים"}></textarea>
         </ColumnCard>
     )
 }

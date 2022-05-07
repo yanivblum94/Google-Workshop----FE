@@ -12,9 +12,10 @@
 .free-input_instructions__titles{
    font-family: 'Gloria';
    width: 20%; 
-   font-size: 48px;
+   font-size: 36px;
+   font-weight: bold;
    margin-left: 10px;
-   color: #94a7ba;
+   color: #003f7d;
 
 }
 
@@ -22,25 +23,24 @@
     margin-right: 30px;
     text-align: center;
     font-family: 'afek';
-    font-size: 24px;
-    width: 300px;
-    font-weight: bold;
+    font-size: 22px;
+    width: 200px;
 }
 .free-input_instructions__2nd{
     display: flex;
     flex-direction: row; 
     width: 100%;
-    margin-right: 40px;
+    margin-right: 80px;
     align-items: center;
 }
 
 .free-input_box{
     font-size: 24px;
     font-family: 'Afek';
-    margin-right: 5%;
+    margin-right: 10%;
     border-radius: 10px;
     border: 1px solid #003f7d;
-    width: 90%;
+    width: 80%;
     height: 150px;
     padding-right: 5px;
     padding-top: 5px;

@@ -1,9 +1,10 @@
-import pic from "../images/3.png";
+import pic from "../images/logo.png";
 import './TopBar.css'
+
 const TopBar = () => {
     return (
-        <div className='upper-bar'>
-            <img src={pic} className='logo-pic' />
+        <div className='top-bar'>
+            <img src={pic} className='top-bar-logo-pic' />
         </div>
     )
 }

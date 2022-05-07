@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: row;
     font-size: 20px;
-    justify-content: right;
     align-items: center;
     direction: rtl;
 }
@@ -11,7 +10,7 @@
 .review-rating_title {
     align-items: center;
     font-family: 'afek';
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
     margin-left: 50px;
     margin-right: 20px;
@@ -21,7 +20,7 @@
     margin-top: 2%;
     font-family: 'Afek';
     font-weight: bold;
-    font-size: 30px;
+    font-size: 16px;
 }
 
 .review-rating_main{
