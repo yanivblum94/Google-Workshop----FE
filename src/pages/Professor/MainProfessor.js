@@ -14,7 +14,7 @@ const MainProfessor = () => {
   useEffect(() => {
     async function getProf(id) {
       console.log(id);
-      const url = "http://localhost:5000/api/professor/ById?Id=" + id;
+      const url = "http://localhost:9842/api/professor/ById?Id=" + id;
       console.log(url);
       const response = await fetch(url);
       if (!response.ok) {
@@ -35,6 +35,7 @@ const MainProfessor = () => {
   } 
     newReviews = professor.Reviews === null ? [] : professor.Reviews ;
     console.log("got professor")
+    console.log(newReviews);
     return (
       <div className="container">
         <TopBar></TopBar>
