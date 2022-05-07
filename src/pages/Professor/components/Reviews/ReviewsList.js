@@ -7,21 +7,21 @@ const ReviewsList = (props) => {
   if (props.items.length === 0) {
     return <div className = 'reviews-list__fallback'>לא נמצאו דירוגים</div>;
   }
-
+  console.log(props.items);
   return (
     <ul className='reviews-list'>
       {
         (props.items.map((review) => (
           <ReviewItem
             key={review.id}
-            totalRating={review.totalRating}
-            difficulty={review.difficulty}
-            courseName={review.courseName}
-            hwReq={review.hwReq}
-            hwRef={review.hwRef}
-            moodleQuality={review.moodleQuality}
-            records={review.records}
-            textReview={review.textReview}
+            totalRating={review.TotalRating}
+            difficulty={review.DiffRating}
+            treatRaring={review.TreatRating}
+            courseName={review.Course}
+            takeAgain={review.TakeAgain}
+            moodleQuality={review.MaterialsUpdate}
+            records={review.RecordsUpdate}
+            textReview={review.Comment}
           />
         )))
       }

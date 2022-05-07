@@ -11,10 +11,10 @@ const Reviews = (props) =>{
     const filterChangeHandler = (selectedCourse) => {
         setFilteredCourse(selectedCourse);
     }
-
+    console.log(props.items);
     const filteredReviews = filteredCourse === 'הכול' ? props.items :
     props.items.filter((review) => {
-    return review.courseName === filteredCourse;});
+    return review.Course === filteredCourse;});
 
 return (
     <div>

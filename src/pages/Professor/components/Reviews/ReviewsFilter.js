@@ -13,9 +13,9 @@ const ReviewsFilter = (props) =>{
         <label>בחר קורס</label>
         <select value={props.selected} onChange={dropDownChangeHandler}>
         <option value='הכול'>הכול</option>
-          <option value='מבוא למדמח'>מבוא למדמח</option>
+          {/* <option value='מבוא למדמח'>מבוא למדמח</option>
           <option value='מבני נתונים'>מבני נתונים</option>
-          <option value='מתמטיקה בדידה'>מתמטיקה בדידה</option>
+          <option value='מתמטיקה בדידה'>מתמטיקה בדידה</option> */}
         </select>
       </div>
     </div>
