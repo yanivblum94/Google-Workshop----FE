@@ -1,61 +1,17 @@
 .review-item {
+  padding: 20px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: right;
+  justify-items: center;
   align-items: center;
-  padding: 0.5rem;
-  margin: 1rem 0;
-  background-color: #a7a7a7;
-  direction: rtl;
-}
-
-.review-item__description {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: flex-end;
-  flex-flow: column-reverse;
-  font-family: "Afek", sans-serif;
-  justify-content: flex-start;
-  flex: 1;
-  direction: rtl;
-}
-
-.review-item h2 {
-  color: #3a3a3a;
-  font-size: 1rem;
-  flex: 1;
-  margin: 0 1rem;
-  color: rgb(255, 255, 255);
-  direction: rtl;
-}
-
-.review-item__ratingValues {
-  display: flex;
-  flex-direction: column;
-  font-size: 1rem;
-  font-weight: bold;
-  font-family: "Afek", sans-serif;
-  padding: 0.5rem;
-  border-radius: 12px;
-  direction: rtl;
-  padding-top: 20px;
-}
-.review-item__ratingValuesCard {
   margin-bottom: 20px;
-  margin-top: 15%;
-  padding: 5%;
-  color: rgb(255, 255, 255);
-  font-size: 20px;
-  font-weight: bold;
-  font-family: "Afek", sans-serif;
-  color: white;
-  background-color: #eb5e28;
-  border: 1px solid white;
   direction: rtl;
-  border-radius: 12px;
 }
+
 .review-item__ratingInfo {
-  margin-right: 48px;
   text-align: right;
   width: 100%;
   display: flex;
@@ -63,75 +19,74 @@
   font-size: 1rem;
   font-weight: bold;
   font-family: "Afek", sans-serif;
-  color: white;
-  background-color: #103459;
-  border: 1px solid white;
-  padding: 0.5rem;
-  border-radius: 14px;
+  background-color: white;
   direction: rtl;
 }
 
-.review-item__header {
-  color: rgb(255, 255, 255);
+.review-item__header{
   font-weight: 900;
-  -webkit-box-align: center;
   align-items: right;
   align-self: right;
   display: flex;
   font-size: 32px;
   padding-right: 22px;
+  align-items: baseline;
 }
 
-.review-item__courseMeta {
+.review-item__course {
+  font-size: 36px;
+  color: #103459;
+  margin-left: 10px;
+}
+
+.review-item__ratings{
+  font-size: 20px;
+  color: black;
+  margin-right: 20px;;
+}
+
+.review-item__courseMeta{
   display: flex;
-  flex-flow: wrap;
+  align-items: center;
+  padding-top: 5px;
+  flex-direction: row;
   margin-bottom: 14px;
-  color: rgb(255, 255, 255);
+  border-radius: 20px;
+  width: 680px;
+  color: black;
+  background-color: #d8e2ec;
   font-weight: regular;
   font-family: "Afek", sans-serif;
   font-size: 14px;
 }
+
 .review-item__metaItem {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
   line-height: 1.54;
   margin-right: 16px;
   padding: 4px 4px;
   white-space: nowrap;
-  color: rgb(255, 255, 255);
   margin-bottom: 8px;
   font-weight: regular;
   font-family: "Afek", sans-serif;
   font-size: 14px;
 }
+
+.review-item__metaItem-title{
+  margin-left: 10px;
+}
+
 .review-item__comment {
   display: flex;
   flex-flow: wrap;
   margin-bottom: 14px;
-  color: rgb(255, 255, 255);
   font-size: 16px;
   margin-right: 16px;
 
 }
 
-@media (min-width: 580px) {
-  .review-item__description {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    flex: 1;
-    direction: rtl;
-  }
-
-  .review-item__description h2 {
-    font-size: 1.25rem;
-    direction: rtl;
-  }
-
-  .review-item__price {
-    font-size: 1.25rem;
-    padding: 0.5rem 1.5rem;
-    direction: rtl;
-  }
-}
 
 @font-face {
   font-family: "Gloria";

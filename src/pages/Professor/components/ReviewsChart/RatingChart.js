@@ -23,10 +23,7 @@ const RatingChart = (props) => {
 
   return (
     <div className='chart'>
-      <div className='char-text'>התפלגות דירוגים</div> 
-      <div></div>
     {Object.entries(ratingDict).map(([key,value]) => (
-
       <ChartBar
         key={key}
         value={value}

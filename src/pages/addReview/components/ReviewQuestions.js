@@ -1,15 +1,15 @@
 import ChoiceSegment from "./ChoiceSegment";
 import './ReviewQuestion.css'
-import Card from "./Card";
+import DividedCard from "./DividedCard";
 
 const ReviewQuestions = (props) => {
     return (
-        <Card className="review-question">
-            <h2 className="review-question_title">
+        <DividedCard className="review-question">
+            <div className="review-question_title">
                 {props.title}
-            </h2>
-            <ChoiceSegment onChoosingOption={props.onChoosingOption} name={props.name} values={props.values}></ChoiceSegment>
-        </Card>
+            </div>
+            <ChoiceSegment onChoosingOption={props.onChoosingOption} name={props.name} values={props.values} labels={props.labels}></ChoiceSegment>
+        </DividedCard>
     )
 }
 

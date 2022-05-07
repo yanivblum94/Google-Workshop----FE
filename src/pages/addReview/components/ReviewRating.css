@@ -3,27 +3,30 @@
     display: flex;
     flex-direction: row;
     font-size: 20px;
-    justify-content: right;
     align-items: center;
     direction: rtl;
 }
 
 .review-rating_title {
+    align-items: center;
+    font-family: 'afek';
+    font-size: 24px;
+    font-weight: bold;
     margin-left: 50px;
     margin-right: 20px;
 }
-
 
 .review-rating_result {
+    margin-top: 2%;
     font-family: 'Afek';
     font-weight: bold;
-    font-size: 24px;
-    margin-left: 50px;
-    margin-right: 20px;
-
+    font-size: 16px;
 }
 
-.fa-graduation-cap{
-    --fa-animation-duration: 2s;
-    --fa-animation-iteration-count: 0.5;
+.review-rating_main{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
 }
+
+

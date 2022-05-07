@@ -1,0 +1,40 @@
+.divided-card{
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 2px #999999;
+    direction: rtl;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5%;
+    width: 60%;
+    margin-right: 20%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 2%;
+    padding-left: 2%;
+}
+
+.divided-card_1sthalf{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+    width: 100%;
+}
+
+.divided-card_2ndhalf{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+}
+.vl {
+    border-left: 6px solid #003f7d;
+    margin-right: 20px;
+    height: 60px;
+    width: -10px;
+  }

@@ -11,10 +11,90 @@
   flex-direction: row;
 }
 
+.professor-picture{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border: solid #24292e;
+}
+
 .professor-details{
-    width: 50%;
-    float: right;
-    
+  display: flex;
+  flex-direction: column;
+}
+.professor-details-first{
+  display: flex;
+  flex-direction: row;
+}
+.professor-name-and-email{
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin-top: 50px;
+  margin-right: 50px;
+}
+
+.professor-name{
+font-family: "gloria";
+font-weight: bold;
+font-size: 24px;
+}
+
+.horizontal-line{
+  border-top: solid black;
+  width: 200px;
+  margin-right: 35px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.professor-email{
+  font-family: "gloria";
+  font-size: 18px;
+  margin-right: 50px;
+  }
+
+.professor-website-review-and-rating{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  align-items: center;
+  text-align: center;
+  font-family: 'afek';
+  font-size: 24px;
+  }
+.professor-website-button{
+  width: 180px;
+  background-color: #d8e2ec;
+  border-radius: 25px;
+  margin-top: 20px;
+  height: 50px;
+}
+.rating-button{
+  width: 250px;
+  color: white;
+  background-color: #003f7d;
+  border-radius: 25px;
+  margin-top: 20px;
+  height: 50px;
+  padding: 5px;
+}
+
+.professor-avg-rating{
+  margin-right: 650px;
+  margin-top: -100px;
+  align-items: center;
+  font-family: 'afek';
+  font-size: 96px;
+  display: flex;
+  flex-direction: row;
+  direction: ltr;
+  width: 300px;
+}
+
+.rating-numerator{
+  font-size: 172px;
+  font-weight: bold;
 }
 
 .professor-ratingChart{
