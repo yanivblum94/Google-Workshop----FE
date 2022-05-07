@@ -1,4 +1,4 @@
-
+import "./StarRating.css"
 
 const StarRating = (props) => {
     let leftRating = props.avgRating;
@@ -6,38 +6,43 @@ const StarRating = (props) => {
     let ind = 0;
 
     while (ind<5){
-        if (leftRating > ind + 0.75){
-            starsArray[ind] = "full"
+        console.log("index is" + ind);
+        console.log("rating is" + leftRating);
+        if (leftRating > 0.75){
+            starsArray[ind] = "full";
+            console.log("full");
+
         }
-        else if (leftRating > ind + 0.25){
-            starsArray[ind] = "half"
+        else if (leftRating > 0.25){
+            starsArray[ind] = "half";
+            console.log("half");
+
         }
-    
         else{
-            starsArray[ind] = "empty"
+            starsArray[ind] = "empty";
+            console.log("empty");
+
         }
         ind++;
         leftRating--;
     }
 
-    {[...Array(5)].map((star, index) => {
-        index += 1;
-        return (
-          <button
-            type="button"
-            key={index}
-            className={index <= (hover || rating) ? "on" : "off"}
-            onClick={() => setAndUpdateRating(index)}
-            onMouseEnter={() => hoverRating(index)}
-            onMouseLeave={() => hoverRating(rating)}
-          >
-          <i class="fa-solid fa-graduation-cap fa-3x"></i>
-          </button>
-        );
-      })}
     return (
-
-    )
+        <div className="star-rating">
+          {starsArray.map((star) => {
+            if (star == "full"){
+                return (<i class="fa-solid fa-star fa-2x"></i>); 
+            }
+            else if (star == "half"){
+                return (<i class="fa-solid fa-star-half-stroke fa-2x"></i>); 
+            }
+            else{
+                return (<i class="fa-regular fa-star fa-2x"></i>);
+            } 
+          })
+        }
+        </div>
+      );
 }
 
 export default StarRating;
