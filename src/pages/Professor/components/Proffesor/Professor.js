@@ -2,8 +2,9 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Professor.css";
 import RatingChart from '../ReviewsChart/RatingChart';
-import pic from "../../images/anonymous_profile_pic.png";
+import pic from "../../images/professor_pic.png";
 import StarRating from "../StarRating"; 
+
 const Professor = (props) => {
   let navigate = useNavigate();
   const reviews = props.data.Reviews === null ? [] : props.data.Reviews ;

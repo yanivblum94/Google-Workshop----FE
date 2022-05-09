@@ -28,7 +28,7 @@ const MainProfessor = () => {
   } 
     newReviews = professor.Reviews === null ? [] : professor.Reviews ;
     return (
-      <div className="container">
+      <div>
         <TopBar></TopBar>
         <Professor data={professor} />
         <Reviews items={newReviews} />
