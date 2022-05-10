@@ -230,7 +230,7 @@ function MainAddReview() {
       <div className='bars'>
         <TopBar></TopBar>
         <ProfBar onChoosingCourse={saveCourse} prof_name={state.profName} course_options={options}></ProfBar>
-        <ProgressBar height="10px" color="red" completed={completeness}></ProgressBar>
+        <ProgressBar  height="10px" color="#9391B6" completed={completeness}></ProgressBar>
       </div>
       <div className='rest-of-page'>
         <ReviewRating onChoosingRating={saveProfGeneralRating} title={"המרצה באופן כללי "} ratingsOptions={profRatingsOptions}></ReviewRating>
