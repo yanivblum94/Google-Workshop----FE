@@ -31,7 +31,7 @@ const SearchbarDropdown = (props) => {
           id="search-bar"
           type="text"
           className="form-control"
-          placeholder="חפש מרצה"
+          placeholder="יש להקליד שם של מרצה"
           ref={inputRef}
           onChange={onInputChange}
         />
