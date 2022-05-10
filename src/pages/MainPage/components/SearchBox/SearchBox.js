@@ -84,7 +84,7 @@ function SearchBox() {
   const [defaultOptions, setProfessors] = useState([]);
 
   const fetchProfessorsHandler = useCallback(async () => {
-    const response = await fetch("http://localhost:5000/api/professor");
+    const response = await fetch("http://localhost:9842/api/professor");
     if (!response.ok) {
       throw new Error("Something went wrong!");
     }

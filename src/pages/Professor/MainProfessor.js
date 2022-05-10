@@ -12,7 +12,7 @@ const MainProfessor = () => {
   const [professor, setProfessor] = useState([]);
   useEffect(() => {
     async function getProf(id) {
-      const url = "http://localhost:5000/api/professor/ById?Id=" + id;
+      const url = "http://localhost:9842/api/professor/ById?Id=" + id;
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error("Something went wrong!");
