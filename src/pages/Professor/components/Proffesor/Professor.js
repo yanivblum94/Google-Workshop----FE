@@ -31,11 +31,13 @@ const Professor = (props) => {
           </div>
         </div>
         <div className="professor-website-review-and-rating">
-          <button className="professor-website-button">
+          {(website != "") &&
+            <button className="professor-website-button">
             <a href={website} itemProp="website" title="אתר">
               אתר המרצה
             </a>
           </button>
+          }
           <button className="rating-button" onClick={(e) => {
                 navigate('/professor/add-review',
                 {
