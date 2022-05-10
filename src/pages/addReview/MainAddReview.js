@@ -28,7 +28,7 @@ class Review {
 }
 const options = [
   { value: '03680001', label: 'מתמטיקה בדידה' },
-  { value: '03680002', label: 'מבוא למדמ״ח' },
+  { value: '03680002', label: 'מבוא מורחב למדמ״ח' },
   { value: '03680003', label: 'מבני נתונים' }
 ]
 
