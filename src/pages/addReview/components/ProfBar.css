@@ -32,6 +32,7 @@
     font-size: 2vw;
     font-family: 'gloria';
     font-weight: bold;
+    resize: none;
 }
 
 .prof-bar_course-prompt {
