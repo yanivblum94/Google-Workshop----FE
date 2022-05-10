@@ -28,7 +28,7 @@ class Review {
 }
 const options = [
   { value: '03680001', label: 'מתמטיקה בדידה' },
-  { value: '03680002', label: 'מבוא למדמ"ח' },
+  { value: '03680002', label: 'מבוא למדמ״ח' },
   { value: '03680003', label: 'מבני נתונים' }
 ]
 
@@ -246,7 +246,7 @@ function MainAddReview() {
             אנא מלאו את כל השדות
           </div>
         }
-        <button className='submit-button' onClick={submit}>דרג</button>
+        <button className='submit-button' onClick={submit}>דרגו</button>
       </div>
     </div>
     }
