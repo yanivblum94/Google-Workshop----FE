@@ -33,13 +33,38 @@
   border: 3px solid #103459;
 }
 
+.list-group{
+  max-height: 300px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-self: right;
+  justify-items: right;
+  justify-content: right;
+}
+
+.form-control{
+  height: 70px;
+  font-family: 'afek';
+  font-size: 24px;
+}
+.search-bar-input-line{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fa-magnifying-glass{
+  margin-right: -50px;
+  color: #003f7d;
+}
+
 .search-box {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   font-size: large;
-
   margin-left: auto;
   margin-right: 40%;
   width: 40%;
@@ -61,7 +86,7 @@
 /*from demo*/
 
 .search-bar-dropdown {
-  width: 30em;
+  width: 35em;
   align-items: center;
   justify-content: center;
   direction: rtl;
@@ -69,15 +94,15 @@
 }
 
 #results {
+  margin-right: -30px;
+  width: 33em;
   position: absolute;
-  width: 30em;
   overflow-y: scroll;
-  height: 20em;
   /* border-bottom: 1px #eeeeee solid; */
 }
 
 #results > button {
-  background-color: #fafafa;
+  background-color: #e1e9f0;
 }
 
 /* width */

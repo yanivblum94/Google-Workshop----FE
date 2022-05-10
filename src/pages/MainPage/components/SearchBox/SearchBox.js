@@ -26,53 +26,54 @@ const SearchbarDropdown = (props) => {
   }, []);
   return (
     <div className="search-bar-dropdown">
-      <input
-        id="search-bar"
-        type="text"
-        className="form-control"
-        placeholder="חפש מרצה"
-        ref={inputRef}
-        onChange={onInputChange}
-      />
-      <ul id="results" className="list-group" ref={ulRef}>
-        {options.map((option, index) => {
-          return (
-            <button
-              type="button"
-              key={index}
-              onClick={(e) => {
-                inputRef.current.value = option.Name;
-                propessorId = option.Id;
-                console.log(propessorId);
-                professorProps = options.filter(
-                  (Professor) => Professor.Id === propessorId
-                );
-                console.log(professorProps);
-                pId = professorProps[0].Id;
-                console.log(pId);
-                navigate('/professor',
-                {
-                  state:{
-                    props : {pId}
-                  }
-                }
-                )
-              }}
+      <div className="search-bar-input-line">
+        <input
+          id="search-bar"
+          type="text"
+          className="form-control"
+          placeholder="חפש מרצה"
+          ref={inputRef}
+          onChange={onInputChange}
+        />
+        <i class="fa-solid fa-magnifying-glass fa-2x"></i>
+      </div>
+      {(options.length > 0) &&
+        <ul id="results" className="list-group" ref={ulRef}>
+          {options.map((option, index) => {
+            return (
+              <button
+                type="button"
+                key={index}
+                onClick={(e) => {
+                  inputRef.current.value = option.Name;
+                  propessorId = option.Id;
+                  professorProps = options.filter(
+                    (Professor) => Professor.Id === propessorId
+                  );
+                  pId = professorProps[0].Id;
+                  navigate('/professor',
+                    {
+                      state: {
+                        props: { pId }
+                      }
+                    }
+                  )
+                }}
 
-              className="list-group-item list-group-item-action"
+                className="list-group-item list-group-item-action"
               // to={{
               //   pathname:'/professor',
               //   state: {
               //     props : "yaniv"
               //   }
               // }}
-              
-            >
-              {option.Name + " - " + option.Faculty}
-            </button>
-          );
-        })}
-      </ul>
+
+              >
+                {option.Name + " - " + option.Faculty}
+              </button>
+            );
+          })}
+        </ul>}
     </div>
   );
 };
@@ -83,17 +84,15 @@ function SearchBox() {
   const [defaultOptions, setProfessors] = useState([]);
 
   const fetchProfessorsHandler = useCallback(async () => {
-    const response = await fetch("http://localhost:9842/api/professor");
+    const response = await fetch("http://localhost:5000/api/professor");
     if (!response.ok) {
       throw new Error("Something went wrong!");
     }
 
     const data = await response.json();
-    console.log("did http call");
     setProfessors(data);
   }, []);
 
-  //console.log( Professors);
 
   useEffect(() => {
     fetchProfessorsHandler();

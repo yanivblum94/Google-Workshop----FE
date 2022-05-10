@@ -11,7 +11,7 @@ function MainPage() {
 
   
   return (
-    <div className="container">
+    <div>
       <TopBar/>
       <div className="main-page_explanation">
         ברוכים הבאים ל-TAU RATE: אתר דירוגי המרצים ועוזרי ההוראה של אוניברסיטת תל-אביב בו אתם הסטודנטים מדרגים את מה שחשוב באמת!

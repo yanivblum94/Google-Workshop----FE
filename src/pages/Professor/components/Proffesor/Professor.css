@@ -29,7 +29,7 @@
 .professor-name-and-email{
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 500px;
   margin-top: 50px;
   align-items: center;
 }
