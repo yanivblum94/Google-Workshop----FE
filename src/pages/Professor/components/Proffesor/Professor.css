@@ -80,15 +80,15 @@ font-size: 24px;
 }
 
 .professor-avg-rating{
-  margin-right: 650px;
   margin-top: -200px;
+  margin-left: -780px;
   align-items: center;
   font-family: 'afek';
   font-size: 96px;
   display: flex;
   flex-direction: row;
   direction: ltr;
-  width: 300px;
+  width: auto;
 }
 
 .rating-numerator{
