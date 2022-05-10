@@ -4,7 +4,7 @@ import Reviews from "./components/Reviews/Reviews";
 import "./MainProfessor.css";
 import TopBar from "./components/TopBar";
 import { useLocation } from "react-router-dom";
-let newReviews;
+let newReviews, courses;
 
 const MainProfessor = () => {
   const { state } = useLocation();
@@ -27,11 +27,14 @@ const MainProfessor = () => {
     return (<h1>Loading</h1>);
   } 
     newReviews = professor.Reviews === null ? [] : professor.Reviews ;
+    courses = professor.Courses === null ? [] : professor.Courses ;
     return (
       <div>
         <TopBar></TopBar>
         <Professor data={professor} />
-        <Reviews items={newReviews} />
+        <Reviews 
+        items={newReviews} 
+        courses = {courses}/>
       </div>
     );
 };

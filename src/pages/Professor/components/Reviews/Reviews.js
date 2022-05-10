@@ -12,6 +12,7 @@ const Reviews = (props) =>{
         setFilteredCourse(selectedCourse);
     }
     console.log(props.items);
+    console.log(props.courses);
     const filteredReviews = filteredCourse === 'הכול' ? props.items :
     props.items.filter((review) => {
     return review.Course === filteredCourse;});
@@ -22,6 +23,7 @@ return (
             <ReviewsFilter
             selected = {filteredCourse}
             onChangeFilter={filterChangeHandler}
+            courses = {props.courses}
             />
             <ReviewsList items = {filteredReviews}/>
         </Card>
