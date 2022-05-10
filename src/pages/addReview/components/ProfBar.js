@@ -13,7 +13,7 @@ const ProfBar = (props) => {
             <div className='prof-bar_title'>דרגו את:   </div>
             <div className='prof-bar_prof-name'> {props.prof_name}</div>
             <div className='prof-bar_course-prompt'> בקורס</div>
-            <textarea onChange={courseChangeHandler} className='prof-bar_course_choice' rows={10} MaxLength={300} placeholder={"אנא בחרו קורס"}></textarea>
+            <textarea onChange={courseChangeHandler} className='prof-bar_course_choice' rows={10} MaxLength={300} placeholder={"אנא בַּחֲרוּ קורס"}></textarea>
         </div>
     );
 }
