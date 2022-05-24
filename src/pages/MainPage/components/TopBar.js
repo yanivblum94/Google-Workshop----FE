@@ -6,12 +6,12 @@ import "./TopBar.css";
 const TopBar = () => {
   return (
     <div className="upper-bar">
+      <img src={pic} className="logo-pic" />
       <GoogleButton
         className="google-button"
         type="light"
         onClick={signInWithGoogle}
       />
-      <img src={pic} className="logo-pic" />
     </div>
   );
 };
