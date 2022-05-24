@@ -14,7 +14,7 @@ import '../Professor/components/Proffesor/Professor.css'
 
 class Review {
   constructor(Course, TotalRating, DiffRating, TreatRating,
-    MaterialsUpdate, RecordsUpdate, TakeAgain, Comment, pId) {
+    MaterialsUpdate, RecordsUpdate, TakeAgain, Comment, pId, user) {
     this.Course = Course;
     this.TotalRating = TotalRating;
     this.DiffRating = DiffRating;
@@ -24,6 +24,7 @@ class Review {
     this.TakeAgain = TakeAgain;
     this.Comment = Comment;
     this.ProfId = pId;
+    this.User = user;
   }
 }
 const options = [
@@ -70,6 +71,7 @@ function MainAddReview() {
 
   const { state } = useLocation();
   const pId = state.profId;
+  const user = state.user;
 
   const saveCourse = (chosenCourse) => {
     if (course === -1) {
@@ -165,7 +167,7 @@ function MainAddReview() {
       setCanSubmit(1);
       setIsComplete(true);
       review = new Review(course, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,
-          materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput, pId);
+          materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput, pId, user);
       const requestOptions = {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
