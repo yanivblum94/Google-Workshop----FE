@@ -17,6 +17,7 @@ const Professor = (props) => {
   );
   const pId = props.data.Id;
   const profName = props.data.Name;
+  const user = props.user;
   return (
     <body className="professor">
       <div className="professor-details">
@@ -43,7 +44,8 @@ const Professor = (props) => {
                 {
                   state:{
                     profId : pId,
-                    profName: profName
+                    profName: profName,
+                    user: user
                   }
                 }
                 )
