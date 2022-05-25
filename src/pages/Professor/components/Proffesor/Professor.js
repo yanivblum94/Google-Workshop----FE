@@ -1,11 +1,23 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import {useContext} from 'react';
 import "./Professor.css";
 import RatingChart from '../ReviewsChart/RatingChart';
 import pic from "../../images/professor_pic.png";
 import StarRating from "../StarRating"; 
+import AuthContext from "../../../../store/auth-context";
+
+const checkHasRated = (reviews, email) =>{
+  for(let i=0; i<reviews.length; i++){
+    if(String(reviews[i].User) === String(email)){
+      return true;
+    }
+  }
+  return false;
+}
 
 const Professor = (props) => {
+  const authCtx = useContext(AuthContext);
   let navigate = useNavigate();
   const reviews = props.data.Reviews === null ? [] : props.data.Reviews ;
   const mailto = "mailto:" + props.data.email;
@@ -18,6 +30,7 @@ const Professor = (props) => {
   const pId = props.data.Id;
   const profName = props.data.Name;
   const user = props.user;
+  const hasRated = checkHasRated(reviews, authCtx.email);
   return (
     <body className="professor">
       <div className="professor-details">
@@ -40,16 +53,21 @@ const Professor = (props) => {
           </button>
           }
           <button className="rating-button" onClick={(e) => {
+            if(!authCtx.isLoggedIn){
+              alert('not logged in');
+            }
+            else if(hasRated){
+              alert('already reviewed');
+            }
+            else{
                 navigate('/professor/add-review',
                 {
                   state:{
                     profId : pId,
-                    profName: profName,
-                    user: user
-                  }
+                    profName: profName                  }
                 }
                 )
-              }}
+              }}}
               >
             דרג את המרצה!
           </button>
