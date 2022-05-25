@@ -53,6 +53,9 @@ const choiceSegmentValues = [
   true, false
 ]
 
+const badWordsList =["זונה", "ז*נה", "שרמיט", "שרמוט", "שרמוטה", "זבל", "מטומטם", "דביל", "כלב", "מניאק", "מנאייק", "מנאיק", "מאניאק",
+"אוטיסט", "מפגר", "אידיוט", "אדיוט", "מזדיין", "מזדין", "מיזדיין", "מיזדין", "שמוק", "צ'אחלה", "צאחלה", "ערס"]
+
 function MainAddReview() {
   let review;
   const authCtx = useContext(AuthContext);
@@ -163,8 +166,21 @@ function MainAddReview() {
     }
   }
 
+  const hasBadWord = () =>{
+    for(let i=0; i<badWordsList.length; i++){
+      if(freeInput.includes(badWordsList[i])){
+        return true;
+      }
+    }
+    return false;
+  }
+
   async function submit(){
     if (completeness === 100) {
+    if(hasBadWord()){
+      alert('נא להשתמש במילים ראויות בתגובה');
+      return
+    }
       setCanSubmit(1);
       setIsComplete(true);
       review = new Review(course, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,
