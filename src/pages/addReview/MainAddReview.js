@@ -53,6 +53,9 @@ const choiceSegmentValues = [
   true, false
 ]
 
+const badWordsList =["זונה", "ז*נה", "שרמיט", "שרמוט", "שרמוטה", "זבל", "מטומטם", "דביל", "כלב", "מניאק", "מנאייק", "מנאיק", "מאניאק",
+"אוטיסט", "מפגר", "אידיוט", "אדיוט", "מזדיין", "מזדין", "מיזדיין", "מיזדין", "שמוק", "צ'אחלה", "צאחלה", "ערס"]
+
 function MainAddReview() {
   let review;
   const authCtx = useContext(AuthContext);
@@ -146,7 +149,7 @@ function MainAddReview() {
 
   const saveFreeInput = (writtenInput) => {
     if (writtenInput.target.value.length >= 20){
-      if (freeInput == -1){
+      if (freeInput === -1){
         setCompleteness(completeness + 100 / 8);
         if (completeness > 90) {
           setIsComplete(1);
@@ -156,15 +159,28 @@ function MainAddReview() {
     }
     else{
       setFreeInput(-1);
-      if (freeInput != -1){
+      if (freeInput !== -1){
         setCompleteness(completeness - (100 / 8));
         setIsComplete(0);
       }
     }
   }
 
+  const hasBadWord = () =>{
+    for(let i=0; i<badWordsList.length; i++){
+      if(freeInput.includes(badWordsList[i])){
+        return true;
+      }
+    }
+    return false;
+  }
+
   async function submit(){
-    if (completeness == 100) {
+    if (completeness === 100) {
+    if(hasBadWord()){
+      alert('נא להשתמש במילים ראויות בתגובה');
+      return
+    }
       setCanSubmit(1);
       setIsComplete(true);
       review = new Review(course, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,

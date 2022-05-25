@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import Professor from "./components/Proffesor/Professor";
 import Reviews from "./components/Reviews/Reviews";
 import "./MainProfessor.css";
@@ -21,7 +21,7 @@ const MainProfessor = () => {
       setProfessor(data);
     }
     getProf(state.props.pId);
-  }, []);
+  });
 
   if (professor.length === 0) {
     return (<h1>Loading</h1>);
