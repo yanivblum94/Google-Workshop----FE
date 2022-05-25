@@ -7,9 +7,17 @@
     width: 100%;
     direction: rtl;
     justify-content: center;
+
 }
 
 .logo-pic{
     margin-top: 5px;
     height: 50px;
+    justify-content: center;
+
 }
+
+.google-button {
+    font-weight: bold;
+    margin-top: 5px;
+  }
