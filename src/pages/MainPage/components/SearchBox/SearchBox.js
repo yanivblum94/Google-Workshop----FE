@@ -13,6 +13,7 @@ const SearchbarDropdown = (props) => {
   let propessorId;
   let professorProps;
   let pId;
+  let user ="";
 
   useEffect(() => {
     inputRef.current.addEventListener("click", (event) => {

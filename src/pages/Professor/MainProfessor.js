@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import Professor from "./components/Proffesor/Professor";
 import Reviews from "./components/Reviews/Reviews";
 import "./MainProfessor.css";
-import TopBar from "./components/TopBar";
+import TopBar from "../../pages/MainPage/components/TopBar";
 import { useLocation } from "react-router-dom";
 let newReviews, courses;
 

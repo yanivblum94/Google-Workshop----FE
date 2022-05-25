@@ -6,10 +6,11 @@ import ReviewRating from './components/ReviewRating';
 import ReviewQuestions from './components/ReviewQuestions';
 import TopBar from './components/TopBar';
 import ProgressBar from "react-progressbar";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useLocation, useNavigate } from "react-router-dom";
 import TextAreaWInstrucions from './components/TextAreaWInstructions';
 import Thanks from './components/Thanks';
+import AuthContext from '../../store/auth-context';
 import '../Professor/components/Proffesor/Professor.css'
 
 class Review {
@@ -54,7 +55,7 @@ const choiceSegmentValues = [
 
 function MainAddReview() {
   let review;
-
+  const authCtx = useContext(AuthContext);
   const [completeness, setCompleteness] = useState(0);
   const [course, setCourse] = useState(-1);
   const [profGeneralRating, setProfGeneralRating] = useState(-1);
@@ -71,7 +72,7 @@ function MainAddReview() {
 
   const { state } = useLocation();
   const pId = state.profId;
-  const user = state.user;
+  const user = authCtx.email;
 
   const saveCourse = (chosenCourse) => {
     if (course === -1) {
