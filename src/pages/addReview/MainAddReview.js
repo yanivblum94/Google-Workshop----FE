@@ -146,7 +146,7 @@ function MainAddReview() {
 
   const saveFreeInput = (writtenInput) => {
     if (writtenInput.target.value.length >= 20){
-      if (freeInput == -1){
+      if (freeInput === -1){
         setCompleteness(completeness + 100 / 8);
         if (completeness > 90) {
           setIsComplete(1);
@@ -156,7 +156,7 @@ function MainAddReview() {
     }
     else{
       setFreeInput(-1);
-      if (freeInput != -1){
+      if (freeInput !== -1){
         setCompleteness(completeness - (100 / 8));
         setIsComplete(0);
       }
@@ -164,7 +164,7 @@ function MainAddReview() {
   }
 
   async function submit(){
-    if (completeness == 100) {
+    if (completeness === 100) {
       setCanSubmit(1);
       setIsComplete(true);
       review = new Review(course, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,
