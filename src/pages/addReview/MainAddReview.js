@@ -6,15 +6,16 @@ import ReviewRating from './components/ReviewRating';
 import ReviewQuestions from './components/ReviewQuestions';
 import TopBar from './components/TopBar';
 import ProgressBar from "react-progressbar";
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useLocation, useNavigate } from "react-router-dom";
 import TextAreaWInstrucions from './components/TextAreaWInstructions';
 import Thanks from './components/Thanks';
+import AuthContext from '../../store/auth-context';
 import '../Professor/components/Proffesor/Professor.css'
 
 class Review {
   constructor(Course, TotalRating, DiffRating, TreatRating,
-    MaterialsUpdate, RecordsUpdate, TakeAgain, Comment, pId) {
+    MaterialsUpdate, RecordsUpdate, TakeAgain, Comment, pId, user) {
     this.Course = Course;
     this.TotalRating = TotalRating;
     this.DiffRating = DiffRating;
@@ -24,6 +25,7 @@ class Review {
     this.TakeAgain = TakeAgain;
     this.Comment = Comment;
     this.ProfId = pId;
+    this.User = user;
   }
 }
 const options = [
@@ -53,7 +55,7 @@ const choiceSegmentValues = [
 
 function MainAddReview() {
   let review;
-
+  const authCtx = useContext(AuthContext);
   const [completeness, setCompleteness] = useState(0);
   const [course, setCourse] = useState(-1);
   const [profGeneralRating, setProfGeneralRating] = useState(-1);
@@ -70,6 +72,7 @@ function MainAddReview() {
 
   const { state } = useLocation();
   const pId = state.profId;
+  const user = authCtx.email;
 
   const saveCourse = (chosenCourse) => {
     if (course === -1) {
@@ -165,7 +168,7 @@ function MainAddReview() {
       setCanSubmit(1);
       setIsComplete(true);
       review = new Review(course, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,
-          materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput, pId);
+          materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput, pId, user);
       const requestOptions = {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },

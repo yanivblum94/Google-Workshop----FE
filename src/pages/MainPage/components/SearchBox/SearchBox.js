@@ -54,20 +54,12 @@ const SearchbarDropdown = (props) => {
                   navigate('/professor',
                     {
                       state: {
-                        props: { pId }
-                      }
+                        props: { pId }                      }
                     }
                   )
                 }}
 
                 className="list-group-item list-group-item-action"
-              // to={{
-              //   pathname:'/professor',
-              //   state: {
-              //     props : "yaniv"
-              //   }
-              // }}
-
               >
                 {option.Name + " - " + option.Faculty}
               </button>
