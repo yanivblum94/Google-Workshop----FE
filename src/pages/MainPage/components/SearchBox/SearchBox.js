@@ -1,9 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./SearchBox.css";
-import { Link, useNavigate } from "react-router-dom";
-import Professor from "../../../Professor/components/Proffesor/Professor";
-import { Button } from "bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const SearchbarDropdown = (props) => {
   const { options, onInputChange } = props;
