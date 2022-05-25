@@ -1,6 +1,5 @@
 import pic from "../images/logo.png";
 import GoogleButton from "react-google-button";
-import SignInWithGoogle from "./signInWithGoogle";
 import "./TopBar.css";
 import { initializeApp } from "firebase/app";
 import { useState, useRef, useContext } from 'react';
