@@ -1,0 +1,33 @@
+.unselected-tab{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    color: #003f7d;
+    background-color: white;
+    font-family: 'Afek';
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0.6rem;
+    padding-right: 1rem;
+    min-width: 10rem;
+    width: auto;
+    height: 4rem;
+    border-top-left-radius: 25px;
+}
+
+.selected-tab{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    color: white;
+    background-color: #003f7d;
+    font-family: 'Afek';
+    font-size: 28px;
+    font-weight: bold;
+    padding: 0.6rem;
+    padding-right: 1rem;
+    min-width: 10rem;
+    width: auto;
+    height: 4rem;
+    border-top-left-radius: 25px; 
+}

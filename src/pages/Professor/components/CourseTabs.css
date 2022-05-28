@@ -1,0 +1,12 @@
+.courses-filter{
+    width: 70%;
+    margin-left: 15%;
+
+}
+
+.courses-filter-tabs{
+    display: flex;
+    flex-direction: row;
+    direction: rtl;
+}
+

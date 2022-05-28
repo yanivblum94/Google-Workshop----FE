@@ -6,15 +6,15 @@
     text-align: center;
     justify-content: center;
     width: 90%;
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
   }
   
   .chart-bar__inner {
-    height: 25px;
-    width: 100%;
-    border: 1px solid #f8f8f8;
+    height: 1.8rem;
+    width: 75%;
+    border: 1px solid #cccccc;
     border-radius: 15px;
-    background-color: white;
+    background-color: #cccccc;
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -24,7 +24,6 @@
   
   .chart-bar__fill {
     border-radius: 15px;
-
     background-color: #003f7d;
     transition: all 0.3s ease-out;
   }
@@ -32,7 +31,7 @@
   .chart-bar__label {
     font-family: 'afek';
     font-weight: bold;
-    font-size: 28px;
+    font-size: 36px;
     text-align: center;
     color:black;
     margin-right: 10px;
