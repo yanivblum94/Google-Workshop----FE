@@ -1,9 +1,7 @@
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./SearchBox.css";
-import { Link, useNavigate } from "react-router-dom";
-import Professor from "../../../Professor/components/Proffesor/Professor";
-import { Button } from "bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const SearchbarDropdown = (props) => {
   const { options, onInputChange } = props;
@@ -54,22 +52,14 @@ const SearchbarDropdown = (props) => {
                   navigate('/professor',
                     {
                       state: {
-                        props: { pId }
-                      }
+                        props: { pId }                      }
                     }
                   )
                 }}
 
                 className="list-group-item list-group-item-action"
-              // to={{
-              //   pathname:'/professor',
-              //   state: {
-              //     props : "yaniv"
-              //   }
-              // }}
-
               >
-                {option.Name + " - " + option.Faculty}
+              <i class="fa-solid fa-graduation-cap" style={{ marginLeft: '1rem' }}/>{option.Name + " - " + option.Faculty}
               </button>
             );
           })}

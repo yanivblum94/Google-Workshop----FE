@@ -1,10 +1,23 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useContext } from 'react';
 import "./Professor.css";
 import RatingChart from '../ReviewsChart/RatingChart';
+import pic from "../../images/professor_pic.png";
 import StarRating from "../StarRating";
+import AuthContext from "../../../../store/auth-context";
+
+const checkHasRated = (reviews, email) => {
+  for (let i = 0; i < reviews.length; i++) {
+    if (String(reviews[i].User) === String(email)) {
+      return true;
+    }
+  }
+  return false;
+}
 
 const Professor = (props) => {
+  const authCtx = useContext(AuthContext);
   let navigate = useNavigate();
   const reviews = props.data.Reviews === null ? [] : props.data.Reviews;
   const mailto = "mailto:" + props.data.email;
@@ -16,6 +29,7 @@ const Professor = (props) => {
   );
   const pId = props.data.Id;
   const profName = props.data.Name;
+  const hasRated = checkHasRated(reviews, authCtx.email);
   return (
     <body className="professor">
       <div className="professor-details">
@@ -33,6 +47,28 @@ const Professor = (props) => {
           }
         </div>
         <button className="rating-button" onClick={(e) => {
+          if (!authCtx.isLoggedIn) {
+            alert('not logged in');
+          }
+          else if (hasRated) {
+            alert('already reviewed');
+          }
+          else {
+            navigate('/professor/add-review',
+              {
+                state: {
+                  profId: pId,
+                  profName: profName
+                }
+              }
+            )
+          }
+        }}
+        >
+          דרג את המרצה!
+        </button>
+        {/*}
+        <button className="rating-button-debug" onClick={(e) => {
           navigate('/professor/add-review',
             {
               state: {
@@ -43,29 +79,23 @@ const Professor = (props) => {
           )
         }}
         >
-          דרג את המרצה!
-        </button>
+          DEBUG דרג את המרצה!
+      </button>*/}
       </div>
 
       <div className="professor-rating">
         <div className="professor-avg-rating">
-          <div className="rating-numerator">{props.data.TotalRating}</div>
+          <div className="rating-numerator">{(props.data.TotalRating).toFixed(1)}</div>
           <div className="rating-denominator">/5</div>
         </div>
         <StarRating avgRating={props.data.TotalRating}></StarRating>
         <div className="professor-additional-ratings">
-          <div className="professor-would-take-again">
-            <div className="wta-percent">83%</div>
-            <div className="wta-text">היו לוקחים את הקורס מחדש
+          <div className="professor-treat-rating">
+            <div className="treat-rating">
+              <div className="treat-rating-numerator">{props.data.TreatRating}</div>
+              <div className="treat-rating-denominator">/5</div>
             </div>
-          </div>
-          <div className="vertical-line"></div>
-          <div className="professor-diff-rating">
-            <div className="pdr-rating">
-              <div className="pdr-rating-numerator">4</div>
-              <div className="pdr-rating-denominator">/5</div>
-            </div>
-            <div className="pdr-text">רמת קושי</div>
+            <div className="treat-text">יחס לסטודנטים</div>
           </div>
         </div>
       </div>

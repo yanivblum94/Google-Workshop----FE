@@ -1,6 +1,7 @@
 .main-professor{
+    justify-content: center;
     background-color: #f4f4f4;
-
+    padding-bottom: 300px;
 }
 
 .course-tabs-maria{
