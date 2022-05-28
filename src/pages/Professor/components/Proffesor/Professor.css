@@ -21,6 +21,7 @@
 }
 
 .professor-name-and-email-and-website {
+  background-color: white;
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
   display: flex;
