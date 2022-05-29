@@ -5,13 +5,13 @@
     align-items: center;
     text-align: center;
     justify-content: center;
-    width: 90%;
     margin-bottom: 1rem;
+    width: auto;
   }
   
   .chart-bar__inner {
     height: 1.8rem;
-    width: 75%;
+    width: 15rem;
     border: 1px solid #cccccc;
     border-radius: 15px;
     background-color: #cccccc;
@@ -29,11 +29,21 @@
   }
   
   .chart-bar__label {
+    width: 15rem;
     font-family: 'afek';
-    font-weight: bold;
-    font-size: 36px;
-    text-align: center;
+    font-size: 18px;
+    text-align: right;
     color:black;
     margin-right: 10px;
     padding-bottom: 5px;
+  }
+
+  .num_of_reviews{
+    color: #003f7d;
+    margin-bottom: 0.1rem;
+    text-align: center;
+    margin-left: 0.5rem;
+    font-family: 'afek';
+    font-weight: bold;
+    font-size: 32px;
   }

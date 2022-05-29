@@ -14,6 +14,7 @@ const ChartBar = (props) => {
 
       return (
         <div className='chart-bar'>
+          <div className='num_of_reviews'>{props.number}</div>
           <div className='chart-bar__inner'>
             <div
               className='chart-bar__fill'

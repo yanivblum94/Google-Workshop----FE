@@ -72,3 +72,9 @@
     flex-direction: column;
     text-align: center;   
 }
+
+.course-num-reviews{
+    text-decoration: underline;
+    font-size: 2rem;
+    direction: rtl;
+}

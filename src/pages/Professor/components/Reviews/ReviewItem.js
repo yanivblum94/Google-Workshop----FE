@@ -11,7 +11,7 @@ const ReviewItem = (props) => {
       </div>
       <div className="review-item__ratingInfo">
         <div className="review-item__ratings">דירוג כללי: {props.totalRating}{" "}</div>
-        <div className="review-item__ratings">דרגת קושי: {props.difficulty}{" "}</div>
+        {/*<div className="review-item__ratings">דרגת קושי: {props.difficulty}{" "}</div>*/}
       </div>
     </li>
   );

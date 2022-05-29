@@ -20,6 +20,7 @@ const Professor = (props) => {
   const authCtx = useContext(AuthContext);
   let navigate = useNavigate();
   const reviews = props.data.Reviews === null ? [] : props.data.Reviews;
+  const ratingValuesNums = props.data.RatingValuesNums == null ? [0, 0, 0, 0, 0] : props.data.RatingValuesNums;
   const mailto = "mailto:" + props.data.email;
   const avgRating = "דירוג ממוצע: " + props.data.avgRating + " מתוך " + reviews.length + " דירוגים";
   const website = props.data.WebsiteAddr;
@@ -67,7 +68,7 @@ const Professor = (props) => {
         >
           דרג את המרצה!
         </button>
-        {/*}
+        
         <button className="rating-button-debug" onClick={(e) => {
           navigate('/professor/add-review',
             {
@@ -80,10 +81,11 @@ const Professor = (props) => {
         }}
         >
           DEBUG דרג את המרצה!
-      </button>*/}
+      </button>
       </div>
 
       <div className="professor-rating">
+        <div className="professor-total-ratings-num">{(reviews.length) + " דירוגים"}</div>
         <div className="professor-avg-rating">
           <div className="rating-numerator">{(props.data.TotalRating).toFixed(1)}</div>
           <div className="rating-denominator">/5</div>
@@ -92,7 +94,7 @@ const Professor = (props) => {
         <div className="professor-additional-ratings">
           <div className="professor-treat-rating">
             <div className="treat-rating">
-              <div className="treat-rating-numerator">{props.data.TreatRating}</div>
+              <div className="treat-rating-numerator">{(props.data.TreatRating).toFixed(1)}</div>
               <div className="treat-rating-denominator">/5</div>
             </div>
             <div className="treat-text">יחס לסטודנטים</div>
@@ -101,7 +103,7 @@ const Professor = (props) => {
       </div>
 
       <div className="professor-rating-chart">
-        <RatingChart ratingValuesArray={ratingValuesArray}></RatingChart>
+        <RatingChart numReviews={ratingValuesNums} ratingValuesArray={ratingValuesArray}></RatingChart>
       </div>
     </body>
   );
