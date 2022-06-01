@@ -21,7 +21,7 @@ const MainProfessor = () => {
       setProfessor(data);
     }
     getProf(state.props.pId);
-  });
+  }, []);
 
   if (professor.length === 0) {
     return (<h1>Loading</h1>);
