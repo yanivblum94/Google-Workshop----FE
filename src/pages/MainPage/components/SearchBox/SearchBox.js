@@ -57,7 +57,7 @@ const SearchbarDropdown = (props) => {
                 }}
                 className="list-group-item list-group-item-action"
               >
-                {option.Name + " - " + option.Faculty}
+                {option.Name + " – " + option.Faculty}
               </button>
             );
           })}
