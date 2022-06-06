@@ -26,13 +26,14 @@
     margin-left: 2%;
 }
 
-.prof-bar_course_choice{
-    height: 70%;
-    width: 500px;
-    font-size: 2vw;
+.course-choice{
+    margin-top: 1vw;
+    color: #555555;
+    height: 3vw;
+    width: 450px;
+    font-size: 1vw;
     font-family: 'gloria';
     font-weight: bold;
-    resize: none;
 }
 
 .prof-bar_course-prompt {
