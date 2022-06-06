@@ -33,7 +33,7 @@
   border: 3px solid #103459;
 }
 
-.list-group{
+.list-group {
   max-height: 300px;
   font-size: 18px;
   display: flex;
@@ -43,18 +43,18 @@
   justify-content: right;
 }
 
-.form-control{
+.form-control {
   height: 70px;
-  font-family: 'afek';
+  font-family: "afek";
   font-size: 24px;
 }
-.search-bar-input-line{
+.search-bar-input-line {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.fa-magnifying-glass{
+.fa-magnifying-glass {
   margin-right: -50px;
   color: #003f7d;
 }

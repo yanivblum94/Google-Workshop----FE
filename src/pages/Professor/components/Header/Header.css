@@ -1,19 +1,16 @@
-.header{
-    direction: rtl;
-    background-color: #a7a7a7;
-    padding-right: 1rem;
-    display: flex;
-    flex-direction: row;
+.header {
+  direction: rtl;
+  background-color: #a7a7a7;
+  padding-right: 1rem;
+  display: flex;
+  flex-direction: row;
 }
 
-.logo{
-    width: 20%;
-    float: right;
-    padding-right: 4%;
-    font-weight: bold;
-    font-size: 0.8cm;
-    /* padding-left: 200px; */
+.logo {
+  width: 20%;
+  float: right;
+  padding-right: 4%;
+  font-weight: bold;
+  font-size: 0.8cm;
+  /* padding-left: 200px; */
 }
-
-
-

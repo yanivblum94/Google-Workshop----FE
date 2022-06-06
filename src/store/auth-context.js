@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const AuthContext = React.createContext({
-  token: '',
+  token: "",
   isLoggedIn: false,
   email: "",
   userName: "",
   login: (result) => {},
-  logout: () => {},
+  logout: () => {}
 });
 
 export const AuthContextProvider = (props) => {
@@ -33,7 +33,7 @@ export const AuthContextProvider = (props) => {
     email: email,
     userName: userName,
     login: loginHandler,
-    logout: logoutHandler,
+    logout: logoutHandler
   };
 
   return (

@@ -1,23 +1,21 @@
-.upper-bar{ 
-    box-shadow: 2px 2px 2px 2px #DDDDDD; 
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    height: 65px;
-    width: 100%;
-    direction: rtl;
-    justify-content: center;
-
+.upper-bar {
+  box-shadow: 2px 2px 2px 2px #dddddd;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 65px;
+  width: 100%;
+  direction: rtl;
+  justify-content: center;
 }
 
-.logo-pic{
-    margin-top: 5px;
-    height: 50px;
-    justify-content: center;
-
+.logo-pic {
+  margin-top: 5px;
+  height: 50px;
+  justify-content: center;
 }
 
 .google-button {
-    font-weight: bold;
-    margin-top: 5px;
-  }
+  font-weight: bold;
+  margin-top: 5px;
+}

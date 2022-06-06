@@ -1,15 +1,15 @@
-.prof-topbar{    
-    box-shadow: 2px 2px 2px 2px #DDDDDD; 
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    height: 65px;
-    width: 100%;
-    direction: rtl;
-    justify-content: center;
+.prof-topbar {
+  box-shadow: 2px 2px 2px 2px #dddddd;
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 65px;
+  width: 100%;
+  direction: rtl;
+  justify-content: center;
 }
 
-.prof-topbar_logo-pic{
-    margin-top: 5px;
-    height: 50px;
+.prof-topbar_logo-pic {
+  margin-top: 5px;
+  height: 50px;
 }

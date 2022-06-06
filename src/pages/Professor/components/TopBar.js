@@ -1,12 +1,12 @@
 import pic from "../images/logo.png";
-import './TopBar.css'
+import "./TopBar.css";
 
 const TopBar = () => {
-    return (
-        <div className='prof-topbar'>
-            <img src={pic} className='prof-topbar_logo-pic' />
-        </div>
-    )
-}
+  return (
+    <div className="prof-topbar">
+      <img src={pic} className="prof-topbar_logo-pic" />
+    </div>
+  );
+};
 
 export default TopBar;

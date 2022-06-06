@@ -1,21 +1,31 @@
 /* origin was App.css in Maria's branch */
 
-import './MainAddReview.css'
-import ProfBar from './components/ProfBar'
-import ReviewRating from './components/ReviewRating';
-import ReviewQuestions from './components/ReviewQuestions';
-import TopBar from './components/TopBar';
+import "./MainAddReview.css";
+import ProfBar from "./components/ProfBar";
+import ReviewRating from "./components/ReviewRating";
+import ReviewQuestions from "./components/ReviewQuestions";
+import TopBar from "./components/TopBar";
 import ProgressBar from "react-progressbar";
-import { useState, useContext } from 'react';
+import { useState, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import TextAreaWInstrucions from './components/TextAreaWInstructions';
-import Thanks from './components/Thanks';
-import AuthContext from '../../store/auth-context';
-import '../Professor/components/Proffesor/Professor.css'
+import TextAreaWInstrucions from "./components/TextAreaWInstructions";
+import Thanks from "./components/Thanks";
+import AuthContext from "../../store/auth-context";
+import "../Professor/components/Proffesor/Professor.css";
 
 class Review {
-  constructor(Course, TotalRating, DiffRating, TreatRating,
-    MaterialsUpdate, RecordsUpdate, TakeAgain, Comment, pId, user) {
+  constructor(
+    Course,
+    TotalRating,
+    DiffRating,
+    TreatRating,
+    MaterialsUpdate,
+    RecordsUpdate,
+    TakeAgain,
+    Comment,
+    pId,
+    user
+  ) {
     this.Course = Course;
     this.TotalRating = TotalRating;
     this.DiffRating = DiffRating;
@@ -29,32 +39,47 @@ class Review {
   }
 }
 const options = [
-  { value: '03680001', label: 'מתמטיקה בדידה' },
-  { value: '03680002', label: 'מבוא מורחב למדמ״ח' },
-  { value: '03680003', label: 'מבני נתונים' }
-]
+  { value: "03680001", label: "מתמטיקה בדידה" },
+  { value: "03680002", label: "מבוא מורחב למדמ״ח" },
+  { value: "03680003", label: "מבני נתונים" }
+];
 
-const profRatingsOptions = [
-  "גרוע", "רע", "בסדר", "טוב", "מעולה"
-]
+const profRatingsOptions = ["גרוע", "רע", "בסדר", "טוב", "מעולה"];
 
-const profDiffOptions = [
-  "קשה מאוד", "קשה", "בסדר", "קל", "קל מאוד"
-]
+const profDiffOptions = ["קשה מאוד", "קשה", "בסדר", "קל", "קל מאוד"];
 
-const profStudentTreatmentOptions = [
-  "גרוע", "רע", "בסדר", "טוב", "מעולה"
-]
+const profStudentTreatmentOptions = ["גרוע", "רע", "בסדר", "טוב", "מעולה"];
 
-const choiceSegmentLabels = [
-  "כן", "לא"
-]
-const choiceSegmentValues = [
-  true, false
-]
+const choiceSegmentLabels = ["כן", "לא"];
+const choiceSegmentValues = [true, false];
 
-const badWordsList =["זונה", "ז*נה", "שרמיט", "שרמוט", "שרמוטה", "זבל", "מטומטם", "דביל", "כלב", "מניאק", "מנאייק", "מנאיק", "מאניאק",
-"אוטיסט", "מפגר", "אידיוט", "אדיוט", "מזדיין", "מזדין", "מיזדיין", "מיזדין", "שמוק", "צ'אחלה", "צאחלה", "ערס"]
+const badWordsList = [
+  "זונה",
+  "ז*נה",
+  "שרמיט",
+  "שרמוט",
+  "שרמוטה",
+  "זבל",
+  "מטומטם",
+  "דביל",
+  "כלב",
+  "מניאק",
+  "מנאייק",
+  "מנאיק",
+  "מאניאק",
+  "אוטיסט",
+  "מפגר",
+  "אידיוט",
+  "אדיוט",
+  "מזדיין",
+  "מזדין",
+  "מיזדיין",
+  "מיזדין",
+  "שמוק",
+  "צ'אחלה",
+  "צאחלה",
+  "ערס"
+];
 
 function MainAddReview() {
   let review;
@@ -63,7 +88,8 @@ function MainAddReview() {
   const [course, setCourse] = useState(-1);
   const [profGeneralRating, setProfGeneralRating] = useState(-1);
   const [profDifficultyRating, setProfDifficultyRating] = useState(-1);
-  const [profStudentTreatmentRating, setProfStudentTreatmentRating] = useState(-1);
+  const [profStudentTreatmentRating, setProfStudentTreatmentRating] =
+    useState(-1);
   const [materialOnMoodle, setMaterialOnMoodle] = useState(-1);
   const [recordingsAvailable, setRecordingsAvailable] = useState(-1);
   const [wouldTakeAgain, setWouldTakeAgain] = useState(-1);
@@ -85,7 +111,7 @@ function MainAddReview() {
       }
     }
     setCourse(chosenCourse.target.value);
-  }
+  };
 
   const saveProfGeneralRating = (chosenRating) => {
     if (profGeneralRating === -1) {
@@ -95,7 +121,7 @@ function MainAddReview() {
       }
     }
     setProfGeneralRating(chosenRating);
-  }
+  };
 
   const saveProfDifficultyRating = (chosenRating) => {
     if (profDifficultyRating === -1) {
@@ -105,7 +131,7 @@ function MainAddReview() {
       }
     }
     setProfDifficultyRating(chosenRating);
-  }
+  };
 
   const saveProfStudentTreatmentRating = (chosenRating) => {
     if (profStudentTreatmentRating === -1) {
@@ -115,7 +141,7 @@ function MainAddReview() {
       }
     }
     setProfStudentTreatmentRating(chosenRating);
-  }
+  };
 
   const saveMaterialOnMoodle = (choice) => {
     if (materialOnMoodle === -1) {
@@ -125,7 +151,7 @@ function MainAddReview() {
       }
     }
     setMaterialOnMoodle(choice);
-  }
+  };
 
   const saveRecordingsAvialable = (choice) => {
     if (recordingsAvailable === -1) {
@@ -135,7 +161,7 @@ function MainAddReview() {
       }
     }
     setRecordingsAvailable(choice);
-  }
+  };
 
   const saveWouldTakeAgain = (choice) => {
     if (wouldTakeAgain === -1) {
@@ -145,130 +171,177 @@ function MainAddReview() {
       }
     }
     setWouldTakeAgain(choice);
-  }
+  };
 
   const saveFreeInput = (writtenInput) => {
-    if (writtenInput.target.value.length >= 20){
-      if (freeInput === -1){
+    if (writtenInput.target.value.length >= 20) {
+      if (freeInput === -1) {
         setCompleteness(completeness + 100 / 8);
         if (completeness > 90) {
           setIsComplete(1);
         }
       }
       setFreeInput(writtenInput.target.value);
-    }
-    else{
+    } else {
       setFreeInput(-1);
-      if (freeInput !== -1){
-        setCompleteness(completeness - (100 / 8));
+      if (freeInput !== -1) {
+        setCompleteness(completeness - 100 / 8);
         setIsComplete(0);
       }
     }
-  }
+  };
 
-  const hasBadWord = () =>{
-    for(let i=0; i<badWordsList.length; i++){
-      if(freeInput.includes(badWordsList[i])){
+  const hasBadWord = () => {
+    for (let i = 0; i < badWordsList.length; i++) {
+      if (freeInput.includes(badWordsList[i])) {
         return true;
       }
     }
     return false;
-  }
+  };
 
-  async function submit(){
+  async function submit() {
     if (completeness === 100) {
-    if(hasBadWord()){
-      alert('נא להשתמש במילים ראויות בתגובה');
-      return
-    }
+      if (hasBadWord()) {
+        alert("נא להשתמש במילים ראויות בתגובה");
+        return;
+      }
       setCanSubmit(1);
       setIsComplete(true);
-      review = new Review(course, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,
-          materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput, pId, user);
+      review = new Review(
+        course,
+        profGeneralRating,
+        profDifficultyRating,
+        profStudentTreatmentRating,
+        materialOnMoodle,
+        recordingsAvailable,
+        wouldTakeAgain,
+        freeInput,
+        pId,
+        user
+      );
       const requestOptions = {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(review) 
-    };
-    try {
-      const res = await fetch(`http://localhost:9842/api/professor`, requestOptions
-        );
-      if (!res.ok) {
-        const message = `An error has occured: ${res.status} - ${res.statusText}`;
-        throw new Error(message);
-      }
-      const data = await res.json();
-      const result = {
-        status: res.status + "-" + res.statusText,
-        headers: { "Content-Type": res.headers.get("Content-Type") },
-        data: data,
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(review)
       };
-      setPutResult(result);
-    } catch (err) {
-      setPutResult(err.message);
-    }
-  }
-    else{
+      try {
+        const res = await fetch(
+          `http://localhost:9842/api/professor`,
+          requestOptions
+        );
+        if (!res.ok) {
+          const message = `An error has occured: ${res.status} - ${res.statusText}`;
+          throw new Error(message);
+        }
+        const data = await res.json();
+        const result = {
+          status: res.status + "-" + res.statusText,
+          headers: { "Content-Type": res.headers.get("Content-Type") },
+          data: data
+        };
+        setPutResult(result);
+      } catch (err) {
+        setPutResult(err.message);
+      }
+    } else {
       setCanSubmit(0);
     }
   }
 
-  
   return (
     <div>
-    {
-      isComplete && 
-      <div className='thanks-page'>
-      <Thanks></Thanks>
-      <button
-              type="button"
-              className="professor-website-button"
-              onClick={(e) => {
-                navigate('/professor',
-                {
-                  state:{
-                    props : {pId}
-                  }
+      {isComplete && (
+        <div className="thanks-page">
+          <Thanks></Thanks>
+          <button
+            type="button"
+            className="professor-website-button"
+            onClick={(e) => {
+              navigate("/professor", {
+                state: {
+                  props: { pId }
                 }
-                )
-              }}
-              >חזור למרצה הקודם</button>
-              <button
-              type="button"
-              className="professor-website-button"
-              onClick={(e) => {
-                navigate('/mainPage'
-                )
-              }}
-              >חזור לדף הראשי</button>
-      </div>
-    }
-    {
-      !isComplete &&
-      <div className='MainAddReview'>
-      <div className='bars'>
-        <TopBar></TopBar>
-        <ProfBar onChoosingCourse={saveCourse} prof_name={state.profName} course_options={options}></ProfBar>
-        <ProgressBar  height="10px" color="#9391B6" completed={completeness}></ProgressBar>
-      </div>
-      <div className='rest-of-page'>
-        <ReviewRating onChoosingRating={saveProfGeneralRating} title={"המרצה באופן כללי "} ratingsOptions={profRatingsOptions}></ReviewRating>
-        <ReviewRating onChoosingRating={saveProfDifficultyRating} title={"רמת הקושי של המרצה"} ratingsOptions={profDiffOptions}></ReviewRating>
-        <ReviewRating onChoosingRating={saveProfStudentTreatmentRating} title={"יחס המרצה לסטודנטים"} ratingsOptions={profStudentTreatmentOptions}></ReviewRating>
-        <ReviewQuestions onChoosingOption={saveMaterialOnMoodle} title="המרצה מעלה את חומרי הקורס למודל" name="nyku," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
-        <ReviewQuestions onChoosingOption={saveRecordingsAvialable} title="יש הקלטות של הקורס במודל" name="dfd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
-        <ReviewQuestions onChoosingOption={saveWouldTakeAgain} title="הייתי לוקח\ת את הקורס עם המרצה שוב" name="dfgd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
-        <TextAreaWInstrucions onWritingReview={saveFreeInput}></TextAreaWInstrucions>
-        {
-          !canSubmit && 
-          <div className='fill-request'>
-            אנא מלאו את כל השדות
+              });
+            }}
+          >
+            חזור למרצה הקודם
+          </button>
+          <button
+            type="button"
+            className="professor-website-button"
+            onClick={(e) => {
+              navigate("/mainPage");
+            }}
+          >
+            חזור לדף הראשי
+          </button>
+        </div>
+      )}
+      {!isComplete && (
+        <div className="MainAddReview">
+          <div className="bars">
+            <TopBar></TopBar>
+            <ProfBar
+              onChoosingCourse={saveCourse}
+              prof_name={state.profName}
+              course_options={options}
+            ></ProfBar>
+            <ProgressBar
+              height="10px"
+              color="#9391B6"
+              completed={completeness}
+            ></ProgressBar>
           </div>
-        }
-        <button className='submit-button' onClick={submit}>דרגו</button>
-      </div>
-    </div>
-    }
+          <div className="rest-of-page">
+            <ReviewRating
+              onChoosingRating={saveProfGeneralRating}
+              title={"המרצה באופן כללי "}
+              ratingsOptions={profRatingsOptions}
+            ></ReviewRating>
+            <ReviewRating
+              onChoosingRating={saveProfDifficultyRating}
+              title={"רמת הקושי של המרצה"}
+              ratingsOptions={profDiffOptions}
+            ></ReviewRating>
+            <ReviewRating
+              onChoosingRating={saveProfStudentTreatmentRating}
+              title={"יחס המרצה לסטודנטים"}
+              ratingsOptions={profStudentTreatmentOptions}
+            ></ReviewRating>
+            <ReviewQuestions
+              onChoosingOption={saveMaterialOnMoodle}
+              title="המרצה מעלה את חומרי הקורס למודל"
+              name="nyku,"
+              values={choiceSegmentValues}
+              labels={choiceSegmentLabels}
+            ></ReviewQuestions>
+            <ReviewQuestions
+              onChoosingOption={saveRecordingsAvialable}
+              title="יש הקלטות של הקורס במודל"
+              name="dfd,"
+              values={choiceSegmentValues}
+              labels={choiceSegmentLabels}
+            ></ReviewQuestions>
+            <ReviewQuestions
+              onChoosingOption={saveWouldTakeAgain}
+              title="הייתי לוקח\ת את הקורס עם המרצה שוב"
+              name="dfgd,"
+              values={choiceSegmentValues}
+              labels={choiceSegmentLabels}
+            ></ReviewQuestions>
+            <TextAreaWInstrucions
+              onWritingReview={saveFreeInput}
+            ></TextAreaWInstrucions>
+            {!canSubmit && (
+              <div className="fill-request">אנא מלאו את כל השדות</div>
+            )}
+            <button className="submit-button" onClick={submit}>
+              דרגו
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

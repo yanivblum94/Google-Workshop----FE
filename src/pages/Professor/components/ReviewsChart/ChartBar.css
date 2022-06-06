@@ -1,40 +1,40 @@
 .chart-bar {
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    width: 90%;
-    margin-bottom: 10px;
-  }
-  
-  .chart-bar__inner {
-    height: 25px;
-    width: 100%;
-    border: 1px solid #f8f8f8;
-    border-radius: 15px;
-    background-color: white;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    font-weight: bold;
-  }
-  
-  .chart-bar__fill {
-    border-radius: 15px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 90%;
+  margin-bottom: 10px;
+}
 
-    background-color: #003f7d;
-    transition: all 0.3s ease-out;
-  }
-  
-  .chart-bar__label {
-    font-family: 'afek';
-    font-weight: bold;
-    font-size: 28px;
-    text-align: center;
-    color:black;
-    margin-right: 10px;
-    padding-bottom: 5px;
-  }
+.chart-bar__inner {
+  height: 25px;
+  width: 100%;
+  border: 1px solid #f8f8f8;
+  border-radius: 15px;
+  background-color: white;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-weight: bold;
+}
+
+.chart-bar__fill {
+  border-radius: 15px;
+
+  background-color: #003f7d;
+  transition: all 0.3s ease-out;
+}
+
+.chart-bar__label {
+  font-family: "afek";
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  color: black;
+  margin-right: 10px;
+  padding-bottom: 5px;
+}

@@ -2,13 +2,11 @@ import pic from "../images/logo.png";
 import GoogleButton from "react-google-button";
 import "./TopBar.css";
 import { initializeApp } from "firebase/app";
-import { useContext } from 'react';
-import AuthContext from '../../../store/auth-context';
+import { useContext } from "react";
+import AuthContext from "../../../store/auth-context";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { firebaseConfig } from "../firebaseConfig";
 import { Link } from "react-router-dom";
-
-
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
@@ -18,7 +16,7 @@ const TopBar = () => {
   const SignInWithGoogle = () => {
     const provider = new GoogleAuthProvider();
     provider.setCustomParameters({
-      hd: "mail.tau.ac.il",
+      hd: "mail.tau.ac.il"
     });
     signInWithPopup(auth, provider)
       .then((result) => {

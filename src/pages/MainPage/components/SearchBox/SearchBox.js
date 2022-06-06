@@ -35,7 +35,7 @@ const SearchbarDropdown = (props) => {
         />
         <i class="fa-solid fa-magnifying-glass fa-2x"></i>
       </div>
-      {(options.length > 0) &&
+      {options.length > 0 && (
         <ul id="results" className="list-group" ref={ulRef}>
           {options.map((option, index) => {
             return (
@@ -49,21 +49,20 @@ const SearchbarDropdown = (props) => {
                     (Professor) => Professor.Id === propessorId
                   );
                   pId = professorProps[0].Id;
-                  navigate('/professor',
-                    {
-                      state: {
-                        props: { pId }                      }
+                  navigate("/professor", {
+                    state: {
+                      props: { pId }
                     }
-                  )
+                  });
                 }}
-
                 className="list-group-item list-group-item-action"
               >
                 {option.Name + " - " + option.Faculty}
               </button>
             );
           })}
-        </ul>}
+        </ul>
+      )}
     </div>
   );
 };
@@ -82,7 +81,6 @@ function SearchBox() {
     const data = await response.json();
     setProfessors(data);
   }, []);
-
 
   useEffect(() => {
     fetchProfessorsHandler();

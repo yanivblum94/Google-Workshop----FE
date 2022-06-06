@@ -1,16 +1,16 @@
 .container {
-  margin:0;
-    display: flex;
-    flex-direction: column;
-  }
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
 
-.main-page_explanation{
+.main-page_explanation {
   padding-right: 0%;
   margin-left: 20%;
   width: 60%;
   margin-top: 100px;
   direction: rtl;
-  font-family: 'afek';
+  font-family: "afek";
   font-weight: bold;
   font-size: 24px;
   justify-content: center;

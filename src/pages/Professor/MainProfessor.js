@@ -24,19 +24,17 @@ const MainProfessor = () => {
   }, []);
 
   if (professor.length === 0) {
-    return (<h1>Loading</h1>);
-  } 
-    newReviews = professor.Reviews === null ? [] : professor.Reviews ;
-    courses = professor.Courses === null ? [] : professor.Courses ;
-    return (
-      <div>
-        <TopBar></TopBar>
-        <Professor data={professor} />
-        <Reviews 
-        items={newReviews} 
-        courses = {courses}/>
-      </div>
-    );
+    return <h1>Loading</h1>;
+  }
+  newReviews = professor.Reviews === null ? [] : professor.Reviews;
+  courses = professor.Courses === null ? [] : professor.Courses;
+  return (
+    <div>
+      <TopBar></TopBar>
+      <Professor data={professor} />
+      <Reviews items={newReviews} courses={courses} />
+    </div>
+  );
 };
 
 export default MainProfessor;

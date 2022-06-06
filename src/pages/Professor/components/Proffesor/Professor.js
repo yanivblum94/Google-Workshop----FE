@@ -1,32 +1,35 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import {useContext} from 'react';
+import { useContext } from "react";
 import "./Professor.css";
-import RatingChart from '../ReviewsChart/RatingChart';
+import RatingChart from "../ReviewsChart/RatingChart";
 import pic from "../../images/professor_pic.png";
-import StarRating from "../StarRating"; 
+import StarRating from "../StarRating";
 import AuthContext from "../../../../store/auth-context";
 
-const checkHasRated = (reviews, email) =>{
-  for(let i=0; i<reviews.length; i++){
-    if(String(reviews[i].User) === String(email)){
+const checkHasRated = (reviews, email) => {
+  for (let i = 0; i < reviews.length; i++) {
+    if (String(reviews[i].User) === String(email)) {
       return true;
     }
   }
   return false;
-}
+};
 
 const Professor = (props) => {
   const authCtx = useContext(AuthContext);
   let navigate = useNavigate();
-  const reviews = props.data.Reviews === null ? [] : props.data.Reviews ;
+  const reviews = props.data.Reviews === null ? [] : props.data.Reviews;
   const mailto = "mailto:" + props.data.email;
-  const avgRating = "דירוג ממוצע: " + props.data.avgRating + " מתוך " + reviews.length + " דירוגים";
+  const avgRating =
+    "דירוג ממוצע: " +
+    props.data.avgRating +
+    " מתוך " +
+    reviews.length +
+    " דירוגים";
   const website = props.data.WebsiteAddr;
 
-  const ratingValuesArray = reviews.map(rate =>
-    rate.TotalRating
-  );
+  const ratingValuesArray = reviews.map((rate) => rate.TotalRating);
   const pId = props.data.Id;
   const profName = props.data.Name;
   const hasRated = checkHasRated(reviews, authCtx.email);
@@ -44,30 +47,30 @@ const Professor = (props) => {
           </div>
         </div>
         <div className="professor-website-review-and-rating">
-          {(website !== "") &&
+          {website !== "" && (
             <button className="professor-website-button">
-            <a href={website} itemProp="website" title="אתר">
-              אתר המרצה
-            </a>
-          </button>
-          }
-          <button className="rating-button" onClick={(e) => {
-            if(!authCtx.isLoggedIn){
-              alert('not logged in');
-            }
-            else if(hasRated){
-              alert('already reviewed');
-            }
-            else{
-                navigate('/professor/add-review',
-                {
-                  state:{
-                    profId : pId,
-                    profName: profName                  }
-                }
-                )
-              }}}
-              >
+              <a href={website} itemProp="website" title="אתר">
+                אתר המרצה
+              </a>
+            </button>
+          )}
+          <button
+            className="rating-button"
+            onClick={(e) => {
+              if (!authCtx.isLoggedIn) {
+                alert("not logged in");
+              } else if (hasRated) {
+                alert("already reviewed");
+              } else {
+                navigate("/professor/add-review", {
+                  state: {
+                    profId: pId,
+                    profName: profName
+                  }
+                });
+              }
+            }}
+          >
             דרג את המרצה!
           </button>
           <div className="professor-avg-rating">
