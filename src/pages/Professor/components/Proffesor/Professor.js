@@ -69,19 +69,6 @@ const Professor = (props) => {
           דרג את המרצה!
         </button>
         
-        <button className="rating-button-debug" onClick={(e) => {
-          navigate('/professor/add-review',
-            {
-              state: {
-                profId: pId,
-                profName: profName
-              }
-            }
-          )
-        }}
-        >
-          DEBUG דרג את המרצה!
-      </button>
       </div>
 
       <div className="professor-rating">

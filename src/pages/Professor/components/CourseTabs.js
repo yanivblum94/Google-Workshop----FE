@@ -17,7 +17,7 @@ const CourseTabs = (props) => {
     coursesTakeAgainTrues = props.data.CoursesTakeAgainTrues === null ? [0, 0, 0, 0, 0] : props.data.CoursesTakeAgainTrues;
 
     let course_index = 0;
-    let [selectedCourse, setSelectedCourse] = useState(courses[0]);
+    let [selectedCourse, setSelectedCourse] = useState(courses[0].courseName);
     let [filteredReviews, setFilteredReviews] = useState(reviews.filter((review) => {
         return review.Course == courses[0];
     }));
@@ -34,12 +34,12 @@ const CourseTabs = (props) => {
             <div className="courses-filter-tabs">
                 {courses.map((course, index) => {
                     console.log(selectedCourse);
-                    if (course == selectedCourse) {
+                    if (course.courseName == selectedCourse) {
                         course_index = index;
-                        return (<CourseTab selected='selected-tab' name={course} setActiveCourseTab={changeActiveTab}></CourseTab>);
+                        return (<CourseTab selected='selected-tab' name={course.courseName} setActiveCourseTab={changeActiveTab}></CourseTab>);
                     }
                     else {
-                        return (<CourseTab selected='unselected-tab' name={course} setActiveCourseTab={changeActiveTab}></CourseTab>);
+                        return (<CourseTab selected='unselected-tab' name={course.courseName} setActiveCourseTab={changeActiveTab}></CourseTab>);
                     }
                 })}
             </div>
