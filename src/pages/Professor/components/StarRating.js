@@ -6,21 +6,21 @@ const StarRating = (props) => {
     let ind = 0;
 
     while (ind<5){
-        console.log("index is" + ind);
-        console.log("rating is" + leftRating);
+        //console.log("index is" + ind);
+        //console.log("rating is" + leftRating);
         if (leftRating > 0.75){
             starsArray[ind] = "full";
-            console.log("full");
+            //console.log("full");
 
         }
         else if (leftRating > 0.25){
             starsArray[ind] = "half";
-            console.log("half");
+            //console.log("half");
 
         }
         else{
             starsArray[ind] = "empty";
-            console.log("empty");
+            //console.log("empty");
 
         }
         ind++;

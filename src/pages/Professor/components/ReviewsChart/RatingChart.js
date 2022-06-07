@@ -14,15 +14,15 @@ const RatingChart = (props) => {
   const ratingLabels = ["גרוע", "לא טוב", "בסדר", "טוב", "מעולה"];
 
     let totalRatings = props.ratingValuesArray.length;
-    console.log("in rating chart");
+    //console.log("in rating chart");
 
     for(let i = 0; i< props.ratingValuesArray.length;i++){
         ratingDict[props.ratingValuesArray[i]] ++;
     }
 
     const ratingValues = props.ratingValuesArray;
-    console.log(ratingDict);
-    console.log(totalRatings);
+    //console.log(ratingDict);
+    //console.log(totalRatings);
 
   return (
     <div className='chart'>
