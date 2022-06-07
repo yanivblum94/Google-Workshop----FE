@@ -16,7 +16,8 @@ const ReviewsFilter = (props) => {
           <option value="הכול">הכול</option>
           {courses.length > 0 &&
             courses.map((item) => {
-              return <option value={item}> {item} </option>;
+              const viewItem = item.courseNumber + " – " + item.courseName;
+              return <option value={viewItem}> {viewItem} </option>;
             })}
         </select>
       </div>
