@@ -18,14 +18,17 @@ const CourseTabs = (props) => {
     let course_index = 0;
     let [selectedCourse, setSelectedCourse] = useState(courses[0].courseName);
     let [filteredReviews, setFilteredReviews] = useState(reviews.filter((review) => {
-        return review.Course === courses[0];
+        return review.Course === courses[0].courseName;
     }));
 
     const changeActiveTab = (tab) => {
-        setFilteredReviews(props.data.Reviews.filter((review) => {
-            return review.Course === tab.target.innerText;
-        }))
+        if (props.data.Reviews != null) {
+            setFilteredReviews(props.data.Reviews.filter((review) => {
+                return review.Course === tab.target.innerText;
+            }))
+        }
         setSelectedCourse(tab.target.innerText);
+
     }
 
     const findIdxInCourse = (courses, courseName) =>{
@@ -54,6 +57,7 @@ const CourseTabs = (props) => {
                     }
                 })}
             </div>
+            {filteredReviews.length == 0 && <div className="emptyCourseTab">עדיין אין דירוגים עבור קורס זה</div>}
             {filteredReviews.length !== 0 &&
                 <div className="courses-filter-reviews">
                     <div className="courses-filter-coursedata">

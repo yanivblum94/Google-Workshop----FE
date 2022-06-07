@@ -1,33 +1,46 @@
 .unselected-tab{
     display: flex;
     flex-direction: row;
+    text-align: center;
+    cursor: pointer;
+    color: #003f7d;
+    background-color: #9db0c3;
+    font-family: 'Afek';
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0.6rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    min-width: 10rem;
+    width: auto;
+    height: 6rem;
+    border-top-left-radius: 25px;
+    margin-left: 0.5rem;
+}
+
+.selected-tab{
+    position: relative;
+    top: 3.5px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
     cursor: pointer;
     color: #003f7d;
     background-color: white;
     font-family: 'Afek';
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
     padding: 0.6rem;
-    padding-right: 1rem;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    padding-bottom: 20px;
     min-width: 10rem;
     width: auto;
-    height: 4rem;
-    border-top-left-radius: 25px;
-}
-
-.selected-tab{
-    display: flex;
-    flex-direction: row;
-    cursor: pointer;
-    color: white;
-    background-color: #003f7d;
-    font-family: 'Afek';
-    font-size: 28px;
-    font-weight: bold;
-    padding: 0.6rem;
-    padding-right: 1rem;
-    min-width: 10rem;
-    width: auto;
-    height: 4rem;
+    height: 6rem;
     border-top-left-radius: 25px; 
+    border-top: solid #d8e2ec;
+    border-left: solid #d8e2ec;
+    border-right: solid #d8e2ec;
+    margin-left: 0.5rem;
+
 }

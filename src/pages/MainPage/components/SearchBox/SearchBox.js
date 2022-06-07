@@ -18,6 +18,7 @@ const SearchbarDropdown = (props) => {
       ulRef.current.style.display = "flex";
       onInputChange(event);
     });
+  
     document.addEventListener("click", (event) => {
       ulRef.current.style.display = "none";
     });
