@@ -146,9 +146,9 @@
 }
 
 .professor-total-ratings-num{
-  text-decoration: underline;
   color: #003f7d;
   font-weight: bold;
+  font-size: 28px;
   margin-bottom: -2rem;
 }
 
