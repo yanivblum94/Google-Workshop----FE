@@ -20,7 +20,7 @@ const RatingChart = (props) => {
         ratingDict[props.ratingValuesArray[i]] ++;
     }
 
-    const ratingValues = props.ratingValuesArray;
+    //const ratingValues = props.ratingValuesArray;
     //console.log(ratingDict);
     //console.log(totalRatings);
 

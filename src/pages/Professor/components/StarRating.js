@@ -30,10 +30,10 @@ const StarRating = (props) => {
     return (
         <div className="star-rating">
           {starsArray.map((star) => {
-            if (star == "full"){
+            if (star === "full"){
                 return (<i class="fa-solid fa-star fa-xl"></i>); 
             }
-            else if (star == "half"){
+            else if (star === "half"){
                 return (<i class="fa-solid fa-star-half-stroke fa-xl"></i>); 
             }
             else{

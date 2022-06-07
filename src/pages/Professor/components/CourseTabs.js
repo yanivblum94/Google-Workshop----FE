@@ -2,7 +2,6 @@ import "./CourseTabs.css"
 import CourseTab from "./CourseTab";
 import { useState } from "react";
 import ReviewItem from "./Reviews/ReviewItem";
-import { unstable_composeClasses } from "@mui/material";
 
 let reviews, courses, coursesReviewsCounts, coursesDifficultiesSum,
     coursesMaterialsTrues, coursesRecordsTrues, coursesTakeAgainTrues;
@@ -19,7 +18,7 @@ const CourseTabs = (props) => {
     let course_index = 0;
     let [selectedCourse, setSelectedCourse] = useState(courses[0].courseName);
     let [filteredReviews, setFilteredReviews] = useState(reviews.filter((review) => {
-        return review.Course == courses[0];
+        return review.Course === courses[0];
     }));
 
     const changeActiveTab = (tab) => {

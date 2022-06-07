@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Professor from "./components/Proffesor/Professor";
-import Reviews from "./components/Reviews/Reviews";
 import "./MainProfessor.css";
 import TopBar from "../../pages/MainPage/components/TopBar";
 import { useLocation } from "react-router-dom";

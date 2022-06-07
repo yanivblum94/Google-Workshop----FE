@@ -1,5 +1,5 @@
 import './ProfBar.css'
-import React, { Component } from 'react'
+import React from 'react'
 import Select from 'react-select'
 
 

@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from 'react';
 import "./Professor.css";
 import RatingChart from '../ReviewsChart/RatingChart';
-import pic from "../../images/professor_pic.png";
 import StarRating from "../StarRating";
 import AuthContext from "../../../../store/auth-context";
 
@@ -22,7 +21,6 @@ const Professor = (props) => {
   const reviews = props.data.Reviews === null ? [] : props.data.Reviews;
   const ratingValuesNums = props.data.RatingValuesNums == null ? [0, 0, 0, 0, 0] : props.data.RatingValuesNums;
   const mailto = "mailto:" + props.data.email;
-  const avgRating = "דירוג ממוצע: " + props.data.avgRating + " מתוך " + reviews.length + " דירוגים";
   const website = props.data.WebsiteAddr;
 
   const ratingValuesArray = reviews.map(rate =>
@@ -40,7 +38,7 @@ const Professor = (props) => {
           <a className="professor-email" href={mailto} itemProp="email" title={props.data.EmailAddr}>
             {props.data.EmailAddr}
           </a>
-          {(website != "") &&
+          {(website !== "") &&
             <button className="professor-website-button">
               <a href={website} itemProp="website" title="אתר">
                 אתר המרצה
