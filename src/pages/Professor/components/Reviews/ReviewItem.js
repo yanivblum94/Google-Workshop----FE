@@ -1,8 +1,7 @@
-import Card from "../UI/Card";
 import "./ReviewItem.css";
 
 const ReviewItem = (props) => {
-  console.log(props);
+  //console.log(props);
   return (
     <li className="review-item">
       <div className="review-item__comment">

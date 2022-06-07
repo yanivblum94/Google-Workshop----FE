@@ -28,11 +28,7 @@ class Review {
     this.User = user;
   }
 }
-const options = [
-  { value: '03680001', label: 'מתמטיקה בדידה' },
-  { value: '03680002', label: 'מבוא מורחב למדמ״ח' },
-  { value: '03680003', label: 'מבני נתונים' }
-]
+
 
 const profRatingsOptions = [
   "גרוע", "רע", "בסדר", "טוב", "מעולה"
@@ -76,8 +72,15 @@ function MainAddReview() {
   const { state } = useLocation();
   const pId = state.profId;
   const user = authCtx.email;
-
+  const courses = state.courses;
+  //console.log(courses);
+  const options = courses.map((course, index)=>{
+    return { 
+    value: course.courseNumber,
+    label: course.courseName};
+  });
   const saveCourse = (chosenCourse) => {
+    console.log(chosenCourse);
     if (course === -1) {
       setCompleteness(completeness + 100 / 8);
       if (completeness > 90) {
@@ -183,8 +186,9 @@ function MainAddReview() {
     }
       setCanSubmit(1);
       setIsComplete(true);
-      review = new Review(course, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,
+      review = new Review(course.label, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,
           materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput, pId, user);
+      console.log(review);
       const requestOptions = {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },

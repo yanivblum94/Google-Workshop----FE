@@ -30,6 +30,7 @@ const Professor = (props) => {
   );
   const pId = props.data.Id;
   const profName = props.data.Name;
+  const courses = props.data.Courses;
   const hasRated = checkHasRated(reviews, authCtx.email);
   return (
     <body className="professor">
@@ -49,17 +50,18 @@ const Professor = (props) => {
         </div>
         <button className="rating-button" onClick={(e) => {
           if (!authCtx.isLoggedIn) {
-            alert('not logged in');
+            alert('עליך להתחבר על מנת להוסיף תגובה');
           }
           else if (hasRated) {
-            alert('already reviewed');
+            alert('ניתן להוסיף תגובה אחת בלבד לכול מרצה');
           }
           else {
             navigate('/professor/add-review',
               {
                 state: {
                   profId: pId,
-                  profName: profName
+                  profName: profName,
+                  courses : courses
                 }
               }
             )
