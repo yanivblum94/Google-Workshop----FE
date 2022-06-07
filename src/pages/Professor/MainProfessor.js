@@ -4,7 +4,8 @@ import Reviews from "./components/Reviews/Reviews";
 import "./MainProfessor.css";
 import TopBar from "../../pages/MainPage/components/TopBar";
 import { useLocation } from "react-router-dom";
-let newReviews, courses;
+import CourseTabs from "./components/CourseTabs"
+
 
 const MainProfessor = () => {
   const { state } = useLocation();
@@ -25,18 +26,15 @@ const MainProfessor = () => {
 
   if (professor.length === 0) {
     return (<h1>Loading</h1>);
-  } 
-    newReviews = professor.Reviews === null ? [] : professor.Reviews ;
-    courses = professor.Courses === null ? [] : professor.Courses ;
-    return (
-      <div>
-        <TopBar></TopBar>
-        <Professor data={professor} />
-        <Reviews 
-        items={newReviews} 
-        courses = {courses}/>
-      </div>
-    );
+  }
+
+  return (
+    <div className="main-professor">
+      <TopBar></TopBar>
+      <Professor data={professor} />
+      <CourseTabs data={professor}></CourseTabs>
+    </div>
+  );
 };
 
 export default MainProfessor;

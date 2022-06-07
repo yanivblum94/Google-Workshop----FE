@@ -10,6 +10,9 @@ const RatingChart = (props) => {
     4:0,
     5:0
 };
+
+  const ratingLabels = ["גרוע", "לא טוב", "בסדר", "טוב", "מעולה"];
+
     let totalRatings = props.ratingValuesArray.length;
     console.log("in rating chart");
 
@@ -28,7 +31,8 @@ const RatingChart = (props) => {
         key={key}
         value={value}
         maxValue={totalRatings}
-        label={key}
+        label={key + " - " + ratingLabels[key-1]}
+        number={props.numReviews[key-1]}
       />
     ))}
   </div>

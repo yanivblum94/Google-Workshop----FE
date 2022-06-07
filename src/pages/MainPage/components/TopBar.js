@@ -31,7 +31,8 @@ const TopBar = () => {
   };
   return (
     <div className="upper-bar">
-      <Link to="/mainPage">
+      <div className="upper-bar-content">
+      <Link className="logo" to="/mainPage">
         <img src={pic} className="logo-pic" />
       </Link>
       {!authCtx.isLoggedIn && (
@@ -41,7 +42,8 @@ const TopBar = () => {
           onClick={SignInWithGoogle}
         />
       )}
-      {authCtx.isLoggedIn && <p>hi {authCtx.userName}</p>}
+      {authCtx.isLoggedIn && <div className="user-greeting"><i class="fa-solid fa-graduation-cap fa-2x fa-beat"></i>{"  "}Hi, {authCtx.userName}!</div>}
+      </div>
     </div>
   );
 };

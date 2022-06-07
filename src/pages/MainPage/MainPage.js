@@ -9,14 +9,14 @@ import "./MainPage.css";
 
 function MainPage() {
 
-  
+
   return (
     <div>
-      <TopBar/>
+      <TopBar />
       <div className="main-page_explanation">
-      ברוכים הבאים ל־TAU RATE: האתר לדירוג המרצים ועוזרי ההוראה של אוניברסיטת תל־אביב שבו אתם הסטודנטים מדרגים את מה שחשוב באמת!
+        ברוכים הבאים ל־TAU RATE: האתר לדירוג המרצים ועוזרי ההוראה של אוניברסיטת תל־אביב שבו אתם הסטודנטים מדרגים את מה שחשוב באמת!
       </div>
-      <ProfSearch/>
+      <ProfSearch />
     </div>
   );
 }

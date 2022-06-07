@@ -1,4 +1,11 @@
-.container{
-    justify-content: right;
-    width: 100%;
+.main-professor{
+    justify-content: center;
+    background-color: #f4f4f4;
+    padding-bottom: 300px;
+}
+
+.course-tabs-maria{
+    display: flex;
+    flex-direction: row;
+    direction: rtl;
 }

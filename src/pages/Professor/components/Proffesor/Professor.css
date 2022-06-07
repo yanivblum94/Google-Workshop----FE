@@ -1,172 +1,155 @@
 .professor {
-  padding: 1rem;
-  background-color: #ffffff;
-  margin: 2rem auto;
-  width: 60rem;
-  max-width: 95%;
+  background-color: #f5f5f5;
+  margin-top: 2rem;
   direction: rtl;
+  display: flex;
+  flex-direction: row;
   font-family: 'Gloria', sans-serif;
-  /* float: right; */
-  display: flex;
-  flex-direction: row;
+  justify-content: center;
 }
 
-.professor-picture{
-  width: 200px;
-  height: 200px;
-  border-radius: 100%;
-  border: solid #24292e;
+.professor-details {
+  justify-content: right;
+  justify-items: right;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
 }
 
-.professor-details{
+.professor-name-and-email-and-website {
+  background-color: white;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
   display: flex;
   flex-direction: column;
-}
-.professor-details-first{
-  display: flex;
-  flex-direction: row;
-}
-.professor-name-and-email{
-  display: flex;
-  flex-direction: column;
-  width: 500px;
+  width: 30rem;
+  height: auto;
+  min-height: 10rem;
+  max-height: 20rem;
   margin-top: 50px;
   align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 10px 2px #CCCCCC;
+  margin-bottom: 2rem;
 }
 
-.professor-name{
-font-family: "gloria";
-font-weight: bold;
-font-size: 24px;
-}
-
-.horizontal-line{
-  border-top: solid black;
-  width: 250px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.professor-email{
+.professor-name {
   font-family: "gloria";
-  font-size: 18px;
-  margin-right: 50px;
-  }
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
 
-.professor-website-review-and-rating{
+.professor-email {
+  font-family: "gloria";
+  font-size: 20px;
+}
+
+.professor-rating {
   display: flex;
+  margin-bottom: 0px;
+  margin-left: 12rem;
   flex-direction: column;
-  width: 200px;
+  align-content: center;
   align-items: center;
   text-align: center;
+  justify-content: center;
   font-family: 'afek';
   font-size: 24px;
-  }
-.professor-website-button{
-  width: 180px;
+}
+
+.professor-website-button {
   background-color: #d8e2ec;
   border-radius: 25px;
   margin-top: 20px;
-  height: 50px;
 }
-.rating-button{
-  width: 250px;
+
+.rating-button {
+  width: 20rem;
   color: white;
   background-color: #003f7d;
   border-radius: 25px;
-  margin-top: 20px;
   height: 50px;
-  padding: 5px;
 }
 
-.professor-avg-rating{
-  margin-top: -200px;
-  margin-left: -780px;
+.rating-button-debug{
+  background-color: red;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.professor-avg-rating {
   align-items: center;
   font-family: 'afek';
   font-size: 96px;
   display: flex;
   flex-direction: row;
   direction: ltr;
-  width: auto;
+  margin: 0%;
+  height: 12rem;
 }
 
-.rating-numerator{
+.rating-numerator {
   font-size: 172px;
   font-weight: bold;
 }
 
-.professor-ratingChart{
-    float: left;
-    width: 50%;
-    background-color: #a7a7a7;
+.professor-rating-chart {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.professor-additional-ratings{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  direction: ltr;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.professor-treat-rating{
+  align-items: top;
+}
+
+.treat-rating{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+}
+
+.treat-rating-numerator{
+  font-weight: bold;
+  font-size: 52px;
+}
+
+.treat-text{
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  font-size: 1rem;
+
+}
+.vertical-line{
+  width: 1px;
+  height: 5rem;
+  border-left: solid black;
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
 
 }
 
-.professor-element{
-    padding: 0.7rem;
-    /* background-color: #a7a7a7; */
-
-}
-
-/* CSS */
-.ratingButton {
-  appearance: none;
-  background-color: #eb5e28;
-  border: 1px solid rgba(27, 31, 35, 0.15);
-  border-radius: 6px;
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
-    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
-  box-sizing: border-box;
-  color: #24292e;
-  cursor: pointer;
-  display: inline-block;
-  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  list-style: none;
-  padding: 6px 16px;
-  position: relative;
-  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  white-space: nowrap;
-  word-wrap: break-word;
-}
-
-.button-4:hover {
-  background-color: #f3f4f6;
-  text-decoration: none;
-  transition-duration: 0.1s;
-}
-
-.button-4:disabled {
-  background-color: #fafbfc;
-  border-color: rgba(27, 31, 35, 0.15);
-  color: #959da5;
-  cursor: default;
-}
-
-.button-4:active {
-  background-color: #edeff2;
-  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
-  transition: none 0s;
-}
-
-.button-4:focus {
-  outline: 1px transparent;
-}
-
-.button-4:before {
-  display: none;
-}
-
-.button-4:-webkit-details-marker {
-  display: none;
+.professor-total-ratings-num{
+  text-decoration: underline;
+  color: #003f7d;
+  font-weight: bold;
+  margin-bottom: -2rem;
 }
 
 @font-face {

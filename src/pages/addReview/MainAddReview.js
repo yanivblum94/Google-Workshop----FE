@@ -84,7 +84,7 @@ function MainAddReview() {
         setIsComplete(1);
       }
     }
-    setCourse(chosenCourse.target.value);
+    setCourse(chosenCourse);
   }
 
   const saveProfGeneralRating = (chosenRating) => {
