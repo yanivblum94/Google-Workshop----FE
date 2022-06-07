@@ -1,6 +1,4 @@
 .unselected-tab{
-    position: relative;
-    top: 19px;
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -15,10 +13,11 @@
     padding-left: 1.5rem;
     min-width: 10rem;
     width: auto;
-    height: 6rem;
+    height: inherit;
     border-top-left-radius: 25px;
     margin-left: 0.1rem;
     border:solid #a8b5c1;
+    border-bottom: none;
 }
 
 .selected-tab{
@@ -31,19 +30,17 @@
     color: #003f7d;
     background-color: white;
     font-family: 'Afek';
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     padding: 0.6rem;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
-    padding-bottom: 20px;
+    padding-bottom: 2rem;
     min-width: 10rem;
     width: auto;
-    height: 7rem;
     border-top-left-radius: 25px; 
     border-top: solid #a8b5c1;
     border-left: solid #a8b5c1;
     border-right: solid #a8b5c1;
     margin-left: 0.1rem;
-
 }

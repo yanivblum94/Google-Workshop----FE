@@ -2,13 +2,16 @@
     width: 70%;
     margin-left: 15%;
     margin-top: 3rem;
-
+    min-height: max-content;
 }
 
 .courses-filter-tabs{
     display: flex;
     flex-direction: row;
     direction: rtl;
+    min-height: max-content;
+    justify-content: bottom;
+    align-items:flex-end ;
 }
 
 .courses-filter-reviews{
@@ -92,5 +95,4 @@
     font-weight: bold;
     font-size: 26px;
     border: solid #a8b5c1;
-
 }
