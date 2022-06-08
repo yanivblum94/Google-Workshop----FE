@@ -4,7 +4,7 @@
     text-align: center;
     cursor: pointer;
     color: #003f7d;
-    background-color: #9db0c3;
+    background-color: #bccfe2;
     font-family: 'Afek';
     font-size: 24px;
     font-weight: bold;
@@ -13,14 +13,16 @@
     padding-left: 1.5rem;
     min-width: 10rem;
     width: auto;
-    height: 6rem;
+    height: inherit;
     border-top-left-radius: 25px;
-    margin-left: 0.5rem;
+    margin-left: 0.1rem;
+    border:solid #a8b5c1;
+    border-bottom: none;
 }
 
 .selected-tab{
     position: relative;
-    top: 3.5px;
+    top: 0.2rem;
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -28,19 +30,17 @@
     color: #003f7d;
     background-color: white;
     font-family: 'Afek';
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
     padding: 0.6rem;
     padding-right: 1.5rem;
     padding-left: 1.5rem;
-    padding-bottom: 20px;
+    padding-bottom: 2rem;
     min-width: 10rem;
     width: auto;
-    height: 6rem;
     border-top-left-radius: 25px; 
-    border-top: solid #d8e2ec;
-    border-left: solid #d8e2ec;
-    border-right: solid #d8e2ec;
-    margin-left: 0.5rem;
-
+    border-top: solid #a8b5c1;
+    border-left: solid #a8b5c1;
+    border-right: solid #a8b5c1;
+    margin-left: 0.1rem;
 }
