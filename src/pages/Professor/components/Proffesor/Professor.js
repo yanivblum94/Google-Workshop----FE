@@ -48,10 +48,10 @@ const Professor = (props) => {
         </div>
         <button className="rating-button" onClick={(e) => {
           if (!authCtx.isLoggedIn) {
-            alert('עליך להתחבר על מנת להוסיף תגובה');
+            alert('עליך להתחבר כדי להוסיף תגובה');
           }
           else if (hasRated) {
-            alert('ניתן להוסיף תגובה אחת בלבד לכול מרצה');
+            alert('ניתן להוסיף תגובה אחת בלבד לכל מרצה');
           }
           else {
             navigate('/professor/add-review',
