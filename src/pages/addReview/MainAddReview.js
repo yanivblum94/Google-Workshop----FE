@@ -256,8 +256,8 @@ function MainAddReview() {
         <ProgressBar  height="10px" color="#9391B6" completed={completeness}></ProgressBar>
       </div>
       <div className='rest-of-page'>
-        <ReviewRating onChoosingRating={saveProfGeneralRating} title={"המרצה באופן כללי "} ratingsOptions={profRatingsOptions}></ReviewRating>
-        <ReviewRating onChoosingRating={saveProfDifficultyRating} title={"רמת הקושי של המרצה"} ratingsOptions={profDiffOptions}></ReviewRating>
+        <ReviewRating onChoosingRating={saveProfGeneralRating} title={"המרצה באופן כללי"} ratingsOptions={profRatingsOptions}></ReviewRating>
+        <ReviewRating onChoosingRating={saveProfDifficultyRating} title={"רמת הקושי של הקורס"} ratingsOptions={profDiffOptions}></ReviewRating>
         <ReviewRating onChoosingRating={saveProfStudentTreatmentRating} title={"יחס המרצה לסטודנטים"} ratingsOptions={profStudentTreatmentOptions}></ReviewRating>
         <ReviewQuestions onChoosingOption={saveMaterialOnMoodle} title="המרצה מעלה את חומרי הקורס למודל" name="nyku," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
         <ReviewQuestions onChoosingOption={saveRecordingsAvialable} title="יש הקלטות של הקורס במודל" name="dfd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
