@@ -23,6 +23,7 @@
     text-align: center;
     align-content: center;
     width: 100%;
+    overflow: hidden;
 }
 
 .divided-card_2ndhalf{
@@ -38,3 +39,49 @@
     height: 60px;
     width: -10px;
   }
+
+@media only screen and (width: 1536px) {
+    .divided-card{
+        font-size: 20px;
+        margin-bottom: 1.5%;
+        width: 70%;
+        margin-right: 15%;
+    }
+}
+
+@media only screen and (width: 1280px) {
+    .divided-card{
+        font-size: 20px;
+        margin-bottom: 1.5%;
+        width: 78%;
+        margin-right: 11%;
+    }
+}
+
+@media only screen and (min-width: 1097px) and (max-width: 1098px){
+    .divided-card{
+        font-size: 20px;
+        margin-bottom: 1.5%;
+        width: 86%;
+        margin-right: 7%;
+    }
+}
+
+@media only screen and (width: 960px){
+    .divided-card{
+        font-size: 20px;
+        margin-bottom: 1.5%;
+        width: 90%;
+        margin-right: 5%;
+    }
+}
+
+
+@media only screen and (max-width: 768px){
+    .divided-card{
+        font-size: 20px;
+        margin-bottom: 1.5%;
+        width: 95%;
+        margin-right: 2.5%;
+    }
+}

@@ -24,62 +24,147 @@
     src: url('fonts/afek/afek-bold-aaa.otf');
     font-weight: bold;
   }
-  
 
-.rest-of-page{
+  .rest-of-page{
     margin-top: 11%;
     direction: rtl;
 }
 
 .bars{
-    direction: rtl;
-    top:0;
-    width: 100%;
-    height: 20%;
-    position: fixed;
+  direction: rtl;
+  top:0;
+  width: 100%;
+  height: 20%;
+  position: fixed;
 }
 
 .submit-button{
-    margin: 30px;
-    margin-right:40%;
-    width: 20%;
-    height: 72px;
-    background-color: #003f7d;
-    font-family: 'Gloria';
-    font-weight: bold;
-    font-size: 36px;
-    color: white;
-    align-items: center;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px 2px #999999;
-    border-color: #003f7d;
-    cursor: pointer;
+  margin: 30px;
+  margin-right:40%;
+  width: 20%;
+  height: 72px;
+  background-color: #003f7d;
+  font-family: 'Gloria';
+  font-weight: bold;
+  font-size: 36px;
+  color: white;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 2px #999999;
+  border-color: #003f7d;
+  cursor: pointer;
 }
 
 .submit-button:hover{
-  background: #0060C0;
-  transform: scale(1.2);
+background: #0060C0;
+transform: scale(1.2);
 }
 
 .fill-request{
-  font-size: 24px;
-  font-family: 'gloria';
-  font-weight: bold;
-  color: red;
-  text-align: center;
+font-size: 24px;
+font-family: 'gloria';
+font-weight: bold;
+color: red;
+text-align: center;
 }
 
 .thanks-page{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+justify-items: center;
 }
 
 .professor-website-button{
-  font-family: 'Gloria';
-  width: 300px;
-  font-weight: bold;
-  font-size: 18px;
+font-family: 'Gloria';
+width: 300px;
+font-weight: bold;
+font-size: 18px;
 }
+
+@media only screen and (width: 1780px){
+  .rest-of-page{
+    margin-top: 12%;
+  }
+}
+
+  @media only screen and (width: 1536px){
+    .rest-of-page{
+      margin-top: 13%;
+    }
+  }
+
+  @media only screen and (width: 1280px){
+    .rest-of-page{
+      margin-top: 15%;
+    }
+  }
+
+  @media only screen and (min-width: 1097px) and (max-width: 1098px){
+    .rest-of-page{
+      margin-top: 16%;
+    }
+  }
+
+  @media only screen and (min-width: 1097px) and (max-width: 1098px){
+    .rest-of-page{
+      margin-top: 16%;
+    }
+  }
+
+  @media only screen and (width: 960px){
+    .rest-of-page{
+      margin-top: 17%;
+    }
+  }
+
+  @media only screen and (width: 768px){
+    .rest-of-page{
+      margin-top: 18%;
+    }
+  }
+
+  
+  @media only screen and (width: 640px){
+    .rest-of-page{
+      margin-top: 20%;
+    }
+
+    .submit-button{
+      margin-right:25%;
+      margin-top: 0%;
+      width: 50%;
+
+    }
+  }
+
+
+  
+  @media only screen and (width: 480px){
+    .rest-of-page{
+      margin-top: 22%;
+    }
+
+    .submit-button{
+      margin-right:25%;
+      margin-top: 0%;
+      width: 50%;
+
+    }
+  }
+
+  
+  @media only screen and (width: 384px){
+    .rest-of-page{
+      margin-top: 25%;
+    }
+
+    .submit-button{
+      margin-right:25%;
+      margin-top: 0%;
+      width: 50%;
+
+    }
+  }
+

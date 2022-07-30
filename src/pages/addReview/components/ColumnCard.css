@@ -10,5 +10,44 @@
     width: 60%;
     padding: 20px;
     margin-right: 20%;
-
 }
+
+@media only screen and (width: 1536px){
+    .column-card {
+        width: 70%;
+        margin-right: 15%;
+
+    }
+  }
+
+  @media only screen and (width: 1280px){
+    .column-card {
+        width: 78%;
+        margin-right: 11%;
+
+    }
+  }
+
+  @media only screen and (min-width: 1097px) and (max-width: 1098px){
+    .column-card {
+        width: 86%;
+        margin-right: 7%;
+
+    }
+  }
+
+  @media only screen and (width: 960px){
+    .column-card {
+        width: 90%;
+        margin-right: 5%;
+
+    }
+  }
+
+  @media only screen and (max-width: 768px){
+    .column-card {
+        width: 95%;
+        margin-right: 2.5%;
+
+    }
+  }

@@ -44,3 +44,28 @@
     border-right: solid #a8b5c1;
     margin-left: 0.1rem;
 }
+
+@media only screen and (max-width: 1098px){
+
+.unselected-tab{
+    position: initial;
+    padding: 0.6rem;
+    height: inherit;
+    border-top-left-radius: 0px;
+    border-bottom: solid #a8b5c1;
+    margin-bottom: 2%;
+    margin-right: 2%;
+
+}
+
+.selected-tab{
+    transform: scale(1.05);
+    position: initial;
+    top: 0rem;
+    padding-bottom: 0.6rem;
+    border-top-left-radius: 0px;
+    border-bottom: solid #a8b5c1;
+    margin-bottom: 2%;
+    margin-right: 2%;
+}
+}

@@ -9,9 +9,9 @@ import { firebaseConfig } from "../firebaseConfig";
 import { Link } from "react-router-dom";
 
 
-
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+
 const TopBar = () => {
   const authCtx = useContext(AuthContext);
 
@@ -29,21 +29,23 @@ const TopBar = () => {
         console.log(error);
       });
   };
+  
   return (
-    <div className="upper-bar">
-      <div className="upper-bar-content">
-      <Link className="logo" to="/mainPage">
-        <img src={pic} className="logo-pic" />
+    <div className="top-bar_Maria">
+
+      <Link className="top-bar__logo" to="/mainPage">
+        <img src={pic} className="top-bar__logo-pic" />
       </Link>
+
       {!authCtx.isLoggedIn && (
         <GoogleButton
-          className="google-button"
+          className="top-bar__google-button"
           type="light"
           onClick={SignInWithGoogle}
         />
       )}
-      {authCtx.isLoggedIn && <div className="user-greeting"><i class="fa-solid fa-graduation-cap fa-2x fa-beat"></i>{"  "}Hi, {authCtx.userName}!</div>}
-      </div>
+      {authCtx.isLoggedIn && <div className="top-bar__user-greeting"><i class="fa-solid fa-graduation-cap fa-2x fa-beat"></i>{"  "}Hi, {authCtx.userName}!</div>}
+
     </div>
   );
 };

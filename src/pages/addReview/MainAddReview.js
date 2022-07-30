@@ -4,7 +4,7 @@ import './MainAddReview.css'
 import ProfBar from './components/ProfBar'
 import ReviewRating from './components/ReviewRating';
 import ReviewQuestions from './components/ReviewQuestions';
-import TopBar from './components/TopBar';
+import TopBar from '../../pages/MainPage/components/TopBar';
 import ProgressBar from "react-progressbar";
 import { useState, useContext } from 'react';
 import { useLocation, useNavigate } from "react-router-dom";
@@ -257,7 +257,7 @@ function MainAddReview() {
       </div>
       <div className='rest-of-page'>
         <ReviewRating onChoosingRating={saveProfGeneralRating} title={"המרצה באופן כללי "} ratingsOptions={profRatingsOptions}></ReviewRating>
-        <ReviewRating onChoosingRating={saveProfDifficultyRating} title={"רמת הקושי של המרצה"} ratingsOptions={profDiffOptions}></ReviewRating>
+        <ReviewRating onChoosingRating={saveProfDifficultyRating} title={"רמת הקושי של הקורס"} ratingsOptions={profDiffOptions}></ReviewRating>
         <ReviewRating onChoosingRating={saveProfStudentTreatmentRating} title={"יחס המרצה לסטודנטים"} ratingsOptions={profStudentTreatmentOptions}></ReviewRating>
         <ReviewQuestions onChoosingOption={saveMaterialOnMoodle} title="המרצה מעלה את חומרי הקורס למודל" name="nyku," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
         <ReviewQuestions onChoosingOption={saveRecordingsAvialable} title="יש הקלטות של הקורס במודל" name="dfd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>

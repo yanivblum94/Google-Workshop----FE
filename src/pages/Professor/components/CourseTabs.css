@@ -96,3 +96,51 @@
     font-size: 26px;
     border: solid #a8b5c1;
 }
+
+@media only screen and (max-width: 1098px){
+
+    .courses-filter{
+        width: 98%;
+        margin-left: 1%;
+        margin-top: 3rem;
+        min-height: max-content;
+    }
+    
+    .courses-filter-tabs{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .courses-filter-coursedata{
+        height: 40vh;
+    }
+
+    .course_would_take-again{
+        margin-right: 3% ;
+    }
+    
+    .course_would_take-again-percent{
+        font-size: 2rem;
+    }
+    
+    .course_difficulty{
+        margin-right: 3% ;
+    }
+
+    
+    .course_moodle-material{
+        margin-right: 3% ;
+
+    }
+    
+    .course_moodle-records{
+        margin-right: 3% ;
+ 
+    }
+    
+}
+
+@media only screen and (max-width: 640px){
+    .courses-filter-coursedata{
+        height: 100vh;
+    }
+}

@@ -12,10 +12,12 @@
 }
 
 .review-item__comment {
+  direction: rtl;
   font-family: 'afek';
   display: flex;
-  flex-flow: wrap;
+  text-align: right;
   margin-bottom: 14px;
+  max-width: max-content;
   font-size: 1.5rem;
   margin-right: 16px;
 }

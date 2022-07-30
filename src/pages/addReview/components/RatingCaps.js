@@ -23,7 +23,7 @@ const RatingCaps = (props) => {
             <button
               type="button"
               key={index}
-              className={index <= (hover || rating) ? "on" : "off"}
+              className={"graduation-cap-button-" + (index <= (hover || rating) ? "on" : "off")}
               onClick={() => setAndUpdateRating(index)}
               onMouseEnter={() => hoverRating(index)}
               onMouseLeave={() => hoverRating(rating)}
