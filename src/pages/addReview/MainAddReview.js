@@ -195,7 +195,7 @@ function MainAddReview() {
         body: JSON.stringify(review) 
     };
     try {
-      const res = await fetch(`http://localhost:9842/api/professor`, requestOptions
+      const res = await fetch(`https://tau-rate-356509.appspot.com/api/professor`, requestOptions
         );
       if (!res.ok) {
         const message = `An error has occured: ${res.status} - ${res.statusText}`;
