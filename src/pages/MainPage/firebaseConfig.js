@@ -1,8 +1,8 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyBR-F8WhPRa_mgyghCBOPYPL80LAHjVuig",
-  authDomain: "taurate-15ce8.firebaseapp.com",
-  projectId: "taurate-15ce8",
-  storageBucket: "taurate-15ce8.appspot.com",
-  messagingSenderId: "720256723995",
-  appId: "1:720256723995:web:85f5ec9db63376c3cf5cbe"
+  apiKey: "AIzaSyCpUR5lusOOlGNr1IPIW7M6xdfC1v9KnMc",
+  authDomain: "taurate-new.firebaseapp.com",
+  projectId: "taurate-new",
+  storageBucket: "taurate-new.appspot.com",
+  messagingSenderId: "246404620023",
+  appId: "1:246404620023:web:8966b287a1d4ef8a51bdf2"
 };
