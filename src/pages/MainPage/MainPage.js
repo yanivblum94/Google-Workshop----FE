@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React from 'react';
 import ProfSearch from "./components/ProfSearch/ProfSearch";
 import TopBar from "./components/TopBar/TopBar";
 

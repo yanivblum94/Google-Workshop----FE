@@ -1,5 +1,4 @@
 import "./CourseTab.css"
-import { useState } from "react";
 
 
 const CourseTab = (props) => {

@@ -1,5 +1,3 @@
-/* origin was App.css in Maria's branch */
-
 import './MainAddReview.css'
 import ProfBar from './components/ProfBar/ProfBar'
 import ReviewRating from './components/ReviewRating/ReviewRating';
