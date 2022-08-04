@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import ProfSearch from "./components/ProfSearch";
-import Header from "../Professor/components/Header/Header"
-import TopBar from "./components/TopBar";
+import ProfSearch from "./components/ProfSearch/ProfSearch";
+import TopBar from "./components/TopBar/TopBar";
 
 import "./MainPage.css";
 

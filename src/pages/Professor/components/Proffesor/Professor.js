@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from 'react';
 import "./Professor.css";
 import RatingChart from '../ReviewsChart/RatingChart';
-import StarRating from "../StarRating";
+import StarRating from "../StarRating/StarRating";
 import AuthContext from "../../../../store/auth-context";
 
 const checkHasRated = (reviews, email) => {
@@ -59,26 +59,11 @@ const Professor = (props) => {
                 state: {
                   profId: pId,
                   profName: profName,
-                  courses : courses
+                  courses: courses
                 }
               }
             )
           }
-        }}
-        >
-          דרג את המרצה!
-        </button>
-        <button className="rating-button" onClick={(e) => {
-            navigate('/professor/add-review',
-              {
-                state: {
-                  profId: pId,
-                  profName: profName,
-                  courses : courses
-                }
-              }
-            )
-          
         }}
         >
           דרג את המרצה!

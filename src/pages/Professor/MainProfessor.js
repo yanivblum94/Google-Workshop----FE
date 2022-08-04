@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Professor from "./components/Proffesor/Professor";
 import "./MainProfessor.css";
-import TopBar from "../../pages/MainPage/components/TopBar";
+import TopBar from "../../pages/MainPage/components/TopBar/TopBar";
 import { useLocation } from "react-router-dom";
-import CourseTabs from "./components/CourseTabs"
+import CourseTabs from "./components/CourseTabs/CourseTabs"
 
 
 const MainProfessor = () => {
@@ -24,7 +24,7 @@ const MainProfessor = () => {
   }, []);
 
   if (professor.length === 0) {
-    return (<h1>Loading</h1>);
+    return (<h1></h1>);
   }
 
   return (

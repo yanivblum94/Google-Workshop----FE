@@ -1,0 +1,73 @@
+.review-item {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  justify-items: right;
+  align-items: right;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  direction: rtl;
+  border-radius: 20px;
+}
+
+.review-item__comment {
+  direction: rtl;
+  font-family: 'afek';
+  display: flex;
+  text-align: right;
+  margin-bottom: 14px;
+  max-width: max-content;
+  font-size: 1.5rem;
+  margin-right: 16px;
+}
+
+.review-item__comment-title {
+  text-decoration: underline;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.review-item__ratingInfo {
+  background-color: #ebeff4;
+  border-radius: 10px;
+  width: 15rem;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Afek", sans-serif;
+  justify-content: center;
+  direction: rtl;
+}
+
+.review-item__ratings {
+  color: black;
+  font-size: 1.7rem;
+}
+
+
+
+@font-face {
+  font-family: "Gloria";
+  src: url("/src/fonts/gloria/gloria-regular-aaa.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gloria";
+  src: url("/src/fonts/gloria/gloria-bold-aaa.otf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Afek";
+  src: url("/src/fonts/afek/afek-regular-aaa.otf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Afek";
+  src: url("/src/fonts/afek/afek-bold-aaa.otf");
+  font-weight: bold;
+}

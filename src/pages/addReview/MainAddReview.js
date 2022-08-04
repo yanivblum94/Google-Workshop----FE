@@ -1,15 +1,15 @@
 /* origin was App.css in Maria's branch */
 
 import './MainAddReview.css'
-import ProfBar from './components/ProfBar'
-import ReviewRating from './components/ReviewRating';
-import ReviewQuestions from './components/ReviewQuestions';
-import TopBar from '../../pages/MainPage/components/TopBar';
+import ProfBar from './components/ProfBar/ProfBar'
+import ReviewRating from './components/ReviewRating/ReviewRating';
+import ReviewQuestions from './components/ReviewQuestions/ReviewQuestions';
+import TopBar from '../../pages/MainPage/components/TopBar/TopBar';
 import ProgressBar from "react-progressbar";
 import { useState, useContext } from 'react';
 import { useLocation, useNavigate } from "react-router-dom";
-import TextAreaWInstrucions from './components/TextAreaWInstructions';
-import Thanks from './components/Thanks';
+import TextAreaWInstrucions from './components/TextAreaWInstructions/TextAreaWInstructions';
+import Thanks from './components/Thanks/Thanks';
 import AuthContext from '../../store/auth-context';
 import '../Professor/components/Proffesor/Professor.css'
 
@@ -49,8 +49,8 @@ const choiceSegmentValues = [
   true, false
 ]
 
-const badWordsList =["זונה", "ז*נה", "שרמיט", "שרמוט", "שרמוטה", "זבל", "מטומטם", "דביל", "כלב", "מניאק", "מנאייק", "מנאיק", "מאניאק",
-"אוטיסט", "מפגר", "אידיוט", "אדיוט", "מזדיין", "מזדין", "מיזדיין", "זין", "מיזדין", "שמוק", "צ'אחלה", "צאחלה", "ערס"]
+const badWordsList = ["זונה", "ז*נה", "שרמיט", "שרמוט", "שרמוטה", "זבל", "מטומטם", "דביל", "כלב", "מניאק", "מנאייק", "מנאיק", "מאניאק",
+  "אוטיסט", "מפגר", "אידיוט", "אדיוט", "מזדיין", "מזדין", "מיזדיין", "זין", "מיזדין", "שמוק", "צ'אחלה", "צאחלה", "ערס"]
 
 function MainAddReview() {
   let review;
@@ -74,10 +74,11 @@ function MainAddReview() {
   const user = authCtx.email;
   const courses = state.courses;
   //console.log(courses);
-  const options = courses.map((course, index)=>{
-    return { 
-    value: course.courseNumber,
-    label: course.courseName};
+  const options = courses.map((course, index) => {
+    return {
+      value: course.courseNumber,
+      label: course.courseName
+    };
   });
   const saveCourse = (chosenCourse) => {
     console.log(chosenCourse);
@@ -151,8 +152,8 @@ function MainAddReview() {
   }
 
   const saveFreeInput = (writtenInput) => {
-    if (writtenInput.target.value.length >= 20){
-      if (freeInput === -1){
+    if (writtenInput.target.value.length >= 20) {
+      if (freeInput === -1) {
         setCompleteness(completeness + 100 / 8);
         if (completeness > 90) {
           setIsComplete(1);
@@ -160,119 +161,119 @@ function MainAddReview() {
       }
       setFreeInput(writtenInput.target.value);
     }
-    else{
+    else {
       setFreeInput(-1);
-      if (freeInput !== -1){
+      if (freeInput !== -1) {
         setCompleteness(completeness - (100 / 8));
         setIsComplete(0);
       }
     }
   }
 
-  const hasBadWord = () =>{
-    for(let i=0; i<badWordsList.length; i++){
-      if(freeInput.includes(badWordsList[i])){
+  const hasBadWord = () => {
+    for (let i = 0; i < badWordsList.length; i++) {
+      if (freeInput.includes(badWordsList[i])) {
         return true;
       }
     }
     return false;
   }
 
-  async function submit(){
+  async function submit() {
     if (completeness === 100) {
-    if(hasBadWord()){
-      alert('נא להשתמש במילים ראויות בתגובה');
-      return
-    }
+      if (hasBadWord()) {
+        alert('נא להשתמש במילים ראויות בתגובה');
+        return
+      }
       setCanSubmit(1);
       setIsComplete(true);
       review = new Review(course.label, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,
-          materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput, pId, user);
+        materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput, pId, user);
       console.log(review);
       const requestOptions = {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(review) 
-    };
-    try {
-      const res = await fetch(`http://localhost:9842/api/professor`, requestOptions
-        );
-      if (!res.ok) {
-        const message = `An error has occured: ${res.status} - ${res.statusText}`;
-        throw new Error(message);
-      }
-      const data = await res.json();
-      const result = {
-        status: res.status + "-" + res.statusText,
-        headers: { "Content-Type": res.headers.get("Content-Type") },
-        data: data,
+        body: JSON.stringify(review)
       };
-      setPutResult(result);
-    } catch (err) {
-      setPutResult(err.message);
+      try {
+        const res = await fetch(`http://localhost:9842/api/professor`, requestOptions
+        );
+        if (!res.ok) {
+          const message = `An error has occured: ${res.status} - ${res.statusText}`;
+          throw new Error(message);
+        }
+        const data = await res.json();
+        const result = {
+          status: res.status + "-" + res.statusText,
+          headers: { "Content-Type": res.headers.get("Content-Type") },
+          data: data,
+        };
+        setPutResult(result);
+      } catch (err) {
+        setPutResult(err.message);
+      }
     }
-  }
-    else{
+    else {
       setCanSubmit(0);
     }
   }
 
-  
+
   return (
     <div>
-    {
-      isComplete && 
-      <div className='thanks-page'>
-      <Thanks></Thanks>
-      <button
-              type="button"
-              className="professor-website-button"
-              onClick={(e) => {
-                navigate('/professor',
+      {
+        isComplete &&
+        <div className='thanks-page'>
+          <Thanks></Thanks>
+          <button
+            type="button"
+            className="professor-website-button"
+            onClick={(e) => {
+              navigate('/professor',
                 {
-                  state:{
-                    props : {pId}
+                  state: {
+                    props: { pId }
                   }
                 }
-                )
-              }}
-              >חזור למרצה הקודם</button>
-              <button
-              type="button"
-              className="professor-website-button"
-              onClick={(e) => {
-                navigate('/mainPage'
-                )
-              }}
-              >חזור לדף הראשי</button>
-      </div>
-    }
-    {
-      !isComplete &&
-      <div className='MainAddReview'>
-      <div className='bars'>
-        <TopBar></TopBar>
-        <ProfBar onChoosingCourse={saveCourse} prof_name={state.profName} course_options={options}></ProfBar>
-        <ProgressBar  height="10px" color="#9391B6" completed={completeness}></ProgressBar>
-      </div>
-      <div className='rest-of-page'>
-        <ReviewRating onChoosingRating={saveProfGeneralRating} title={"המרצה באופן כללי "} ratingsOptions={profRatingsOptions}></ReviewRating>
-        <ReviewRating onChoosingRating={saveProfDifficultyRating} title={"רמת הקושי של הקורס"} ratingsOptions={profDiffOptions}></ReviewRating>
-        <ReviewRating onChoosingRating={saveProfStudentTreatmentRating} title={"יחס המרצה לסטודנטים"} ratingsOptions={profStudentTreatmentOptions}></ReviewRating>
-        <ReviewQuestions onChoosingOption={saveMaterialOnMoodle} title="המרצה מעלה את חומרי הקורס למודל" name="nyku," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
-        <ReviewQuestions onChoosingOption={saveRecordingsAvialable} title="יש הקלטות של הקורס במודל" name="dfd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
-        <ReviewQuestions onChoosingOption={saveWouldTakeAgain} title="הייתי לוקח\ת את הקורס עם המרצה שוב" name="dfgd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
-        <TextAreaWInstrucions onWritingReview={saveFreeInput}></TextAreaWInstrucions>
-        {
-          !canSubmit && 
-          <div className='fill-request'>
-            אנא מלאו את כל השדות
+              )
+            }}
+          >חזור למרצה הקודם</button>
+          <button
+            type="button"
+            className="professor-website-button"
+            onClick={(e) => {
+              navigate('/mainPage'
+              )
+            }}
+          >חזור לדף הראשי</button>
+        </div>
+      }
+      {
+        !isComplete &&
+        <div className='MainAddReview'>
+          <div className='bars'>
+            <TopBar></TopBar>
+            <ProfBar onChoosingCourse={saveCourse} prof_name={state.profName} course_options={options}></ProfBar>
+            <ProgressBar height="10px" color="#9391B6" completed={completeness}></ProgressBar>
           </div>
-        }
-        <button className='submit-button' onClick={submit}>דרגו</button>
-      </div>
-    </div>
-    }
+          <div className='rest-of-page'>
+            <ReviewRating onChoosingRating={saveProfGeneralRating} title={"המרצה באופן כללי "} ratingsOptions={profRatingsOptions}></ReviewRating>
+            <ReviewRating onChoosingRating={saveProfDifficultyRating} title={"רמת הקושי של הקורס"} ratingsOptions={profDiffOptions}></ReviewRating>
+            <ReviewRating onChoosingRating={saveProfStudentTreatmentRating} title={"יחס המרצה לסטודנטים"} ratingsOptions={profStudentTreatmentOptions}></ReviewRating>
+            <ReviewQuestions onChoosingOption={saveMaterialOnMoodle} title="המרצה מעלה את חומרי הקורס למודל" name="nyku," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
+            <ReviewQuestions onChoosingOption={saveRecordingsAvialable} title="יש הקלטות של הקורס במודל" name="dfd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
+            <ReviewQuestions onChoosingOption={saveWouldTakeAgain} title="הייתי לוקח\ת את הקורס עם המרצה שוב" name="dfgd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
+            <TextAreaWInstrucions onWritingReview={saveFreeInput}></TextAreaWInstrucions>
+            {
+              !canSubmit &&
+              <div className='fill-request'>
+                אנא מלאו את כל השדות
+              </div>
+            }
+            <button className='submit-button' onClick={submit}>דרגו</button>
+          </div>
+        </div>
+      }
     </div>
   );
 }
