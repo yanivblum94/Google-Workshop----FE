@@ -1,0 +1,148 @@
+.courses-filter {
+    width: 70%;
+    margin-left: 15%;
+    margin-top: 3rem;
+    min-height: max-content;
+}
+
+.courses-filter-tabs {
+    display: flex;
+    flex-direction: row;
+    direction: rtl;
+    min-height: max-content;
+    justify-content: bottom;
+    align-items: flex-end;
+}
+
+.courses-filter-reviews {
+    background-color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    border: solid #a8b5c1;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+
+.horizontal-line-reviews {
+    width: 100%;
+    border-top: solid #AAAAAA;
+}
+
+.courses-filter-coursedata {
+    height: 7rem;
+    background-color: #d8e2ec;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+    justify-content: space-evenly;
+    align-items: center;
+    direction: rtl;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.course_would_take-again {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.course_would_take-again-percent {
+    font-size: 2rem;
+}
+
+.course_difficulty {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.course_difficulty-rating {
+    font-size: 2rem;
+
+}
+
+.course_moodle-material {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.course_moodle-records {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.course-num-reviews {
+    text-decoration: underline;
+    font-size: 2rem;
+    direction: rtl;
+}
+
+.emptyCourseTab {
+    background-color: white;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-center;
+    color: #003f7d;
+    font-family: 'afek';
+    font-weight: bold;
+    font-size: 26px;
+    border: solid #a8b5c1;
+}
+
+@media only screen and (max-width: 1098px) {
+
+    .courses-filter {
+        width: 98%;
+        margin-left: 1%;
+        margin-top: 3rem;
+        min-height: max-content;
+    }
+
+    .courses-filter-tabs {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .courses-filter-coursedata {
+        height: 40vh;
+    }
+
+    .course_would_take-again {
+        margin-right: 3%;
+    }
+
+    .course_would_take-again-percent {
+        font-size: 2rem;
+    }
+
+    .course_difficulty {
+        margin-right: 3%;
+    }
+
+
+    .course_moodle-material {
+        margin-right: 3%;
+
+    }
+
+    .course_moodle-records {
+        margin-right: 3%;
+
+    }
+
+}
+
+@media only screen and (max-width: 640px) {
+    .courses-filter-coursedata {
+        height: 100vh;
+    }
+}

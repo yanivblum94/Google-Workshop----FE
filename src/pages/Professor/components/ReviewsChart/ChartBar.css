@@ -1,49 +1,48 @@
 .chart-bar {
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    width: auto;
-  }
-  
-  .chart-bar__inner {
-    height: 1.8rem;
-    width: 15rem;
-    border: 1px solid #cccccc;
-    border-radius: 15px;
-    background-color: #cccccc;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    font-weight: bold;
-  }
-  
-  .chart-bar__fill {
-    border-radius: 15px;
-    background-color: #003f7d;
-    transition: all 0.3s ease-out;
-  }
-  
-  .chart-bar__label {
-    width: 15rem;
-    font-family: 'afek';
-    font-size: 18px;
-    text-align: right;
-    color:black;
-    margin-right: 10px;
-    padding-bottom: 5px;
-  }
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
 
-  .num_of_reviews{
-    color: #003f7d;
-    margin-bottom: 0.1rem;
-    text-align: center;
-    margin-left: 0.5rem;
-    font-family: 'afek';
-    font-weight: bold;
-    font-size: 32px;
-  }
+.chart-bar__inner {
+  height: 1.8rem;
+  width: 15rem;
+  border: 1px solid #cccccc;
+  border-radius: 15px;
+  background-color: #cccccc;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  font-weight: bold;
+}
+
+.chart-bar__fill {
+  border-radius: 15px;
+  background-color: #003f7d;
+  transition: all 0.3s ease-out;
+}
+
+.chart-bar__label {
+  width: 15rem;
+  font-family: 'afek';
+  font-size: 18px;
+  text-align: right;
+  color: black;
+  margin-right: 10px;
+  padding-bottom: 5px;
+}
+
+.num_of_reviews {
+  color: #003f7d;
+  margin-bottom: 0.1rem;
+  text-align: center;
+  margin-left: 0.5rem;
+  font-family: 'afek';
+  font-weight: bold;
+  font-size: 32px;
+}

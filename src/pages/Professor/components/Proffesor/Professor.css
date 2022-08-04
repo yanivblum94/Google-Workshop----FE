@@ -60,12 +60,14 @@
 }
 
 .professor-website-button {
+  border: none;
   background-color: #d8e2ec;
   border-radius: 25px;
   margin-top: 20px;
 }
 
 .rating-button {
+  border: none;
   width: 20rem;
   color: white;
   background-color: #003f7d;
@@ -73,7 +75,7 @@
   height: 50px;
 }
 
-.rating-button-debug{
+.rating-button-debug {
   background-color: red;
   margin-top: 100px;
   margin-bottom: 50px;
@@ -103,7 +105,7 @@
   justify-content: center;
 }
 
-.professor-additional-ratings{
+.professor-additional-ratings {
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
@@ -112,11 +114,11 @@
   justify-content: center;
 }
 
-.professor-treat-rating{
+.professor-treat-rating {
   align-items: top;
 }
 
-.treat-rating{
+.treat-rating {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -124,19 +126,20 @@
   font-size: 36px;
 }
 
-.treat-rating-numerator{
+.treat-rating-numerator {
   font-weight: bold;
   font-size: 52px;
 }
 
-.treat-text{
+.treat-text {
   font-weight: bold;
   text-align: center;
   width: 100%;
   font-size: 1rem;
 
 }
-.vertical-line{
+
+.vertical-line {
   width: 1px;
   height: 5rem;
   border-left: solid black;
@@ -145,7 +148,7 @@
 
 }
 
-.professor-total-ratings-num{
+.professor-total-ratings-num {
   color: #003f7d;
   font-weight: bold;
   font-size: 28px;
@@ -162,4 +165,155 @@
   font-family: 'Gloria';
   src: url('/src/fonts/gloria/gloria-bold-aaa.otf');
   font-weight: bold;
+}
+
+@media only screen and (max-width: 1280px) {
+  .professor-name-and-email-and-website {
+    width: 30vw;
+  }
+
+  .professor-details {
+    margin-right: 4vw;
+    margin-left: 7vw;
+  }
+
+  .professor-rating {
+    margin-left: 15vw;
+  }
+}
+
+@media only screen and (max-width: 1098px) {
+  .professor-name-and-email-and-website {
+    width: 35vw;
+  }
+
+  .professor-details {
+    margin-right: 4vw;
+    margin-left: 0rem;
+  }
+
+  .professor-rating {
+    margin-left: 10vw;
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .professor {
+    flex-wrap: wrap;
+    justify-content: right;
+  }
+
+  .professor-name-and-email-and-website {
+    width: 40vw;
+  }
+
+  .professor-details {
+    width: 40vw;
+    margin-right: 5vw;
+    margin-left: 0vw;
+    margin-bottom: 10vh;
+
+  }
+
+  .professor-rating {
+    margin-right: 5vw;
+    margin-left: 10vw;
+  }
+
+  .professor-rating-chart {
+    margin-right: 45vw;
+    margin-bottom: 5vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .professor {
+    flex-wrap: wrap;
+    justify-content: right;
+  }
+
+  .professor-name-and-email-and-website {
+    width: 50vw;
+  }
+
+  .professor-details {
+    width: 50vw;
+    margin-right: 0vw;
+    margin-bottom: 20vh;
+
+  }
+
+  .professor-rating {
+    width: 30vw;
+    margin-right: 5vw;
+    margin-left: 0vw;
+  }
+
+  .professor-rating-chart {
+    margin-right: 40vw;
+    margin-bottom: 5vh;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .professor {
+    flex-direction: column;
+  }
+
+  .professor-name-and-email-and-website {
+    width: 70vw;
+  }
+
+  .professor-details {
+    width: 60vw;
+    margin-right: 20vw;
+    margin-bottom: 5vh;
+  }
+
+  .professor-rating {
+    margin-right: 35vw;
+    margin-bottom: 5vh;
+  }
+
+  .professor-rating-chart {
+    margin-right: 35vw;
+  }
+}
+
+
+@media only screen and (max-width: 480px) {
+  .professor {
+    flex-direction: column;
+  }
+
+  .professor-name-and-email-and-website {
+    width: 100vw;
+  }
+
+  .professor-details {
+    width: 60vw;
+    margin-right: 15vw;
+    margin-bottom: 0vh;
+  }
+
+  .professor-rating {
+    margin-right: 35vw;
+    margin-bottom: 5vh;
+  }
+
+  .professor-rating-chart {
+    margin-right: 30vw;
+  }
+
+  .professor-website-button {
+    height: 30vh;
+    border-radius: 30vh;
+    margin-top: 1vh;
+  }
+
+  .rating-button {
+    height: 30vh;
+    border-radius: 30vh;
+    margin-top: -10vh;
+  }
 }

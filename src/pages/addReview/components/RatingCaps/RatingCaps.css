@@ -1,0 +1,83 @@
+.graduation-cap-button-on {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #003f7d;
+}
+
+.graduation-cap-button-off {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #ccc;
+}
+
+@media only screen and (min-width: 1097px) and (max-width: 1098px) {
+  .graduation-cap-button-on {
+    width: 7vw;
+  }
+
+  .graduation-cap-button-off {
+    width: 7vw;
+  }
+}
+
+@media only screen and (width: 960px) {
+  .graduation-cap-button-on {
+    width: 8vw;
+  }
+
+  .graduation-cap-button-off {
+    width: 8vw;
+  }
+}
+
+@media only screen and (width: 768px) {
+  .graduation-cap-button-on {
+    transform: scale(0.8);
+    width: 8.5vw;
+  }
+
+  .graduation-cap-button-off {
+    transform: scale(0.8);
+    width: 8.5vw;
+  }
+}
+
+@media only screen and (width: 640px) {
+  .graduation-cap-button-on {
+    transform: scale(0.65);
+    width: 8.5vw;
+  }
+
+  .graduation-cap-button-off {
+    transform: scale(0.65);
+    width: 8.5vw;
+  }
+}
+
+@media only screen and (width: 480px) {
+  .graduation-cap-button-on {
+    transform: scale(0.4);
+    width: 8vw;
+  }
+
+  .graduation-cap-button-off {
+    transform: scale(0.4);
+    width: 8vw;
+  }
+}
+
+@media only screen and (width: 384px) {
+  .graduation-cap-button-on {
+    transform: scale(0.3);
+    width: 7vw;
+  }
+
+  .graduation-cap-button-off {
+    transform: scale(0.3);
+    width: 7vw;
+  }
+}
