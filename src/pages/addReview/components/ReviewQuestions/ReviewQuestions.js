@@ -1,6 +1,6 @@
 import ChoiceSegment from "../../components/ChoiceSegment/ChoiceSegment";
 import './ReviewQuestion.css'
-import DividedCard from "../../components/AI/DividedCard/DividedCard";
+import DividedCard from "../../components/UI/DividedCard/DividedCard";
 
 const ReviewQuestions = (props) => {
     return (

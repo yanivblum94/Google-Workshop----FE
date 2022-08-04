@@ -1,6 +1,6 @@
-import ColumnCard from "../../components/AI/ColumnCard/ColumnCard"
+import ColumnCard from "../../components/UI/ColumnCard/ColumnCard"
 import './TextAreaWInstructions.css'
-import DividedDiv from "../../components/AI/DividedDiv/DividedDiv"
+import DividedDiv from "../../components/UI/DividedDiv/DividedDiv"
 const TextAreaWInstrucions = (props) => {
     return (
         <ColumnCard className="free-input">

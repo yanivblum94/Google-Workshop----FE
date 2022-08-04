@@ -1,6 +1,6 @@
 import './ReviewRating.css'
 import { useState } from "react";
-import DividedCard from "../../components/AI/DividedCard/DividedCard";
+import DividedCard from "../../components/UI/DividedCard/DividedCard";
 import RatingCaps from "../../components/RatingCaps/RatingCaps";
 
 const ReviewRating = (props) => {
