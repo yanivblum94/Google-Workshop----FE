@@ -2,6 +2,7 @@ import './MainAddReview.css'
 import ProfBar from './components/ProfBar/ProfBar'
 import ReviewRating from './components/ReviewRating/ReviewRating';
 import ReviewQuestions from './components/ReviewQuestions/ReviewQuestions';
+import OneReviewNote from './components/OneReviewNote/OneReviewNote';
 import TopBar from '../../pages/MainPage/components/TopBar/TopBar';
 import ProgressBar from "react-progressbar";
 import { useState, useContext } from 'react';
@@ -255,6 +256,7 @@ function MainAddReview() {
             <ProgressBar height="10px" color="#9391B6" completed={completeness}></ProgressBar>
           </div>
           <div className='rest-of-page'>
+            <OneReviewNote></OneReviewNote>
             <ReviewRating onChoosingRating={saveProfGeneralRating} title={"המרצה באופן כללי "} ratingsOptions={profRatingsOptions}></ReviewRating>
             <ReviewRating onChoosingRating={saveProfDifficultyRating} title={"רמת הקושי של הקורס"} ratingsOptions={profDiffOptions}></ReviewRating>
             <ReviewRating onChoosingRating={saveProfStudentTreatmentRating} title={"יחס המרצה לסטודנטים"} ratingsOptions={profStudentTreatmentOptions}></ReviewRating>

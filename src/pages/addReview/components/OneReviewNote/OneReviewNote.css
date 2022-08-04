@@ -1,0 +1,16 @@
+.one-review-note {
+    font-family: 'gloria';
+    color: #003f7d;
+    font-size: 22px;
+    font-weight: bold;
+    direction: rtl;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 2%;
+    width: 50%;
+    margin-right: 25%;
+}
+
+.fa-heart {
+    color: red;
+}
