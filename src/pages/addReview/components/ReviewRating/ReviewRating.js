@@ -7,7 +7,7 @@ const ReviewRating = (props) => {
     const [userRating, setUserRating] = useState("דרגו")
 
     const hoverChangeHandler = (newRating) => {
-        if (newRating == 0) {
+        if (newRating === 0) {
             setUserRating("דרגו");
         }
         else {

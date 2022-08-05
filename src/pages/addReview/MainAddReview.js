@@ -72,7 +72,6 @@ function MainAddReview() {
   const pId = state.profId;
   const user = authCtx.email;
   const courses = state.courses;
-  //console.log(courses);
   const options = courses.map((course, index) => {
     return {
       value: course.courseNumber,
@@ -80,7 +79,6 @@ function MainAddReview() {
     };
   });
   const saveCourse = (chosenCourse) => {
-    console.log(chosenCourse);
     if (course === -1) {
       setCompleteness(completeness + 100 / 8);
       if (completeness > 90) {
@@ -188,7 +186,6 @@ function MainAddReview() {
       setIsComplete(true);
       review = new Review(course.label, profGeneralRating, profDifficultyRating, profStudentTreatmentRating,
         materialOnMoodle, recordingsAvailable, wouldTakeAgain, freeInput, pId, user);
-      console.log(review);
       const requestOptions = {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },

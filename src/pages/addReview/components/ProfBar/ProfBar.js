@@ -5,7 +5,6 @@ import Select from 'react-select'
 
 const ProfBar = (props) => {
     const courseChangeHandler = (newCourse) => {
-        console.log(newCourse);
         props.onChoosingCourse(newCourse);
     };
 

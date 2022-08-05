@@ -20,7 +20,6 @@ export const AuthContextProvider = (props) => {
     setToken(result.user.accessToken);
     setEmail(result.user.email);
     setUserName(result.user.displayName);
-    console.log(result);
   };
 
   const logoutHandler = () => {

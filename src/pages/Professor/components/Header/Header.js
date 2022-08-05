@@ -12,7 +12,6 @@ const Header = (props) => {
         className="google-button"
         type="light"
         onClick={() => {
-          console.log("Google button clicked");
         }}
       />
     </div>

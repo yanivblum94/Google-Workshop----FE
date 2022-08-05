@@ -47,7 +47,6 @@ const CourseTabs = (props) => {
         <div className="courses-filter">
             <div className="courses-filter-tabs">
                 {courses.map((course, index) => {
-                    //console.log(selectedCourse);
                     if (course.courseName === selectedCourse) {
                         course_index = index;
                         return (<CourseTab selected='selected-tab' name={course.courseName} setActiveCourseTab={changeActiveTab}></CourseTab>);
@@ -57,7 +56,7 @@ const CourseTabs = (props) => {
                     }
                 })}
             </div>
-            {filteredReviews.length == 0 && <div className="emptyCourseTab">עדיין אין דירוגים עבור קורס זה</div>}
+            {filteredReviews.length === 0 && <div className="emptyCourseTab">עדיין אין דירוגים עבור קורס זה</div>}
             {filteredReviews.length !== 0 &&
                 <div className="courses-filter-reviews">
                     <div className="courses-filter-coursedata">

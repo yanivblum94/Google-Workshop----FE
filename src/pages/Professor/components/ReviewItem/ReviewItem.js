@@ -1,7 +1,6 @@
 import "./ReviewItem.css";
 
 const ReviewItem = (props) => {
-  //console.log(props);
   return (
     <li className="review-item">
       <div className="review-item__comment">

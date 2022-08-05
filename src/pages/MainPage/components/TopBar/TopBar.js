@@ -22,7 +22,6 @@ const TopBar = () => {
     });
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result);
         authCtx.login(result);
       })
       .catch((error) => {
