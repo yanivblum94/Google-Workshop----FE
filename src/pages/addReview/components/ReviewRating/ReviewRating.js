@@ -21,13 +21,13 @@ const ReviewRating = (props) => {
     };
 
     return (
-        <DividedCard className="review-rating">
+        <div className="review-rating">
             <div className="review-rating_title">{props.title}</div>
             <div className="review-rating_main">
                 <RatingCaps onChoosingRating={ratingChangeHandler} onHovering={hoverChangeHandler}></RatingCaps>
                 <div className="review-rating_result">{userRating}</div>
             </div>
-        </DividedCard>
+        </div>
 
     )
 }

@@ -26,11 +26,17 @@
 }
 
 .rest-of-page {
-  margin-top: 11%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 13rem;
+  gap: 5vh;
   direction: rtl;
 }
 
 .bars {
+  z-index: 1;
   direction: rtl;
   top: 0;
   width: 100%;
@@ -39,9 +45,9 @@
 }
 
 .submit-button {
-  margin: 30px;
-  margin-right: 40%;
-  width: 20%;
+  margin-bottom: 40px;
+  max-width: 300px;
+  width: 40%;
   height: 72px;
   background-color: #003f7d;
   font-family: 'Gloria';
@@ -61,11 +67,17 @@
 }
 
 .fill-request {
+  width: 80%;
   font-size: 24px;
   font-family: 'gloria';
   font-weight: bold;
   color: red;
   text-align: center;
+}
+
+
+.bg-custom{
+  background-color: #858dc3 !important;
 }
 
 .thanks-page {
@@ -81,89 +93,4 @@
   width: 300px;
   font-weight: bold;
   font-size: 18px;
-}
-
-@media only screen and (width: 1780px) {
-  .rest-of-page {
-    margin-top: 12%;
-  }
-}
-
-@media only screen and (width: 1536px) {
-  .rest-of-page {
-    margin-top: 13%;
-  }
-}
-
-@media only screen and (width: 1280px) {
-  .rest-of-page {
-    margin-top: 15%;
-  }
-}
-
-@media only screen and (min-width: 1097px) and (max-width: 1098px) {
-  .rest-of-page {
-    margin-top: 16%;
-  }
-}
-
-@media only screen and (min-width: 1097px) and (max-width: 1098px) {
-  .rest-of-page {
-    margin-top: 16%;
-  }
-}
-
-@media only screen and (max-width: 960px) {
-  .rest-of-page {
-    margin-top: 17%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .rest-of-page {
-    margin-top: 18%;
-  }
-}
-
-
-@media only screen and (max-width: 640px) {
-  .rest-of-page {
-    margin-top: 20%;
-  }
-
-  .submit-button {
-    margin-right: 25%;
-    margin-top: 0%;
-    width: 50%;
-
-  }
-}
-
-
-
-@media only screen and (max-width: 480px) {
-  .rest-of-page {
-    margin-top: 22%;
-  }
-
-  .submit-button {
-    margin-right: 25%;
-    margin-top: 0%;
-    width: 50%;
-
-  }
-}
-
-
-@media only screen and (max-width: 384px) {
-  .rest-of-page {
-    margin-top: 25%;
-  }
-
-  .submit-button {
-    margin-right: 25%;
-    margin-top: 0%;
-    width: 50%;
-
-  }
 }

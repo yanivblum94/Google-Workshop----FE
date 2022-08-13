@@ -45,7 +45,7 @@
     margin-left: 0.1rem;
 }
 
-@media only screen and (max-width: 1098px) {
+@media only screen and (max-width: 1200px) {
 
     .unselected-tab {
         position: initial;

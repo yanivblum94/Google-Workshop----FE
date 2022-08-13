@@ -42,3 +42,10 @@ input[type="radio"]:checked {
 input[type="radio"]:hover {
     transform: scale(1.5);
 }
+
+@media only screen and (max-width: 800px) {
+    .radio-button {
+        margin: 10%;
+        transform: scale(0.9);
+    }
+}

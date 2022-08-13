@@ -1,7 +1,9 @@
 .main-professor {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     background-color: #f4f4f4;
-    padding-bottom: 300px;
+    padding-bottom: 100px;
 }
 
 .course-tabs-maria {

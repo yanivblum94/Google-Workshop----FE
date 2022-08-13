@@ -1,0 +1,26 @@
+.course-choice {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.course-choice_select {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    color: #555555;
+    font-size: 24px;
+    font-family: 'gloria';
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.course-choice_prompt {
+    align-items: center;
+    font-family: 'afek';
+    font-size: 24px;
+    font-weight: bold;
+}

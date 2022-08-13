@@ -1,0 +1,13 @@
+.column-card {
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 2px #999999;
+    direction: rtl;
+    display: flex;
+    flex-direction: row;
+    justify-items: right;
+    font-size: 20px;
+    margin-bottom: 30px;
+    width: 60%;
+    padding: 20px;
+    margin-right: 20%;
+  }

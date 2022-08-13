@@ -30,20 +30,21 @@ const TopBar = () => {
   };
 
   return (
-    <div className="top-bar_Maria">
-
+    <div className="top-bar">
+      <div className="empty-div"></div>
       <Link className="top-bar__logo" to="/mainPage">
         <img src={pic} className="top-bar__logo-pic" />
       </Link>
-
+      <div className="empty-div"></div>
       {!authCtx.isLoggedIn && (
-        <GoogleButton
+        <div id="our-button" className="top-bar__our-google-button">
+        <GoogleButton id="google-button"
           className="top-bar__google-button"
           type="light"
           onClick={SignInWithGoogle}
-        />
+        /></div>
       )}
-      {authCtx.isLoggedIn && <div className="top-bar__user-greeting"><i class="fa-solid fa-graduation-cap fa-2x fa-beat"></i>{"  "}Hi, {authCtx.userName}!</div>}
+      {authCtx.isLoggedIn && <div className="top-bar__user-greeting"><i class="fa-solid fa-graduation-cap fa-2x fa-beat"></i><div className="user-name">{"  "}Hi, {authCtx.userName}!</div></div>}
 
     </div>
   );
