@@ -4,13 +4,15 @@ import ReviewRating from './components/ReviewRating/ReviewRating';
 import ReviewQuestions from './components/ReviewQuestions/ReviewQuestions';
 import OneReviewNote from './components/OneReviewNote/OneReviewNote';
 import TopBar from '../../pages/MainPage/components/TopBar/TopBar';
-import ProgressBar from "react-progressbar";
+import ProgressBar from "react-bootstrap/ProgressBar";
 import { useState, useContext } from 'react';
 import { useLocation, useNavigate } from "react-router-dom";
 import TextAreaWInstrucions from './components/TextAreaWInstructions/TextAreaWInstructions';
 import Thanks from './components/Thanks/Thanks';
 import AuthContext from '../../store/auth-context';
 import '../Professor/components/Proffesor/Professor.css'
+import CourseChoice from './components/CourseChoice/CourseChoice';
+import HorizontalLine from './components/UI/HorizontalLine/HorizontalLine';
 
 class Review {
   constructor(Course, TotalRating, DiffRating, TreatRating,
@@ -250,16 +252,25 @@ function MainAddReview() {
           <div className='bars'>
             <TopBar></TopBar>
             <ProfBar onChoosingCourse={saveCourse} prof_name={state.profName} course_options={options}></ProfBar>
-            <ProgressBar height="10px" color="#9391B6" completed={completeness}></ProgressBar>
+            <ProgressBar striped animated variant="custom" height="20px" color="#9391B6" now={completeness}></ProgressBar>
           </div>
           <div className='rest-of-page'>
             <OneReviewNote></OneReviewNote>
+            <HorizontalLine></HorizontalLine>
+            <CourseChoice onChoosingCourse={saveCourse} course_options={options}></CourseChoice>
+            <HorizontalLine></HorizontalLine>
             <ReviewRating onChoosingRating={saveProfGeneralRating} title={"המרצה באופן כללי "} ratingsOptions={profRatingsOptions}></ReviewRating>
+            <HorizontalLine></HorizontalLine>
             <ReviewRating onChoosingRating={saveProfDifficultyRating} title={"רמת הקושי של הקורס"} ratingsOptions={profDiffOptions}></ReviewRating>
+            <HorizontalLine></HorizontalLine>
             <ReviewRating onChoosingRating={saveProfStudentTreatmentRating} title={"יחס המרצה לסטודנטים"} ratingsOptions={profStudentTreatmentOptions}></ReviewRating>
+            <HorizontalLine></HorizontalLine>
             <ReviewQuestions onChoosingOption={saveMaterialOnMoodle} title="המרצה מעלה את חומרי הקורס למודל" name="nyku," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
+            <HorizontalLine></HorizontalLine>
             <ReviewQuestions onChoosingOption={saveRecordingsAvialable} title="יש הקלטות של הקורס במודל" name="dfd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
+            <HorizontalLine></HorizontalLine>
             <ReviewQuestions onChoosingOption={saveWouldTakeAgain} title="הייתי לוקח\ת את הקורס עם המרצה שוב" name="dfgd," values={choiceSegmentValues} labels={choiceSegmentLabels}></ReviewQuestions>
+            <HorizontalLine></HorizontalLine>
             <TextAreaWInstrucions onWritingReview={saveFreeInput}></TextAreaWInstrucions>
             {
               !canSubmit &&

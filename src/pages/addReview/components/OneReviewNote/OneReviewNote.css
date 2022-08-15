@@ -5,10 +5,10 @@
     font-weight: bold;
     direction: rtl;
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 2%;
-    width: 50%;
-    margin-right: 25%;
+    width: 90%;
+    background-color: #eaf2fa;
+    border-radius: 25px;
+    padding: 2%;
 }
 
 .fa-heart {

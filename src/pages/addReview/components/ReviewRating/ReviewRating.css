@@ -3,17 +3,20 @@
     display: flex;
     flex-direction: row;
     font-size: 20px;
+    justify-content: center;
+    align-content: center;
     align-items: center;
     direction: rtl;
+    gap: 40px;
 }
 
 .review-rating_title {
+    width: 250px;
+    text-align: center;
     align-items: center;
     font-family: 'afek';
     font-size: 24px;
     font-weight: bold;
-    margin-left: 50px;
-    margin-right: 20px;
 }
 
 .review-rating_result {
@@ -27,4 +30,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .review-rating {
+        gap: 10px;
+        flex-direction: column;
+    }
 }

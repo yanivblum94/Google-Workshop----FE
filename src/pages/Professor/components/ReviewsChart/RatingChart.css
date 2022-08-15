@@ -1,11 +1,9 @@
 .chart {
     text-align: center;
-    justify-content: center;
-    align-items: center;
+    justify-content: right;
+    align-items: right;
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 250px;
 }
 
 .char-text {

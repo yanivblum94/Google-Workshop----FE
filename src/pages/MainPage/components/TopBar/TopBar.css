@@ -1,290 +1,82 @@
-.top-bar_Maria {
+.top-bar {
+  height: 100px;
   background-color: white;
   box-shadow: 2px 2px 2px 2px #DDDDDD;
   display: flex;
   flex-direction: row;
   direction: rtl;
-  justify-items: right;
+  justify-items: center;
 }
 
+.top-bar__logo {
+  width: 300px !important;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 .top-bar__logo-pic {
   width: 100%;
 }
 
+.top-bar__google-button {
+  flex-grow: 2 !important;
+  width: 300px !important;
+  left: 30px;
+  top: 20px;
+  position: absolute;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  padding-left: 1vw !important;
+}
+
 .top-bar__user-greeting {
+  left: 30px;
+  top: 30px;
+  width: 300px !important;
+  position: absolute;
   color: #003f7d;
-  margin-top: 2vh;
   direction: ltr;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
   align-content: center;
   align-items: center;
   font-size: large;
   font-family: 'gloria';
   font-weight: bold;
-  margin-right: 0%;
 }
 
-@media only screen and (min-width: 2134px) {
-  .top-bar_Maria {
-    gap: 26vw;
+@media only screen and (max-width: 1200px) {
+  .top-bar {
+    justify-items: right;
   }
 
   .top-bar__logo {
-    height: 4vh;
-    width: 8vw;
-    margin-right: 46vw;
+    margin-right: 5%;
   }
-
-
-  .top-bar__google-button {
-    margin-top: 1vh;
-  }
-
 }
 
-@media only screen and (min-width: 1921px) {
-  .top-bar_Maria {
-    gap: 26vw;
+@media only screen and (max-width: 700px) {
+  .top-bar__google-button {
+    margin-top: 1%;
+    width: 60px !important;
+    color: transparent !important;
+  }
+  
+  .top-bar__user-greeting {
+    left: 30px;
+    top: 10px;
+    width: 70px !important;
   }
 
+  .user-name{
+    color: transparent;
+  }
+}
+
+@media only screen and (max-width: 450px) {
   .top-bar__logo {
-    margin-top: -1vh;
-    transform: scale(0.8);
-    margin-right: 46vw;
-  }
-
-
-  .top-bar__google-button {
-    margin-top: 0.5vh;
-  }
-}
-
-@media only screen and (width: 1920px) {
-  .top-bar_Maria {
-    gap: 25vw;
-  }
-
-  .top-bar__logo {
-    height: 5vh;
-    width: 10%;
-    margin-right: 45vw;
-  }
-
-
-  .top-bar__google-button {
-    margin-top: 0.5vh;
-  }
-}
-
-@media only screen and (min-width: 1745px) {
-  .top-bar_Maria {
-    gap: 22vw;
-  }
-
-  .top-bar__logo {
-    height: 6vh;
-    width: 12vw;
-    margin-right: 44vw;
-  }
-
-  .top-bar__google-button {
-    margin-top: 1vh;
-  }
-}
-
-@media only screen and (min-width: 1281px) {
-  .top-bar_Maria {
-    gap: 18vw;
-  }
-
-  .top-bar__logo {
-    height: 8vh;
-    width: 15vw;
-    margin-right: 42.5vw;
-  }
-
-  .top-bar__google-button {
-    margin-top: 1.5vh;
-  }
-
-
-}
-
-@media only screen and (min-width: 1099px) and (max-width: 1280px) {
-  .top-bar_Maria {
-    gap: 14vw;
-  }
-
-  .top-bar__logo {
-    height: 10vh;
-    width: 17vw;
-    margin-right: 41.5vw;
-  }
-
-  .top-bar__google-button {
-    margin-top: 1.5vh;
-  }
-
-
-}
-
-@media only screen and (min-width: 961px) and (max-width: 1098px) {
-  .top-bar_Maria {
-    gap: 10vw;
-  }
-
-  .top-bar__logo {
-    height: 12vh;
-    width: 19vw;
-    margin-right: 40.5vw;
-  }
-
-  .top-bar__google-button {
-    margin-top: 1.7vh;
-  }
-
-
-}
-
-@media only screen and (min-width: 769px) and (max-width: 960px) {
-  .top-bar_Maria {
-    gap: 5vw;
-  }
-
-  .top-bar__logo {
-    height: 14vh;
-    width: 23vw;
-    margin-right: 38.5vw;
-  }
-
-  .top-bar__google-button {
-    font-size: 4vw;
-    width: 10vw;
-    margin-top: 2vh;
-  }
-
-
-}
-
-@media only screen and (min-width: 641px) and (max-width: 768px) {
-  .top-bar_Maria {
-    gap: 30vw;
-  }
-
-  .top-bar__logo {
-    height: 16vh;
-    width: 25vw;
-    margin-right: 7vw;
-  }
-
-  .top-bar__google-button {
-    font-size: 4vw;
-    width: 10vw;
-    margin-top: 2vh;
-  }
-
-
-}
-
-@media only screen and (min-width: 481px) and (max-width: 640px) {
-  .top-bar_Maria {
-    gap: 20vw;
-  }
-
-  .top-bar__logo {
-    height: 18vh;
-    width: 28vw;
-    margin-right: 7vw;
-  }
-
-  .top-bar__google-button {
-    font-size: 4vw;
-    width: 7vw;
-    margin-top: 1.5vh;
-    margin-left: 2vw;
-  }
-
-
-}
-
-@media only screen and (max-width: 480px) {
-  .top-bar_Maria {
-    gap: 15vw;
-  }
-
-  .top-bar__logo {
-    height: 30vh;
-    width: 35vw;
-    margin-right: 5vw;
-  }
-
-  .top-bar__google-button {
-    font-size: 1vw;
-    width: 7vw;
-    margin-top: 1.5vh;
-    margin-left: 1vw;
-  }
-
-}
-
-@media only screen and (max-width: 384px) {
-  .top-bar__logo {
-    height: 38vh;
-    width: 40vw;
-    margin-right: 2vw;
-  }
-
-  .top-bar__google-button {
-    font-size: 1vw;
-    width: 7vw;
-    margin-top: 1.5vh;
-    margin-left: 1vw;
-  }
-
-
-}
-
-
-
-
-@media only screen and (max-height: 982px) {
-  .top-bar_Maria {
-    height: 10vh;
-  }
-}
-
-@media only screen and (max-height: 864px) {
-  .top-bar_Maria {
-    height: 11vh;
-  }
-}
-
-@media only screen and (max-height: 720px) {
-  .top-bar_Maria {
-    height: 12vh;
-  }
-}
-
-@media only screen and (max-height: 618px) {
-  .top-bar_Maria {
-    height: 14vh;
-  }
-}
-
-@media only screen and (max-height: 432px) {
-  .top-bar_Maria {
-    height: 18vh;
-  }
-}
-
-@media only screen and (max-height: 360px) {
-  .top-bar_Maria {
-    height: 20vh;
-  }
-}
-
-@media only screen and (max-height: 270px) {
-  .top-bar_Maria {
-    height: 28vh;
+    margin-top: 2.5%;
+    width: 230px !important;
   }
 }
