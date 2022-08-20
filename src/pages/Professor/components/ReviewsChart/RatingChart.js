@@ -27,7 +27,7 @@ const RatingChart = (props) => {
           key={key}
           value={value}
           maxValue={totalRatings}
-          label={key + " - " + ratingLabels[key - 1]}
+          label={key + " – " + ratingLabels[key - 1]}
           number={props.numReviews[key - 1]}
         />
       ))}

@@ -61,7 +61,7 @@ const SearchbarDropdown = (props) => {
 
                 className="list-group-item list-group-item-action"
               >
-                <i class="fa-solid fa-graduation-cap" style={{ marginLeft: '1rem' }} />{option.Name + " - " + option.Faculty}
+                <i class="fa-solid fa-graduation-cap" style={{ marginLeft: '1rem' }} />{option.Name + " – " + option.Faculty}
               </button>
             );
           })}
