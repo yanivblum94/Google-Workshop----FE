@@ -1,0 +1,24 @@
+.course-choice-for-review {
+    margin: auto;
+    justify-content: center;
+    margin-bottom: 2%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.course-choice-review_select {
+    border: solid #a8b5c1;
+    direction: rtl;
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    color: #555555;
+    font-size: 24px;
+    font-family: 'gloria';
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+}

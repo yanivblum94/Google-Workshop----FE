@@ -1,4 +1,5 @@
 .courses-filter {
+    justify-items: center;
     width: 70%;
     margin-right: auto;
     margin-left: auto;
@@ -87,6 +88,7 @@
 }
 
 .emptyCourseTab {
+    width: 100%;
     background-color: white;
     height: 200px;
     display: flex;

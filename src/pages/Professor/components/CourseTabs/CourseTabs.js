@@ -1,7 +1,7 @@
 import "./CourseTabs.css"
-import CourseTab from "./CourseTab";
 import { useState } from "react";
 import ReviewItem from "../../components/ReviewItem/ReviewItem";
+import CourseChoiceForReview from "../../components/CourseChoiceForReview/CourseChoiceForReview";
 
 let reviews, courses, coursesReviewsCounts, coursesDifficultiesSum,
     coursesMaterialsTrues, coursesRecordsTrues, coursesTakeAgainTrues;
@@ -21,13 +21,14 @@ const CourseTabs = (props) => {
         return review.Course === courses[0].courseName;
     }));
 
-    const changeActiveTab = (tab) => {
+    const changeSelectedCourse = (chosenCourse) => {
+        console.log(chosenCourse);
         if (props.data.Reviews != null) {
             setFilteredReviews(props.data.Reviews.filter((review) => {
-                return review.Course === tab.target.innerText;
+                return review.Course === chosenCourse.label;
             }))
         }
-        setSelectedCourse(tab.target.innerText);
+        setSelectedCourse(chosenCourse.label);
 
     }
 
@@ -43,19 +44,16 @@ const CourseTabs = (props) => {
         return -1;
     }
 
+    const course_options = courses.map((course, index) => {
+        return {
+          value: course.courseNumber,
+          label: course.courseName
+        };
+      });
+
     return (
         <div className="courses-filter">
-            <div className="courses-filter-tabs">
-                {courses.map((course, index) => {
-                    if (course.courseName === selectedCourse) {
-                        course_index = index;
-                        return (<CourseTab selected='selected-tab' name={course.courseName} setActiveCourseTab={changeActiveTab}></CourseTab>);
-                    }
-                    else {
-                        return (<CourseTab selected='unselected-tab' name={course.courseName} setActiveCourseTab={changeActiveTab}></CourseTab>);
-                    }
-                })}
-            </div>
+            <CourseChoiceForReview onChoosingCourse={changeSelectedCourse} course_options={course_options}></CourseChoiceForReview>
             {filteredReviews.length === 0 && <div className="emptyCourseTab">עדיין אין דירוגים עבור קורס זה</div>}
             {filteredReviews.length !== 0 &&
                 <div className="courses-filter-reviews">
