@@ -22,7 +22,6 @@ const CourseTabs = (props) => {
     }));
 
     const changeSelectedCourse = (chosenCourse) => {
-        console.log(chosenCourse);
         if (props.data.Reviews != null) {
             setFilteredReviews(props.data.Reviews.filter((review) => {
                 return review.Course === chosenCourse.label;
